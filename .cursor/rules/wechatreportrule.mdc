@@ -1,0 +1,1491 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+群聊报告生成器 - 支持日报/周报/月报
+任务描述
+根据[我输入的]群聊的聊天记录，智能生成对应时间范围的报告（日报/周报/月报），输出为精美的HTML页面，适合截图分享。每个话题都将配备犀利有趣的深度评论。
+报告类型自动识别
+系统将根据您提供的时间范围自动选择报告类型：
+
+日报：当指定"今日"、"今天"或具体某一天时
+周报：当指定"本周"、"这周"、"近一周"、"最近7天"时
+月报：当指定"本月"、"这个月"、"近一个月"、"最近30天"时
+
+时间范围示例
+
+日报示例："生成今日群日报"、"2024年3月15日的日报"
+周报示例："生成本周群周报"、"生成最近一周的周报"
+月报示例："生成本月群月报"、"生成3月份的月报"
+
+话题数量配置
+
+日报：提取 3-5 个核心话题
+周报：提取 5-8 个重要话题
+月报：提取 8-12 个热门话题
+
+深度评论系统
+为每个话题生成一条犀利有趣的深度评论，风格特点：
+
+人设：年轻人，批判现实，思考深刻，语言风趣
+风格：融合Oscar Wilde、鲁迅、王朔、刘震云的表达方式
+特色：一针见血的隐喻，辛辣讽刺，抓住事物本质
+表达：用一句话通过隐喻和讽刺揭示话题的深层含义
+
+评论示例
+
+委婉 → "刺向他人时，决定在剑刃上撒上止痛药。"
+内卷 → "所有人都在电梯里跳舞，以为这样能更快到达楼顶。"
+摸鱼 → "在老板的眼皮底下练习如何优雅地浪费时间。"
+
+自动提取信息
+系统将自动从聊天记录中提取：
+
+群名称：从聊天记录的系统通知或常见群聊信息中提取
+时间信息：根据您指定的时间范围和聊天记录中的时间戳确定
+报告标题：根据时间范围自动生成（如"群日报"、"群周报"、"群月报"）
+
+报告模式选择
+
+完整版（默认）：包含所有分析维度和详细数据
+简化版：精简核心内容，适合快速浏览
+
+核心讨论热点（最多3个）
+重要消息摘要
+TOP3活跃成员
+精简词云
+
+提交时注明"生成简化版[日报/周报/月报]"即可
+内容深度调整
+根据报告类型自动调整内容深度：
+
+日报：详细记录当日所有重要内容
+周报：提炼本周重点话题和趋势
+月报：总结月度核心主题和数据分析
+
+聊天记录支持格式
+支持多种常见格式：
+
+"[时间] 昵称：消息内容"
+"时间 - 昵称：消息内容"
+"昵称 时间：消息内容"
+其他合理的时间和昵称分隔格式
+
+输出要求
+使用以下优化后的HTML模板，确保风格一致性和视觉美观度。
+完整HTML模板
+``` html
+html<!DOCTYPE html>
+<html lang="zh-CN"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>[群名称][报告类型] - [时间范围]</title> <style> /* 优化的CSS样式 */ :root { /* 主色调 - 深色科技风 */ --bg-primary: #0a0a0f; --bg-secondary: #16161f; --bg-tertiary: #1e1e2e; --bg-card: #252538;
+        /* 文字色彩 */
+        --text-primary: #ffffff;
+        --text-secondary: #b4b4c8;
+        --text-tertiary: #8888a0;
+        
+        /* 强调色 - 渐变色系 */
+        --accent-primary: #ff6b6b;
+        --accent-secondary: #4ecdc4;
+        --accent-tertiary: #45b7d1;
+        --accent-purple: #a55eea;
+        --accent-orange: #ffa502;
+        --accent-pink: #fd79a8;
+        
+        /* 渐变色 */
+        --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --gradient-tertiary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        --gradient-success: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        
+        /* 阴影 */
+        --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+        --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+        --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+        --shadow-glow: 0 0 20px rgba(102, 126, 234, 0.3);
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.6;
+        font-size: 16px;
+        min-height: 100vh;
+        background-image: 
+            radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(245, 87, 108, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 40% 20%, rgba(78, 205, 196, 0.1) 0%, transparent 50%);
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    /* 头部样式 - 增强视觉效果 */
+    header {
+        text-align: center;
+        padding: 60px 40px;
+        background: var(--gradient-primary);
+        border-radius: 20px;
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+    }
+    
+    header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        animation: pulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.1); opacity: 0.6; }
+    }
+    
+    h1 {
+        font-size: 42px;
+        font-weight: 800;
+        color: var(--text-primary);
+        margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .report-type {
+        display: inline-block;
+        background: rgba(255,255,255,0.2);
+        padding: 8px 24px;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        backdrop-filter: blur(10px);
+    }
+    
+    .date {
+        font-size: 20px;
+        color: rgba(255,255,255,0.9);
+        margin-bottom: 25px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .meta-info {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .meta-info-item {
+        background: rgba(255,255,255,0.15);
+        padding: 10px 25px;
+        border-radius: 30px;
+        font-size: 14px;
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+    }
+    
+    .meta-info-item:hover {
+        background: rgba(255,255,255,0.25);
+        transform: translateY(-2px);
+    }
+    
+    .meta-icon {
+        font-size: 20px;
+    }
+    
+    /* 区块样式 - 卡片化设计 */
+    section {
+        background: var(--bg-secondary);
+        border-radius: 20px;
+        margin-bottom: 40px;
+        padding: 35px;
+        box-shadow: var(--shadow-md);
+        border: 1px solid rgba(255,255,255,0.05);
+        transition: all 0.3s ease;
+    }
+    
+    section:hover {
+        box-shadow: var(--shadow-lg), var(--shadow-glow);
+        transform: translateY(-2px);
+    }
+    
+    h2 {
+        font-size: 32px;
+        font-weight: 700;
+        background: var(--gradient-secondary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    h2::before {
+        content: '';
+        width: 5px;
+        height: 35px;
+        background: var(--gradient-secondary);
+        border-radius: 3px;
+    }
+    
+    h3 {
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--accent-primary);
+        margin: 20px 0 15px 0;
+    }
+    
+    h4 {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--accent-secondary);
+        margin: 15px 0 10px 0;
+    }
+    
+    /* 卡片网格布局 */
+    .card-grid {
+        display: grid;
+        gap: 25px;
+        margin-top: 25px;
+    }
+    
+    .card-grid-1 {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-grid-2 {
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    }
+    
+    .card-grid-3 {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+    
+    /* 通用卡片样式 */
+    .card {
+        background: var(--bg-card);
+        border-radius: 15px;
+        padding: 25px;
+        border: 1px solid rgba(255,255,255,0.05);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gradient-tertiary);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+        border-color: rgba(255,255,255,0.1);
+    }
+    
+    .card:hover::before {
+        opacity: 1;
+    }
+    
+    /* 标签和徽章 */
+    .badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+        margin-right: 8px;
+        margin-bottom: 8px;
+    }
+    
+    .badge-primary {
+        background: var(--gradient-primary);
+        color: white;
+    }
+    
+    .badge-secondary {
+        background: rgba(78, 205, 196, 0.2);
+        color: var(--accent-secondary);
+        border: 1px solid var(--accent-secondary);
+    }
+    
+    .badge-info {
+        background: rgba(69, 183, 209, 0.2);
+        color: var(--accent-tertiary);
+    }
+    
+    /* 优先级标签 */
+    .priority-high {
+        background: linear-gradient(135deg, #eb3b5a, #fc5c65);
+    }
+    
+    .priority-medium {
+        background: linear-gradient(135deg, #fa8231, #fd9644);
+    }
+    
+    .priority-low {
+        background: linear-gradient(135deg, #20bf6b, #26de81);
+    }
+    
+    /* 话题卡片增强 */
+    .topic-card {
+        background: var(--bg-card);
+        border-radius: 15px;
+        padding: 25px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .topic-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg), 0 0 25px rgba(102, 126, 234, 0.2);
+    }
+    
+    .topic-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin-bottom: 15px;
+    }
+    
+    .topic-heat {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--accent-orange);
+        font-weight: 600;
+    }
+    
+    .topic-keywords {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 15px 0;
+    }
+    
+    .keyword {
+        background: rgba(102, 126, 234, 0.15);
+        color: var(--accent-tertiary);
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+    
+    .keyword:hover {
+        background: rgba(102, 126, 234, 0.25);
+        transform: translateY(-1px);
+    }
+    
+    .topic-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 15px;
+    }
+    
+    .topic-stats .badge {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+    
+    /* 深度评论样式 */
+    .deep-comment {
+        background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+        border-radius: 12px;
+        padding: 15px;
+        margin: 15px 0;
+        border-left: 4px solid var(--accent-primary);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .deep-comment::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        font-size: 60px;
+        color: var(--accent-primary);
+        opacity: 0.2;
+        font-family: serif;
+    }
+    
+    .comment-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+    
+    .comment-icon {
+        font-size: 16px;
+    }
+    
+    .comment-label {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--accent-primary);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .comment-content {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .comment-text {
+        font-style: italic;
+        color: var(--text-primary);
+        font-size: 15px;
+        line-height: 1.5;
+        margin: 0;
+        font-weight: 500;
+    }
+    
+    .topic-card:hover .deep-comment {
+        background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(78, 205, 196, 0.15));
+    }
+    
+    /* 教程卡片增强 */
+    .tutorial-card {
+        border-left: 4px solid var(--accent-secondary);
+    }
+    
+    .tutorial-meta {
+        display: flex;
+        gap: 20px;
+        color: var(--text-secondary);
+        font-size: 14px;
+        margin: 10px 0;
+    }
+    
+    .tutorial-link {
+        margin-top: 15px;
+    }
+    
+    .tutorial-link a {
+        color: var(--accent-tertiary);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: all 0.3s ease;
+    }
+    
+    .tutorial-link a:hover {
+        color: var(--accent-secondary);
+        transform: translateX(3px);
+    }
+    
+    /* 消息卡片增强 */
+    .message-card {
+        border-left: 4px solid transparent;
+        border-image: var(--gradient-tertiary) 1;
+    }
+    
+    .message-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
+    .message-time {
+        color: var(--text-tertiary);
+        font-size: 14px;
+    }
+    
+    /* 对话卡片美化 */
+    .dialogue-card {
+        background: var(--bg-card);
+        border-radius: 15px;
+        padding: 25px;
+    }
+    
+    .dialogue-bubble {
+        background: var(--bg-tertiary);
+        border-radius: 15px;
+        padding: 15px 20px;
+        margin: 10px 0;
+        position: relative;
+    }
+    
+    .dialogue-bubble.left {
+        margin-right: 50px;
+        border-bottom-left-radius: 5px;
+    }
+    
+    .dialogue-bubble.right {
+        margin-left: 50px;
+        border-bottom-right-radius: 5px;
+        background: rgba(102, 126, 234, 0.1);
+    }
+    
+    .dialogue-speaker {
+        font-weight: 600;
+        color: var(--accent-purple);
+        margin-bottom: 5px;
+    }
+    
+    .dialogue-highlight {
+        background: linear-gradient(135deg, rgba(245, 87, 108, 0.2), rgba(102, 126, 234, 0.2));
+        border-radius: 10px;
+        padding: 15px;
+        margin: 15px 0;
+        font-style: italic;
+        border-left: 3px solid var(--accent-primary);
+    }
+    
+    /* 问答卡片样式 */
+    .qa-card {
+        background: var(--bg-card);
+        border-radius: 15px;
+        padding: 25px;
+    }
+    
+    .question {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .question-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .question-time {
+        color: var(--text-tertiary);
+        font-size: 14px;
+    }
+    
+    .question-asker {
+        color: var(--text-secondary);
+        font-size: 14px;
+        margin: 10px 0;
+    }
+    
+    .question-tags {
+        display: flex;
+        gap: 8px;
+        margin-top: 10px;
+    }
+    
+    .tag {
+        background: rgba(165, 94, 234, 0.2);
+        color: var(--accent-purple);
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 12px;
+    }
+    
+    .answers {
+        margin-top: 15px;
+    }
+    
+    .answer {
+        margin-bottom: 15px;
+    }
+    
+    .answer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+    
+    .answer-time {
+        color: var(--text-tertiary);
+        font-size: 14px;
+    }
+    
+    .answer-responder {
+        color: var(--text-secondary);
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    
+    .answer-content {
+        background: var(--bg-tertiary);
+        border-radius: 10px;
+        padding: 15px;
+    }
+    
+    /* 数据可视化增强 */
+    .analytics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin: 25px 0;
+    }
+    
+    .stat-card {
+        background: var(--bg-card);
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .stat-card::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%);
+    }
+    
+    .stat-number {
+        font-size: 48px;
+        font-weight: 800;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 10px 0;
+    }
+    
+    .stat-label {
+        color: var(--text-secondary);
+        font-size: 16px;
+    }
+    
+    .stat-change {
+        color: var(--accent-secondary);
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    
+    /* 热度条增强 */
+    .heat-distribution {
+        margin-top: 25px;
+    }
+    
+    .heat-item {
+        margin: 20px 0;
+    }
+    
+    .heat-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    .heat-topic {
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+    
+    .heat-percentage {
+        color: var(--accent-orange);
+        font-weight: 600;
+    }
+    
+    .heat-bar {
+        height: 10px;
+        background: var(--bg-tertiary);
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .heat-fill {
+        height: 100%;
+        border-radius: 10px;
+        transition: width 0.8s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .heat-fill::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        animation: shimmer 2s infinite;
+    }
+    
+    @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+    
+    .heat-stats {
+        margin-top: 8px;
+        color: var(--text-secondary);
+        font-size: 14px;
+    }
+    
+    /* 话唠榜美化 */
+    .participants-ranking {
+        margin-top: 25px;
+    }
+    
+    .participant-card {
+        background: var(--bg-card);
+        border-radius: 15px;
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+    }
+    
+    .participant-card:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .participant-rank {
+        font-size: 48px;
+        font-weight: 800;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+    
+    .rank-1 {
+        background: linear-gradient(135deg, #f9d71c, #f9a825);
+        color: white;
+        box-shadow: 0 0 30px rgba(249, 215, 28, 0.5);
+    }
+    
+    .rank-2 {
+        background: linear-gradient(135deg, #c0c0c0, #b8b8b8);
+        color: white;
+    }
+    
+    .rank-3 {
+        background: linear-gradient(135deg, #cd7f32, #b87333);
+        color: white;
+    }
+    
+    .participant-info {
+        flex: 1;
+    }
+    
+    .participant-name {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+    
+    .participant-stats {
+        display: flex;
+        gap: 20px;
+        margin: 10px 0;
+        color: var(--text-secondary);
+    }
+    
+    .participant-traits {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+    }
+    
+    /* 熬夜冠军特殊样式 */
+    .night-owl-card {
+        background: linear-gradient(135deg, var(--bg-card), rgba(138, 43, 226, 0.1));
+        border: 2px solid rgba(138, 43, 226, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .night-owl-card::before {
+        content: '🌙';
+        position: absolute;
+        top: -20px;
+        right: -20px;
+        font-size: 100px;
+        opacity: 0.1;
+        transform: rotate(-15deg);
+    }
+    
+    .owl-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .owl-crown {
+        font-size: 60px;
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    
+    .owl-info {
+        flex: 1;
+    }
+    
+    .owl-title {
+        color: var(--accent-purple);
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+    
+    .owl-stats {
+        display: flex;
+        gap: 20px;
+        margin: 10px 0;
+        color: var(--text-secondary);
+    }
+    
+    .owl-quote {
+        background: rgba(138, 43, 226, 0.1);
+        border-radius: 10px;
+        padding: 10px;
+        font-style: italic;
+        margin-top: 10px;
+    }
+    
+    /* 时段活跃度分析 */
+    .time-activity {
+        margin-top: 25px;
+    }
+    
+    .time-chart {
+        display: grid;
+        grid-template-columns: repeat(24, 1fr);
+        gap: 5px;
+        margin: 20px 0;
+    }
+    
+    .time-slot {
+        height: 60px;
+        border-radius: 8px;
+        background: var(--bg-tertiary);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .time-slot:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .time-hour {
+        font-weight: 600;
+        margin-bottom: 3px;
+    }
+    
+    .time-count {
+        font-size: 10px;
+        color: var(--text-secondary);
+    }
+    
+    /* 词云增强 - 3D云朵效果 */
+    .cloud-container {
+        position: relative;
+        margin: 40px auto;
+        padding: 40px 0;
+    }
+    
+    .cloud-3d {
+        position: relative;
+        width: 800px;
+        height: 500px;
+        margin: 0 auto;
+        perspective: 1000px;
+    }
+    
+    .cloud-layer {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        animation: rotate3d 30s linear infinite;
+    }
+    
+    @keyframes rotate3d {
+        0% { transform: rotateY(0deg); }
+        100% { transform: rotateY(360deg); }
+    }
+    
+    .cloud-word {
+        position: absolute;
+        padding: 5px 15px;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(5px);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+    
+    .cloud-word:hover {
+        transform: scale(1.2) translateZ(50px);
+        background: rgba(255,255,255,0.1);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        z-index: 100;
+    }
+    
+    .cloud-legend {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+    
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 20px;
+        background: var(--bg-card);
+        border-radius: 25px;
+        transition: all 0.3s ease;
+    }
+    
+    .legend-item:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+    
+    .legend-dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        box-shadow: 0 0 10px currentColor;
+    }
+    
+    /* 页脚美化 */
+    footer {
+        text-align: center;
+        padding: 40px;
+        margin-top: 60px;
+        background: var(--bg-secondary);
+        border-radius: 20px;
+        color: var(--text-secondary);
+        font-size: 14px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--gradient-primary);
+    }
+    
+    .footer-info {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .footer-info span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .disclaimer {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        font-style: italic;
+        color: var(--text-tertiary);
+    }
+    
+    /* 响应式设计 */
+    @media (max-width: 768px) {
+        .container {
+            padding: 10px;
+        }
+        
+        h1 {
+            font-size: 32px;
+        }
+        
+        h2 {
+            font-size: 24px;
+        }
+        
+        .card-grid-2, .card-grid-3 {
+            grid-template-columns: 1fr;
+        }
+        
+        .cloud-3d {
+            width: 100%;
+            height: 400px;
+        }
+        
+        .deep-comment {
+            padding: 12px;
+            margin: 12px 0;
+        }
+        
+        .comment-text {
+            font-size: 14px;
+        }
+        
+        .time-chart {
+            grid-template-columns: repeat(12, 1fr);
+        }
+        
+        .participant-card {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+    
+    /* 加载动画 */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    section {
+        animation: fadeIn 0.6s ease-out;
+    }
+    
+    /* 打印样式 */
+    @media print {
+        body {
+            background: white;
+            color: black;
+        }
+        
+        .card, section {
+            break-inside: avoid;
+            box-shadow: none;
+            border: 1px solid #ddd;
+        }
+    }
+</style>
+</head> <body> <div class="container"> <!-- 头部信息 - 根据报告类型动态调整 --> <header> <div class="report-type">[日报/周报/月报]</div> <h1>[群名称]群聊[报告类型]</h1> <p class="date">[具体日期/时间范围]</p> <div class="meta-info"> <div class="meta-info-item"> <span class="meta-icon">💬</span> <span>总消息数：<strong>[数量]</strong></span> </div> <div class="meta-info-item"> <span class="meta-icon">👥</span> <span>活跃用户：<strong>[数量]</strong></span> </div> <div class="meta-info-item"> <span class="meta-icon">⏱️</span> <span>统计周期：<strong>[时间范围]</strong></span> </div> </div> </header>
+    <!-- 1. 讨论热点 -->
+    <section class="hot-topics">
+        <h2>📊 [时间范围]讨论热点</h2>
+        <div class="card-grid card-grid-2">
+            <!-- 话题卡片示例 -->
+            <div class="card topic-card">
+                <div class="topic-card-header">
+                    <h3>[热点话题名称]</h3>
+                    <div class="topic-heat">
+                        🔥 <span>[热度值]</span>
+                    </div>
+                </div>
+                <span class="badge badge-primary">[话题分类]</span>
+                <p class="topic-summary">[话题简要总结，50-100字]</p>
+                
+                <!-- 深度评论 -->
+                <div class="deep-comment">
+                    <div class="comment-header">
+                        <span class="comment-icon">🎯</span>
+                        <span class="comment-label">评论</span>
+                    </div>
+                    <div class="comment-content">
+                        <p class="comment-text">[犀利有趣的一句话深度评论]</p>
+                    </div>
+                </div>
+                
+                <div class="topic-keywords">
+                    <span class="keyword">#[关键词1]</span>
+                    <span class="keyword">#[关键词2]</span>
+                    <span class="keyword">#[关键词3]</span>
+                </div>
+                <div class="topic-stats">
+                    <span class="badge badge-info">💬 [消息数]条讨论</span>
+                    <span class="badge badge-info">👥 [参与人数]人参与</span>
+                    <span class="badge badge-info">🕐 [讨论时长]</span>
+                </div>
+            </div>
+            <!-- 更多话题卡片... -->
+        </div>
+    </section>
+    
+    <!-- 2. 实用教程与资源分享 -->
+    <section class="tutorials">
+        <h2>📚 实用教程与资源分享</h2>
+        <div class="card-grid card-grid-3">
+            <!-- 教程卡片示例 -->
+            <div class="card tutorial-card">
+                <span class="badge badge-primary">[TUTORIAL/NEWS/RESOURCE]</span>
+                <h3>[教程或资源标题]</h3>
+                <div class="tutorial-meta">
+                    <span>👤 [分享者]</span>
+                    <span>🕐 [分享时间]</span>
+                </div>
+                <p class="tutorial-summary">[内容简介]</p>
+                <div class="key-points">
+                    <h4>核心要点：</h4>
+                    <ul>
+                        <li>[要点1]</li>
+                        <li>[要点2]</li>
+                        <li>[要点3]</li>
+                    </ul>
+                </div>
+                <div class="tutorial-link">
+                    <a href="[URL]">🔗 查看原文</a>
+                </div>
+            </div>
+            <!-- 更多教程卡片... -->
+        </div>
+    </section>
+    
+    <!-- 3. 重要消息汇总 -->
+    <section class="important-messages">
+        <h2>📌 重要消息汇总</h2>
+        <div class="card-grid card-grid-2">
+            <!-- 消息卡片示例 -->
+            <div class="card message-card">
+                <div class="message-header">
+                    <div>
+                        <span class="badge badge-primary">[通知/活动/公告]</span>
+                        <span class="badge priority-high">高优先级</span>
+                    </div>
+                    <span class="message-time">🕐 [时间]</span>
+                </div>
+                <h4>[消息标题]</h4>
+                <p class="message-sender">发送者：[昵称]</p>
+                <div class="message-content">
+                    <p>[消息内容]</p>
+                </div>
+            </div>
+            <!-- 更多消息卡片... -->
+        </div>
+    </section>
+    
+    <!-- 4. 精彩对话 -->
+    <section class="interesting-dialogues">
+        <h2>💭 精彩对话与金句</h2>
+        <div class="card-grid card-grid-1">
+            <!-- 对话卡片示例 -->
+            <div class="card dialogue-card">
+                <span class="badge badge-secondary">[对话/金句]</span>
+                <div class="dialogue-content">
+                    <div class="dialogue-bubble left">
+                        <div class="dialogue-speaker">[说话者A]</div>
+                        <p>[对话内容A]</p>
+                        <span class="message-time">[时间]</span>
+                    </div>
+                    <div class="dialogue-bubble right">
+                        <div class="dialogue-speaker">[说话者B]</div>
+                        <p>[对话内容B]</p>
+                        <span class="message-time">[时间]</span>
+                    </div>
+                </div>
+                <div class="dialogue-highlight">
+                    💡 "[精彩金句或对话亮点]"
+                </div>
+            </div>
+            <!-- 更多对话卡片... -->
+        </div>
+    </section>
+    
+    <!-- 5. 问答精选 -->
+    <section class="questions-answers">
+        <h2>❓ 问答精选</h2>
+        <div class="card-grid card-grid-1">
+            <!-- 问答卡片示例 -->
+            <div class="card qa-card">
+                <div class="question">
+                    <div class="question-header">
+                        <span class="badge badge-info">问题</span>
+                        <span class="question-time">🕐 [提问时间]</span>
+                    </div>
+                    <h4>[问题内容]</h4>
+                    <p class="question-asker">提问者：[昵称]</p>
+                    <div class="question-tags">
+                        <span class="tag">[标签1]</span>
+                        <span class="tag">[标签2]</span>
+                    </div>
+                </div>
+                <div class="answers">
+                    <div class="answer">
+                        <div class="answer-header">
+                            <span class="badge badge-primary">最佳答案</span>
+                            <span class="answer-time">🕐 [回答时间]</span>
+                        </div>
+                        <p class="answer-responder">回答者：[昵称]</p>
+                        <div class="answer-content">
+                            <p>[回答内容]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 更多问答卡片... -->
+        </div>
+    </section>
+    
+    <!-- 6. 数据统计与可视化 -->
+    <section class="analytics">
+        <h2>📈 数据统计与分析</h2>
+        
+        <!-- 统计卡片 -->
+        <div class="analytics-grid">
+            <div class="stat-card">
+                <div class="stat-label">总消息数</div>
+                <div class="stat-number">[数量]</div>
+                <div class="stat-change">较[上期]增长 [百分比]%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">活跃用户</div>
+                <div class="stat-number">[数量]</div>
+                <div class="stat-change">参与率 [百分比]%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">平均响应时间</div>
+                <div class="stat-number">[时间]</div>
+                <div class="stat-change">分钟</div>
+            </div>
+        </div>
+        
+        <!-- 话题热度分布 -->
+        <h3>🔥 话题热度分布</h3>
+        <div class="heat-distribution">
+            <!-- 热度条示例 -->
+            <div class="heat-item">
+                <div class="heat-header">
+                    <span class="heat-topic">[话题名称]</span>
+                    <span class="heat-percentage">[百分比]%</span>
+                </div>
+                <div class="heat-bar">
+                    <div class="heat-fill" style="width: [百分比]%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                </div>
+                <div class="heat-stats">
+                    <span>[消息数]条消息</span> · <span>[参与人数]人参与</span>
+                </div>
+            </div>
+            <!-- 更多热度条... -->
+        </div>
+        
+        <!-- 活跃度排行榜 -->
+        <h3>🏆 活跃度排行榜</h3>
+        <div class="participants-ranking">
+            <!-- 排行榜卡片示例 -->
+            <div class="participant-card">
+                <div class="participant-rank rank-1">1</div>
+                <div class="participant-info">
+                    <div class="participant-name">[群友昵称]</div>
+                    <div class="participant-stats">
+                        <span>💬 [消息数]条</span>
+                        <span>⏱️ 平均[响应时间]分钟</span>
+                        <span>🎯 参与[话题数]个话题</span>
+                    </div>
+                    <div class="participant-traits">
+                        <span class="badge badge-secondary">[特征1]</span>
+                        <span class="badge badge-secondary">[特征2]</span>
+                        <span class="badge badge-secondary">[特征3]</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 更多排名... -->
+        </div>
+        
+        <!-- 时段活跃度分析 - 仅限日报/周报 -->
+        <h3>⏰ 时段活跃度分析</h3>
+        <div class="time-activity">
+            <div class="time-chart">
+                <!-- 24小时时段示例 -->
+                <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-hour">00</div>
+                    <div class="time-count">[消息数]</div>
+                </div>
+                <!-- 更多时段... -->
+            </div>
+        </div>
+        
+        <!-- 熬夜冠军 - 特殊展示 -->
+        <h3>🌙 熬夜冠军</h3>
+        <div class="night-owl-card card">
+            <div class="owl-content">
+                <div class="owl-crown">👑</div>
+                <div class="owl-info">
+                    <h4>[熬夜冠军昵称]</h4>
+                    <p class="owl-title">"[称号，如：午夜守护者]"</p>
+                    <div class="owl-stats">
+                        <span>🕐 最晚活跃：[时间]</span>
+                        <span>🌙 深夜消息：[数量]条</span>
+                    </div>
+                    <p class="owl-quote">"[最后一条深夜消息]"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 7. 词云展示 -->
+    <section class="word-cloud">
+        <h2>☁️ 热词云图</h2>
+        <div class="cloud-container">
+            <div class="cloud-3d">
+                <div class="cloud-layer">
+                    <!-- 词云示例 - 根据实际词频和重要性调整大小和颜色 -->
+                    <span class="cloud-word" style="left: 40%; top: 20%; font-size: 36px; color: #667eea; transform: translateZ(100px);">[热词1]</span>
+                    <span class="cloud-word" style="left: 60%; top: 30%; font-size: 28px; color: #764ba2; transform: translateZ(80px);">[热词2]</span>
+                    <span class="cloud-word" style="left: 30%; top: 40%; font-size: 24px; color: #f093fb; transform: translateZ(60px);">[热词3]</span>
+                    <span class="cloud-word" style="left: 70%; top: 50%; font-size: 20px; color: #f5576c; transform: translateZ(40px);">[热词4]</span>
+                    <span class="cloud-word" style="left: 45%; top: 60%; font-size: 22px; color: #4facfe; transform: translateZ(50px);">[热词5]</span>
+                    <!-- 添加更多词汇，建议40-60个，分布在不同层次 -->
+                </div>
+            </div>
+            
+            <div class="cloud-legend">
+                <div class="legend-item">
+                    <span class="legend-dot" style="background-color: #667eea;"></span>
+                    <span>[分类1] 相关</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot" style="background-color: #f093fb;"></span>
+                    <span>[分类2] 相关</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-dot" style="background-color: #4facfe;"></span>
+                    <span>[分类3] 相关</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 8. 报告总结 - 根据报告类型调整 -->
+    <section class="summary">
+        <h2>📝 [时间范围]总结</h2>
+        <div class="card">
+            <h3>核心洞察</h3>
+            <ul>
+                <li><strong>[洞察点1]：</strong>[具体说明]</li>
+                <li><strong>[洞察点2]：</strong>[具体说明]</li>
+                <li><strong>[洞察点3]：</strong>[具体说明]</li>
+            </ul>
+            
+            <h3>趋势分析</h3>
+            <p>[根据报告类型，分析日/周/月的趋势变化]</p>
+            
+            <h3>建议与展望</h3>
+            <p>[基于数据分析给出的建议]</p>
+        </div>
+    </section>
+    
+    <!-- 页脚信息 -->
+    <footer>
+        <div class="footer-info">
+            <span>📊 数据来源：[群名称]</span>
+            <span>📅 统计周期：[具体时间范围]</span>
+            <span>🕐 生成时间：[当前时间]</span>
+        </div>
+        <p class="disclaimer">
+            免责声明：本报告基于群聊公开讨论内容自动生成，仅供参考。如有不当内容，请联系管理员处理。
+        </p>
+    </footer>
+</div>
+
+<script>
+    // 可选：添加一些交互效果
+    document.addEventListener('DOMContentLoaded', function() {
+        // 为卡片添加渐入动画
+        const cards = document.querySelectorAll('.card');
+        cards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+        
+        // 词云交互
+        const cloudWords = document.querySelectorAll('.cloud-word');
+        cloudWords.forEach(word => {
+            word.addEventListener('mouseenter', function() {
+                this.style.transform = `scale(1.2) translateZ(${parseInt(this.style.transform.match(/\d+/)[0]) + 20}px)`;
+            });
+            word.addEventListener('mouseleave', function() {
+                this.style.transform = this.style.transform.replace(/scale\([\d.]+\)\s*/, '');
+            });
+        });
+        
+        // 时段图表交互
+        const timeSlots = document.querySelectorAll('.time-slot');
+        timeSlots.forEach(slot => {
+            slot.addEventListener('click', function() {
+                // 可以添加点击展开详情的功能
+                console.log('点击了时段：', this.querySelector('.time-hour').textContent);
+            });
+        });
+        
+        // 热度条动画
+        const heatFills = document.querySelectorAll('.heat-fill');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.width = entry.target.getAttribute('data-width') || '0%';
+                }
+            });
+        });
+        
+        heatFills.forEach(fill => {
+            observer.observe(fill);
+        });
+    });
+</script>
+</body> </html>
+```
+
+
+输出完整的html到html文件，文件名基于时间戳生成，类似"temp_file_c38cc988-ca6d-4745-9675-75e9bad37161_artifacts-preview"这样的格式
