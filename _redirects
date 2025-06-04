@@ -1,4 +1,0 @@
-# 通配符重定向 - 去掉.html后缀
-/weekly/*               /weekly/:splat.html         200
-/daily/*                /daily/:splat.html          200
-/monthly/*              /monthly/:splat.html        200
