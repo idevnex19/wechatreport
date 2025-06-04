@@ -1,0 +1,3 @@
+/weekly/:report          /weekly/:report.html       200
+/daily/:report           /daily/:report.html        200
+/monthly/:report         /monthly/:report.html      200

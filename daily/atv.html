@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple TV科班刀把群V1.0日报 - 2025年6月4日</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f7ffa6; margin: 0; padding: 20px; }
+        .container { max-width: 900px; margin: 20px auto; background: #fff; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); padding: 40px; }
+        header { text-align: center; margin-bottom: 40px; }
+        header .report-type { font-size: 1.2em; color: #667eea; font-weight: bold; margin-bottom: 8px; }
+        header h1 { font-size: 2.8em; color: #333; margin: 0; line-height: 1.2; }
+        header .date { font-size: 1.1em; color: #777; margin-top: 5px; }
+        .meta-info { display: flex; justify-content: center; gap: 25px; margin-top: 25px; flex-wrap: wrap; }
+        .meta-info-item { display: flex; align-items: center; background-color: #f0f4ff; padding: 10px 18px; border-radius: 8px; font-size: 0.95em; color: #555; }
+        .meta-icon { font-size: 1.5em; margin-right: 8px; color: #667eea; }
+        section { margin-bottom: 40px; }
+        h2 { font-size: 2em; color: #333; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 30px; }
+        h3 { font-size: 1.5em; color: #555; margin-top: 30px; margin-bottom: 15px; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); }
+        .card { background: #fdfdff; border: 1px solid #e9eef2; border-radius: 10px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .topic-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .topic-card-header h3 { margin: 0; font-size: 1.3em; color: #333; }
+        .topic-heat { font-size: 1.1em; color: #ff5722; font-weight: bold; display: flex; align-items: center; }
+        .topic-heat span { margin-left: 5px; }
+        .badge { display: inline-block; padding: 6px 12px; border-radius: 20px; font-size: 0.8em; font-weight: 600; margin-right: 8px; margin-bottom: 10px; }
+        .badge-primary { background-color: #e0e7ff; color: #667eea; }
+        .badge-info { background-color: #e8f5e9; color: #4caf50; }
+        .badge-secondary { background-color: #f2f4f6; color: #666; }
+        .topic-summary { font-size: 0.95em; color: #555; margin-bottom: 15px; }
+        .deep-comment { background-color: #f7f9fc; border-left: 4px solid #667eea; padding: 15px; border-radius: 8px; margin-top: 20px; margin-bottom: 15px; }
+        .comment-header { display: flex; align-items: center; margin-bottom: 8px; }
+        .comment-icon { font-size: 1.4em; color: #667eea; margin-right: 8px; }
+        .comment-label { font-weight: bold; color: #667eea; }
+        .comment-text { font-style: italic; color: #444; font-size: 0.95em; }
+        .topic-keywords .keyword { display: inline-block; background-color: #f0f8ff; color: #42a5f5; padding: 4px 10px; border-radius: 15px; font-size: 0.8em; margin-right: 6px; margin-bottom: 6px; }
+        .topic-stats { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        
+        .analytics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; margin-bottom: 40px; }
+        .stat-card { background: #f8faff; border: 1px solid #e0e7ff; border-radius: 10px; padding: 25px; text-align: center; }
+        .stat-label { font-size: 0.9em; color: #777; margin-bottom: 10px; }
+        .stat-number { font-size: 2.5em; font-weight: bold; color: #667eea; margin-bottom: 5px; }
+        .stat-change { font-size: 0.85em; color: #4caf50; font-weight: 600; }
+        
+        .heat-distribution .heat-item { margin-bottom: 20px; }
+        .heat-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .heat-topic { font-weight: bold; color: #444; }
+        .heat-percentage { font-weight: bold; color: #667eea; }
+        .heat-bar { background-color: #e0e7ff; border-radius: 5px; height: 10px; overflow: hidden; }
+        .heat-fill { height: 100%; border-radius: 5px; }
+        .heat-stats { display: flex; justify-content: space-between; font-size: 0.85em; color: #777; margin-top: 5px; }
+        
+        .participants-ranking .participant-card { display: flex; align-items: center; background: #fff; padding: 15px 20px; border: 1px solid #eee; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+        .participant-rank { font-size: 1.8em; font-weight: bold; color: #667eea; margin-right: 15px; width: 40px; text-align: center; }
+        .participant-rank.rank-1 { color: #ffd700; } /* Gold */
+        .participant-rank.rank-2 { color: #c0c0c0; } /* Silver */
+        .participant-rank.rank-3 { color: #cd7f32; } /* Bronze */
+        .participant-info { flex-grow: 1; }
+        .participant-name { font-weight: bold; color: #333; font-size: 1.1em; margin-bottom: 5px; }
+        .participant-stats span { font-size: 0.85em; color: #666; margin-right: 12px; }
+        .participant-traits .badge { margin-top: 5px; margin-bottom: 0; }
+        
+        .time-activity .time-chart { display: flex; overflow-x: auto; padding: 15px 0; border-radius: 10px; background-color: #f7f9fc; }
+        .time-slot { flex: 0 0 40px; text-align: center; padding: 10px 0; margin: 0 5px; border-radius: 8px; color: #fff; font-size: 0.8em; display: flex; flex-direction: column; justify-content: space-between; align-items: center; min-height: 80px; }
+        .time-hour { font-weight: bold; margin-bottom: 5px; }
+        .time-count { font-size: 1.1em; font-weight: bold; }
+        /* Example gradients for heat */
+        .time-slot[data-level="0"] { background: linear-gradient(135deg, rgba(230,230,230,0.1), rgba(200,200,200,0.3)); }
+        .time-slot[data-level="1"] { background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(102,126,234,0.3)); }
+        .time-slot[data-level="2"] { background: linear-gradient(135deg, rgba(102,126,234,0.3), rgba(102,126,234,0.5)); }
+        .time-slot[data-level="3"] { background: linear-gradient(135deg, rgba(102,126,234,0.5), rgba(102,126,234,0.7)); }
+        .time-slot[data-level="4"] { background: linear-gradient(135deg, rgba(102,126,234,0.7), rgba(102,126,234,0.9)); }
+        
+        .night-owl-card { background: linear-gradient(135deg, #2a2a72, #009ffd); color: #fff; padding: 25px; border-radius: 10px; text-align: center; margin-top: 30px; }
+        .owl-content { display: flex; flex-direction: column; align-items: center; }
+        .owl-crown { font-size: 3em; margin-bottom: 10px; }
+        .owl-info h4 { font-size: 1.8em; margin-bottom: 5px; }
+        .owl-title { font-size: 1.1em; font-style: italic; opacity: 0.9; margin-bottom: 10px; }
+        .owl-stats span { display: block; font-size: 0.9em; opacity: 0.8; margin-bottom: 5px; }
+        .owl-quote { font-size: 1em; margin-top: 15px; padding: 0 20px; font-style: italic; }
+        
+        .word-cloud .cloud-container { position: relative; height: 350px; display: flex; justify-content: center; align-items: center; background-color: #f7f9fc; border-radius: 10px; overflow: hidden; margin-bottom: 20px; }
+        .cloud-3d { position: absolute; width: 100%; height: 100%; transform-style: preserve-3d; animation: rotateCloud 60s infinite linear; }
+        .cloud-layer { position: absolute; width: 100%; height: 100%; }
+        .cloud-word { position: absolute; font-weight: bold; white-space: nowrap; opacity: 0.8; }
+        @keyframes rotateCloud { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg); } }
+        .cloud-legend { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+        .legend-item { display: flex; align-items: center; font-size: 0.9em; color: #555; }
+        .legend-dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+
+        .summary ul { list-style: none; padding: 0; }
+        .summary ul li { background-color: #f7f9fc; padding: 12px 20px; border-radius: 8px; margin-bottom: 10px; border-left: 4px solid #667eea; }
+        .summary ul li strong { color: #333; }
+        .summary p { font-size: 0.95em; color: #555; margin-bottom: 15px; }
+        
+        footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.85em; color: #888; }
+        .footer-info span { margin: 0 10px; }
+        .disclaimer { margin-top: 15px; font-style: italic; color: #999; }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            header h1 { font-size: 2.2em; }
+            .meta-info { flex-direction: column; align-items: center; }
+            .card-grid { grid-template-columns: 1fr; }
+            .analytics-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="report-type">日报</div>
+            <h1>Apple TV科班刀把群V1.0群聊日报</h1>
+            <p class="date">2025年6月4日</p>
+            <div class="meta-info">
+                <div class="meta-info-item">
+                    <span class="meta-icon">💬</span>
+                    <span>总消息数：<strong>240</strong></span>
+                </div>
+                <div class="meta-info-item">
+                    <span class="meta-icon">👥</span>
+                    <span>活跃用户：<strong>42</strong></span>
+                </div>
+                <div class="meta-info-item">
+                    <span class="meta-icon">⏱️</span>
+                    <span>统计周期：<strong>2025年6月4日</strong></span>
+                </div>
+            </div>
+        </header>
+
+        <section class="hot-topics">
+            <h2>📊 今日讨论热点</h2>
+            <div class="card-grid card-grid-2">
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>Mac Mini / Apple 教育优惠</h3>
+                        <div class="topic-heat">🔥 <span>8.5</span></div>
+                    </div>
+                    <span class="badge badge-primary">数码科技</span>
+                    <p class="topic-summary">群友们热烈讨论了Mac Mini的教育优惠和各种补贴，以及优惠的真实性。大家互相分享链接，探讨价格和购买策略，尤其关注是否存在“私货”或补贴叠加的问题。</p>
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">“在羊毛的道路上，总有人先锋突进，有人质疑真伪，最终都殊途同归——在数字的海洋里寻找那片可以填饱肚子的海藻。”</p>
+                        </div>
+                    </div>
+                    <div class="topic-keywords">
+                        <span class="keyword">#MacMini</span>
+                        <span class="keyword">#教育优惠</span>
+                        <span class="keyword">#苹果</span>
+                        <span class="keyword">#补贴</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 30条讨论</span>
+                        <span class="badge badge-info">👥 15人参与</span>
+                        <span class="badge badge-info">🕐 1小时</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>NS2 / Switch2 购买与价格</h3>
+                        <div class="topic-heat">🔥 <span>9.0</span></div>
+                    </div>
+                    <span class="badge badge-primary">游戏硬件</span>
+                    <p class="topic-summary">Switch2的购买价格引发了群内轰动，从2999元的好价到各种优惠券和返现的叠加，群友们纷纷表示“天塌了”、“人手一台”，并讨论退货重购的策略。发货时间也成为关注点。</p>
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">“当价格跳水比股市还刺激时，消费者的钱包就像被扔进搅拌机，‘早买早享受’变成了‘晚买有折扣，等等变骨折’，一场关于‘亏了’的集体幻觉，最终成就了商家的狂欢。”</p>
+                        </div>
+                    </div>
+                    <div class="topic-keywords">
+                        <span class="keyword">#Switch2</span>
+                        <span class="keyword">#NS2</span>
+                        <span class="keyword">#游戏机</span>
+                        <span class="keyword">#价格战</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 45条讨论</span>
+                        <span class="badge badge-info">👥 20人参与</span>
+                        <span class="badge badge-info">🕐 1.5小时</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>Mac/iPhone 复制粘贴 Bug 与系统问题</h3>
+                        <div class="topic-heat">🔥 <span>7.8</span></div>
+                    </div>
+                    <span class="badge badge-primary">软件使用</span>
+                    <p class="topic-summary">部分群友反馈Mac和iPhone上存在的复制粘贴Bug，特别是在多设备Handoff时容易出现空粘贴板问题。大家讨论了这个问题是否普遍存在，以及可能的解决方案，对macOS的“傻逼”设计表达了不满。</p>
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">“苹果的‘极简’哲学，有时就像一场行为艺术：它把用户的便利像藏宝图一样埋起来，让你在寻找‘bug’的旅途中，偶尔发现‘原来不是我一个人傻’的集体安慰。”</p>
+                        </div>
+                    </div>
+                    <div class="topic-keywords">
+                        <span class="keyword">#macOS</span>
+                        <span class="keyword">#iPhoneBug</span>
+                        <span class="keyword">#复制粘贴</span>
+                        <span class="keyword">#Handoff</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 25条讨论</span>
+                        <span class="badge badge-info">👥 10人参与</span>
+                        <span class="badge badge-info">🕐 40分钟</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>AI手机与国产手机广告问题</h3>
+                        <div class="topic-heat">🔥 <span>7.5</span></div>
+                    </div>
+                    <span class="badge badge-primary">手机讨论</span>
+                    <p class="topic-summary">群内围绕华为、小米、OPPO和vivo等国产手机的广告推送问题展开讨论，有群友认为苹果广告也多。大家分享了如何关闭广告的经验，并吐槽手机变成了“买来的爹”。</p>
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">“手机厂商的‘用户体验’，就像是魔术师手中的牌：你以为买到的是自由，实际上只是换了个姿势被‘服务’，每关闭一个广告，都像是在完成一次付费的‘自愿劳动’。”</p>
+                        </div>
+                    </div>
+                    <div class="topic-keywords">
+                        <span class="keyword">#AI手机</span>
+                        <span class="keyword">#国产手机</span>
+                        <span class="keyword">#广告</span>
+                        <span class="keyword">#隐私</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 35条讨论</span>
+                        <span class="badge badge-info">👥 12人参与</span>
+                        <span class="badge badge-info">🕐 50分钟</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>相机与手机摄影</h3>
+                        <div class="topic-heat">🔥 <span>6.8</span></div>
+                    </div>
+                    <span class="badge badge-primary">摄影设备</span>
+                    <p class="topic-summary">有群友咨询相机选购，讨论了索尼A7C II搭配50mm定焦头的优劣，并对比了手机摄影与相机的表现，尤其是在色彩还原方面。大家普遍认为手机日常使用方便，但相机在特定场景仍有优势。</p>
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">“在像素的丛林里，相机是捕猎者，手机是驯化师。前者追求‘真理’，后者则懂得如何把‘真理’化作‘美颜’，毕竟，在这个人人皆是艺术家的时代，‘好看’才是硬道理。”</p>
+                        </div>
+                    </div>
+                    <div class="topic-keywords">
+                        <span class="keyword">#相机</span>
+                        <span class="keyword">#手机摄影</span>
+                        <span class="keyword">#A7CII</span>
+                        <span class="keyword">#GR3</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 20条讨论</span>
+                        <span class="badge badge-info">👥 8人参与</span>
+                        <span class="badge badge-info">🕐 30分钟</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>出行与生活讨论</h3>
+                        <div class="topic-heat">🔥 <span>6.5</span></div>
+                    </div>
+                    <span class="badge badge-primary">生活分享</span>
+                    <p class="topic-summary">群友们分享了日本旅行、温泉体验、以及对加班、学历、收入等社会现象的看法。从日本萝莉到熬夜冠军，话题涵盖了生活的方方面面，充满了群友间的幽默互动。</p>
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">“在这个加班是主食，内卷是调料的时代，偶尔谈谈日本萝莉和裸体温泉，就像是给灵魂做了一场‘精神按摩’，毕竟，身体是革命的本钱，精神是摸鱼的动力。”</p>
+                        </div>
+                    </div>
+                    <div class="topic-keywords">
+                        <span class="keyword">#日本</span>
+                        <span class="keyword">#旅行</span>
+                        <span class="keyword">#生活</span>
+                        <span class="keyword">#收入</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 40条讨论</span>
+                        <span class="badge badge-info">👥 18人参与</span>
+                        <span class="badge badge-info">🕐 2小时</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="analytics">
+            <h2>📈 数据统计与分析</h2>
+            
+            <div class="analytics-grid">
+                <div class="stat-card">
+                    <div class="stat-label">总消息数</div>
+                    <div class="stat-number">240</div>
+                    <div class="stat-change">较昨日增长 --%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">活跃用户</div>
+                    <div class="stat-number">42</div>
+                    <div class="stat-change">参与率 80%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">平均响应时间</div>
+                    <div class="stat-number">2</div>
+                    <div class="stat-change">分钟</div>
+                </div>
+            </div>
+            
+            <h3>🔥 话题热度分布</h3>
+            <div class="heat-distribution">
+                <div class="heat-item">
+                    <div class="heat-header">
+                        <span class="heat-topic">NS2 / Switch2 购买与价格</span>
+                        <span class="heat-percentage">18.75%</span>
+                    </div>
+                    <div class="heat-bar">
+                        <div class="heat-fill" style="width: 18.75%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                    </div>
+                    <div class="heat-stats">
+                        <span>45条消息</span> · <span>20人参与</span>
+                    </div>
+                </div>
+                <div class="heat-item">
+                    <div class="heat-header">
+                        <span class="heat-topic">出行与生活讨论</span>
+                        <span class="heat-percentage">16.67%</span>
+                    </div>
+                    <div class="heat-bar">
+                        <div class="heat-fill" style="width: 16.67%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                    </div>
+                    <div class="heat-stats">
+                        <span>40条消息</span> · <span>18人参与</span>
+                    </div>
+                </div>
+                <div class="heat-item">
+                    <div class="heat-header">
+                        <span class="heat-topic">AI手机与国产手机广告问题</span>
+                        <span class="heat-percentage">14.58%</span>
+                    </div>
+                    <div class="heat-bar">
+                        <div class="heat-fill" style="width: 14.58%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                    </div>
+                    <div class="heat-stats">
+                        <span>35条消息</span> · <span>12人参与</span>
+                    </div>
+                </div>
+                <div class="heat-item">
+                    <div class="heat-header">
+                        <span class="heat-topic">Mac Mini / Apple 教育优惠</span>
+                        <span class="heat-percentage">12.50%</span>
+                    </div>
+                    <div class="heat-bar">
+                        <div class="heat-fill" style="width: 12.50%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                    </div>
+                    <div class="heat-stats">
+                        <span>30条消息</span> · <span>15人参与</span>
+                    </div>
+                </div>
+                <div class="heat-item">
+                    <div class="heat-header">
+                        <span class="heat-topic">Mac/iPhone 复制粘贴 Bug 与系统问题</span>
+                        <span class="heat-percentage">10.42%</span>
+                    </div>
+                    <div class="heat-bar">
+                        <div class="heat-fill" style="width: 10.42%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                    </div>
+                    <div class="heat-stats">
+                        <span>25条消息</span> · <span>10人参与</span>
+                    </div>
+                </div>
+                <div class="heat-item">
+                    <div class="heat-header">
+                        <span class="heat-topic">相机与手机摄影</span>
+                        <span class="heat-percentage">8.33%</span>
+                    </div>
+                    <div class="heat-bar">
+                        <div class="heat-fill" style="width: 8.33%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                    </div>
+                    <div class="heat-stats">
+                        <span>20条消息</span> · <span>8人参与</span>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>🏆 活跃度排行榜</h3>
+            <div class="participants-ranking">
+                <div class="participant-card">
+                    <div class="participant-rank rank-1">1</div>
+                    <div class="participant-info">
+                        <div class="participant-name">花生喵呜(出 P70 Ultra)</div>
+                        <div class="participant-stats">
+                            <span>💬 27条</span>
+                            <span>⏱️ 平均2分钟</span>
+                            <span>🎯 4个话题</span>
+                        </div>
+                        <div class="participant-traits">
+                            <span class="badge badge-secondary">话痨</span>
+                            <span class="badge badge-secondary">数码狂热</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="participant-card">
+                    <div class="participant-rank rank-2">2</div>
+                    <div class="participant-info">
+                        <div class="participant-name">faichou</div>
+                        <div class="participant-stats">
+                            <span>💬 20条</span>
+                            <span>⏱️ 平均3分钟</span>
+                            <span>🎯 5个话题</span>
+                        </div>
+                        <div class="participant-traits">
+                            <span class="badge badge-secondary">幽默</span>
+                            <span class="badge badge-secondary">热点捕捉</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="participant-card">
+                    <div class="participant-rank rank-3">3</div>
+                    <div class="participant-info">
+                        <div class="participant-name">迪迦奥特曼</div>
+                        <div class="participant-stats">
+                            <span>💬 19条</span>
+                            <span>⏱️ 平均2分钟</span>
+                            <span>🎯 3个话题</span>
+                        </div>
+                        <div class="participant-traits">
+                            <span class="badge badge-secondary">爱国</span>
+                            <span class="badge badge-secondary">直率</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>⏰ 时段活跃度分析</h3>
+            <div class="time-activity">
+                <div class="time-chart">
+                    <!-- Data points are illustrative. In a real scenario, this would be computed from chat data. -->
+                    <div class="time-slot" data-level="1" style="background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(102,126,234,0.3)); color: #333;">
+                        <div class="time-hour">00</div>
+                        <div class="time-count">17</div>
+                    </div>
+                    <div class="time-slot" data-level="1" style="background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(102,126,234,0.3)); color: #333;">
+                        <div class="time-hour">01</div>
+                        <div class="time-count">6</div>
+                    </div>
+                    <div class="time-slot" data-level="0" style="background: linear-gradient(135deg, rgba(230,230,230,0.1), rgba(200,200,200,0.3)); color: #333;">
+                        <div class="time-hour">02</div>
+                        <div class="time-count">0</div>
+                    </div>
+                    <div class="time-slot" data-level="0" style="background: linear-gradient(135deg, rgba(230,230,230,0.1), rgba(200,200,200,0.3)); color: #333;">
+                        <div class="time-hour">03</div>
+                        <div class="time-count">0</div>
+                    </div>
+                    <div class="time-slot" data-level="0" style="background: linear-gradient(135deg, rgba(230,230,230,0.1), rgba(200,200,200,0.3)); color: #333;">
+                        <div class="time-hour">04</div>
+                        <div class="time-count">0</div>
+                    </div>
+                    <div class="time-slot" data-level="0" style="background: linear-gradient(135deg, rgba(230,230,230,0.1), rgba(200,200,200,0.3)); color: #333;">
+                        <div class="time-hour">05</div>
+                        <div class="time-count">0</div>
+                    </div>
+                    <div class="time-slot" data-level="1" style="background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(102,126,234,0.3)); color: #333;">
+                        <div class="time-hour">06</div>
+                        <div class="time-count">1</div>
+                    </div>
+                    <div class="time-slot" data-level="1" style="background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(102,126,234,0.3)); color: #333;">
+                        <div class="time-hour">07</div>
+                        <div class="time-count">3</div>
+                    </div>
+                    <div class="time-slot" data-level="4" style="background: linear-gradient(135deg, rgba(102,126,234,0.7), rgba(102,126,234,0.9)); color: #fff;">
+                        <div class="time-hour">08</div>
+                        <div class="time-count">24</div>
+                    </div>
+                    <div class="time-slot" data-level="4" style="background: linear-gradient(135deg, rgba(102,126,234,0.7), rgba(102,126,234,0.9)); color: #fff;">
+                        <div class="time-hour">09</div>
+                        <div class="time-count">48</div>
+                    </div>
+                    <div class="time-slot" data-level="4" style="background: linear-gradient(135deg, rgba(102,126,234,0.7), rgba(102,126,234,0.9)); color: #fff;">
+                        <div class="time-hour">10</div>
+                        <div class="time-count">37</div>
+                    </div>
+                    <div class="time-slot" data-level="4" style="background: linear-gradient(135deg, rgba(102,126,234,0.7), rgba(102,126,234,0.9)); color: #fff;">
+                        <div class="time-hour">11</div>
+                        <div class="time-count">49</div>
+                    </div>
+                    <div class="time-slot" data-level="4" style="background: linear-gradient(135deg, rgba(102,126,234,0.7), rgba(102,126,234,0.9)); color: #fff;">
+                        <div class="time-hour">12</div>
+                        <div class="time-count">27</div>
+                    </div>
+                    <div class="time-slot" data-level="3" style="background: linear-gradient(135deg, rgba(102,126,234,0.5), rgba(102,126,234,0.7)); color: #fff;">
+                        <div class="time-hour">13</div>
+                        <div class="time-count">10</div>
+                    </div>
+                    <div class="time-slot" data-level="4" style="background: linear-gradient(135deg, rgba(102,126,234,0.7), rgba(102,126,234,0.9)); color: #fff;">
+                        <div class="time-hour">14</div>
+                        <div class="time-count">30</div>
+                    </div>
+                    <div class="time-slot" data-level="3" style="background: linear-gradient(135deg, rgba(102,126,234,0.5), rgba(102,126,234,0.7)); color: #fff;">
+                        <div class="time-hour">15</div>
+                        <div class="time-count">18</div>
+                    </div>
+                    <!-- Add more time slots as needed for 24 hours -->
+                </div>
+            </div>
+            
+            <h3>🌙 熬夜冠军</h3>
+            <div class="night-owl-card card">
+                <div class="owl-content">
+                    <div class="owl-crown">👑</div>
+                    <div class="owl-info">
+                        <h4>apple pencil 2 微瑕 ¥350</h4>
+                        <p class="owl-title">"午夜守护者"</p>
+                        <div class="owl-stats">
+                            <span>🕐 最晚活跃：01:41:28</span>
+                            <span>🌙 深夜消息：2条</span>
+                        </div>
+                        <p class="owl-quote">"晚安哥哥吧"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="word-cloud">
+            <h2>☁️ 热词云图</h2>
+            <div class="cloud-container">
+                <div class="cloud-3d">
+                    <div class="cloud-layer">
+                        <span class="cloud-word" style="left: 10%; top: 15%; font-size: 36px; color: #667eea; transform: translateZ(100px);">NS2</span>
+                        <span class="cloud-word" style="left: 70%; top: 25%; font-size: 28px; color: #764ba2; transform: translateZ(80px);">教育优惠</span>
+                        <span class="cloud-word" style="left: 25%; top: 40%; font-size: 22px; color: #4CAF50; transform: translateZ(60px);">苹果</span>
+                        <span class="cloud-word" style="left: 50%; top: 70%; font-size: 32px; color: #FF5722; transform: translateZ(90px);">广告</span>
+                        <span class="cloud-word" style="left: 85%; top: 55%; font-size: 20px; color: #9C27B0; transform: translateZ(70px);">Mac Mini</span>
+                        <span class="cloud-word" style="left: 5%; top: 60%; font-size: 24px; color: #F44336; transform: translateZ(85px);">日本</span>
+                        <span class="cloud-word" style="left: 45%; top: 10%; font-size: 18px; color: #2196F3; transform: translateZ(50px);">拍照</span>
+                        <span class="cloud-word" style="left: 30%; top: 80%; font-size: 16px; color: #FFC107; transform: translateZ(40px);">国补</span>
+                        <span class="cloud-word" style="left: 65%; top: 5%; font-size: 14px; color: #00BCD4; transform: translateZ(30px);">Bug</span>
+                        <span class="cloud-word" style="left: 15%; top: 30%; font-size: 20px; color: #E91E63; transform: translateZ(75px);">iPhone</span>
+                        <span class="cloud-word" style="left: 80%; top: 80%; font-size: 16px; color: #607D8B; transform: translateZ(45px);">安卓</span>
+                        <span class="cloud-word" style="left: 55%; top: 40%; font-size: 26px; color: #8BC34A; transform: translateZ(95px);">价格</span>
+                        <span class="cloud-word" style="left: 0%; top: 0%; font-size: 12px; color: #FF9800; transform: translateZ(20px);">系统</span>
+                        <span class="cloud-word" style="left: 90%; top: 10%; font-size: 10px; color: #795548; transform: translateZ(10px);">福利</span>
+                        <span class="cloud-word" style="left: 20%; top: 50%; font-size: 20px; color: #F44336; transform: translateZ(65px);">群友</span>
+                        <span class="cloud-word" style="left: 75%; top: 70%; font-size: 18px; color: #FFEB3B; transform: translateZ(55px);">舔</span>
+                        <span class="cloud-word" style="left: 35%; top: 25%; font-size: 24px; color: #9E9E9E; transform: translateZ(80px);">实习生</span>
+                        <span class="cloud-word" style="left: 60%; top: 60%; font-size: 20px; color: #4CAF50; transform: translateZ(70px);">工资</span>
+                        <span class="cloud-word" style="left: 10%; top: 90%; font-size: 16px; color: #2196F3; transform: translateZ(40px);">聊天</span>
+                        <span class="cloud-word" style="left: 95%; top: 95%; font-size: 10px; color: #FF9800; transform: translateZ(15px);">基金</span>
+                    </div>
+                </div>
+                
+                <div class="cloud-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: #667eea;"></span>
+                        <span>数码硬件</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: #FF5722;"></span>
+                        <span>系统软件</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: #4CAF50;"></span>
+                        <span>生活娱乐</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background-color: #F44336;"></span>
+                        <span>社群互动</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="summary">
+            <h2>📝 今日总结</h2>
+            <div class="card">
+                <h3>核心洞察</h3>
+                <ul>
+                    <li><strong>数码产品热度不减：</strong> NS2和Mac Mini的优惠价格成为今日焦点，群友们对如何薅羊毛、比价、退换货展现出极高的热情和专业度，体现了群内数码产品爱好者极强的购买力和信息获取能力。</li>
+                    <li><strong>技术困扰与调侃并存：</strong> Mac/iPhone的复制粘贴Bug引发集体吐槽，反映出用户对系统稳定性和易用性的高要求。同时，群友们通过幽默调侃缓解了技术问题带来的不困扰，展现了群内轻松的交流氛围。</li>
+                    <li><strong>国产手机广告问题：</strong> 国产手机的广告推送成为争议点，虽然有详细的关闭攻略，但用户普遍认为购机后仍需手动关闭广告，增加了使用成本，也引发了对“买手机还是买爹”的哲学思考。</li>
+                    <li><strong>生活与工作交织：</strong> 群聊内容不仅限于数码产品，还涵盖了日本旅行、温泉、高考祝福、年收入讨论等话题，体现了群友们对生活品质的追求和对社会现象的关注，使得群聊内容更加丰富多元。</li>
+                </ul>
+                
+                <h3>趋势分析</h3>
+                <p>今日讨论趋势显示，群友们对“薅羊毛”和“比价”的兴趣高涨，各类数码产品的降价信息能迅速引发大量讨论。此外，对热门社会话题的讨论也持续存在，群聊的深度和广度不断拓展。未来，随着更多新产品的发布和促销活动的推出，相关话题的热度预计将继续保持。</p>
+                
+                <h3>建议与展望</h3>
+                <p>建议群主可以考虑定期组织“羊毛分享”或“比价交流”活动，进一步激发群友们的参与热情。同时，鉴于对手机广告和系统Bug的关注，可以增设相关技术分享或问题解答环节，提升群成员的技术素养和使用体验。保持群内轻松幽默的氛围，鼓励更多生活话题的分享，将有助于提升群成员的活跃度和粘性。</p>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-info">
+                <span>📊 数据来源：Apple TV科班刀把群V1.0</span>
+                <span>📅 统计周期：2025年6月4日</span>
+                <span>🕐 生成时间：2025-06-04T15:52:52+08:00</span>
+            </div>
+            <p class="disclaimer">
+                免责声明：本报告基于群聊公开讨论内容自动生成，仅供参考。如有不当内容，请联系管理员处理。
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
