@@ -1,0 +1,35 @@
+{
+    "rewrites": [
+      {
+        "source": "/weekly/:path",
+        "destination": "/week/:path.html"
+      },
+      {
+        "source": "/daily/:path",
+        "destination": "/daily/:path.html"
+      },
+      {
+        "source": "/monthly/:path",
+        "destination": "/monthly/:path.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/(.*)",
+        "headers": [
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "DENY"
+          },
+          {
+            "key": "X-XSS-Protection",
+            "value": "1; mode=block"
+          }
+        ]
+      }
+    ]
+  }
