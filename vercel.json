@@ -1,35 +1,16 @@
 {
     "rewrites": [
       {
-        "source": "/weekly/:path",
-        "destination": "/week/:path.html"
+        "source": "/weekly/(.*)",
+        "destination": "/weekly/$1.html"
       },
       {
-        "source": "/daily/:path",
-        "destination": "/daily/:path.html"
+        "source": "/daily/(.*)",
+        "destination": "/daily/$1.html"
       },
       {
-        "source": "/monthly/:path",
-        "destination": "/monthly/:path.html"
-      }
-    ],
-    "headers": [
-      {
-        "source": "/(.*)",
-        "headers": [
-          {
-            "key": "X-Content-Type-Options",
-            "value": "nosniff"
-          },
-          {
-            "key": "X-Frame-Options",
-            "value": "DENY"
-          },
-          {
-            "key": "X-XSS-Protection",
-            "value": "1; mode=block"
-          }
-        ]
+        "source": "/monthly/(.*)",
+        "destination": "/monthly/$1.html"
       }
     ]
   }
