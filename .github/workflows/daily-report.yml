@@ -4,7 +4,7 @@ name: Generate Daily Chat Report
 on:
   # 定时运行 - 每天早上8点（UTC时间，北京时间16点）
   schedule:
-    - cron: '0 9 * * *'  # UTC 9:00 = 北京时间 17:00
+    - cron: '0 8 * * *'  # UTC 8:00 = 北京时间 16:00
   
   # 手动触发
   workflow_dispatch:
@@ -28,12 +28,12 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.11'
         
     - name: Cache pip dependencies
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
@@ -84,7 +84,7 @@ jobs:
         fi
     
     - name: Upload artifacts (backup)
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: daily-reports-${{ github.run_number }}
         path: daily/
