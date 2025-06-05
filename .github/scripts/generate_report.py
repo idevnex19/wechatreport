@@ -145,8 +145,9 @@ def main():
     for group_name, file_prefix in GROUP_MAP.items():
         print(f"⏳ 生成群聊：{group_name}")
         try:
-            chat_log = fetch_chat_log(group_name, datetime.datetime.now().strftime("%Y-%m-%d"))
-            full_prompt = f"{group_name}{datetime.datetime.now().strftime("%Y-%m-%d")}的聊天记录```\n{chat_log}\n\n```{prompt_template}"
+            current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+            chat_log = fetch_chat_log(group_name, current_date)
+            full_prompt = f"{group_name}{current_date}的聊天记录```\n{chat_log}\n\n```{prompt_template}"
             html = generate_html(full_prompt)
             filename = f"{file_prefix}_{date_str}.html"
             save_html(html, filename)
