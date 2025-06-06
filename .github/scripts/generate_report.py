@@ -139,15 +139,14 @@ def save_html(content: str, filename: str):
         f.write(content)
 
 def main():
-    date_str = datetime.datetime.now().strftime("%Y-%m-%d")
+    date_str = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
     prompt_template = load_prompt()
 
     for group_name, file_prefix in GROUP_MAP.items():
         print(f"⏳ 生成群聊：{group_name}")
         try:
-            current_date = datetime.datetime.now().strftime("%Y-%m-%d")
-            chat_log = fetch_chat_log(group_name, current_date)
-            full_prompt = f"{group_name}{current_date}的聊天记录```\n{chat_log}\n\n```{prompt_template}"
+            chat_log = fetch_chat_log(group_name, date_str)
+            full_prompt = f"{group_name}{date_str}的聊天记录```\n{chat_log}\n\n```{prompt_template}"
             html = generate_html(full_prompt)
             filename = f"{file_prefix}_{date_str}.html"
             save_html(html, filename)
