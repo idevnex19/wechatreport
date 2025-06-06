@@ -139,7 +139,7 @@ def save_html(content: str, filename: str):
         f.write(content)
 
 def main():
-    date_str = (datetime.datetime.now() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+    date_str = datetime.datetime.now().strftime("%Y-%m-%d")
     prompt_template = load_prompt()
 
     for group_name, file_prefix in GROUP_MAP.items():
