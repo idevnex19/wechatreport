@@ -148,7 +148,7 @@ def main():
             chat_log = fetch_chat_log(group_name, date_str)
             full_prompt = f"{group_name}{date_str}的聊天记录```\n{chat_log}\n\n```{prompt_template}"
             html = generate_html(full_prompt)
-            filename = f"{file_prefix}_{date_str}.html"
+            filename = f"{file_prefix}.html"
             save_html(html, filename)
             print(f"✅ 成功生成 {filename}")
         except Exception as e:
