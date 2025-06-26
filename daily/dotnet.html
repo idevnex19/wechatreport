@@ -1,591 +1,112 @@
-```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asp.Net Java Tech group日报 - 2025-06-23</title>
+    <title>Asp.Net Java Tech group日报 - 2025-06-26</title>
+    <link rel="stylesheet" href="../assets/style.css">
     <style>
-        /* Basic Reset & Body Styles */
-        body {
-            font-family: 'Helvetica Neue', 'Arial', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f7f6;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 960px;
-            margin: 30px auto;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            padding: 30px 40px;
-            box-sizing: border-box;
-        }
-
-        /* Header Styles */
-        header {
-            text-align: center;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 30px;
-        }
-
-        .report-type {
-            font-size: 1.1em;
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            color: #2c3e50;
-            margin: 10px 0 15px;
-            font-weight: 700;
-        }
-
-        header .date {
-            color: #7f8c8d;
-            font-size: 1em;
-            margin-bottom: 20px;
-        }
-
-        .meta-info {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .meta-info-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.95em;
-            color: #555;
-            background-color: #f0f4f7;
-            padding: 8px 15px;
-            border-radius: 8px;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        .meta-info-item strong {
-            color: #34495e;
-            font-weight: 600;
-        }
-
-        .meta-icon {
-            font-size: 1.2em;
-            vertical-align: middle;
-        }
-
-        /* Section Headers */
-        section {
-            margin-bottom: 40px;
-        }
-
-        section h2 {
-            font-size: 1.8em;
-            color: #2c3e50;
-            margin-bottom: 25px;
-            border-left: 5px solid #667eea;
-            padding-left: 15px;
-            line-height: 1.2;
-            font-weight: 600;
-        }
-
-        /* Card Styles */
-        .card-grid {
-            display: grid;
-            gap: 25px;
-        }
-
-        .card-grid-2 {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-
-        .card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-            padding: 25px;
-            border: 1px solid #e0e6eb;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Topic Card Specifics */
-        .topic-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-
-        .topic-card-header h3 {
-            margin: 0;
-            font-size: 1.3em;
-            color: #34495e;
-            font-weight: 600;
-        }
-
-        .topic-heat {
-            font-size: 1.1em;
-            color: #e74c3c;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 500;
-            margin-right: 8px;
-            margin-bottom: 8px;
-        }
-
-        .badge-primary {
-            background-color: #e6eaff;
-            color: #667eea;
-        }
-
-        .badge-info {
-            background-color: #e0f2f7;
-            color: #3498db;
-        }
-        
-        .badge-secondary {
-            background-color: #f0f0f0;
-            color: #6c757d;
-        }
-
-        .topic-summary {
-            color: #555;
-            font-size: 0.95em;
-            margin-top: 15px;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .deep-comment {
-            background-color: #f8f8f8;
-            border-left: 4px solid #764ba2;
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: inset 0 1px 4px rgba(0,0,0,0.05);
-        }
-
-        .comment-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 10px;
-        }
-
-        .comment-icon {
-            font-size: 1.3em;
-            color: #764ba2;
-        }
-
-        .comment-label {
-            font-weight: 600;
-            color: #764ba2;
-            font-size: 0.95em;
-            text-transform: uppercase;
-        }
-
-        .comment-text {
-            color: #444;
-            font-style: italic;
-            font-size: 0.9em;
-            line-height: 1.6;
-        }
-
-        .topic-keywords .keyword {
-            display: inline-block;
-            background-color: #e9f7ef;
-            color: #28a745;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.8em;
-            margin-right: 5px;
-            margin-bottom: 5px;
-        }
-
-        .topic-stats {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px dashed #eee;
-        }
-
-        /* Analytics Section */
-        .analytics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-
-        .stat-card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-            padding: 20px;
-            text-align: center;
-            border: 1px solid #e0e6eb;
-        }
-
-        .stat-label {
-            font-size: 0.9em;
-            color: #7f8c8d;
-            margin-bottom: 8px;
-        }
-
-        .stat-number {
-            font-size: 2.2em;
-            color: #667eea;
-            font-weight: 700;
-        }
-
-        /* Heat Distribution */
-        .heat-distribution {
-            margin-top: 30px;
-        }
-
-        .heat-item {
-            margin-bottom: 20px;
-            background-color: #fff;
-            padding: 15px 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .heat-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .heat-topic {
-            font-weight: 600;
-            color: #34495e;
-            font-size: 1.1em;
-        }
-
-        .heat-percentage {
-            font-weight: 700;
-            color: #667eea;
-            font-size: 1.1em;
-        }
-
-        .heat-bar {
-            background-color: #e0e6eb;
-            height: 10px;
-            border-radius: 5px;
-            overflow: hidden;
-            margin-bottom: 8px;
-        }
-
-        .heat-fill {
-            height: 100%;
-            border-radius: 5px;
-        }
-
-        .heat-stats {
-            font-size: 0.85em;
-            color: #7f8c8d;
-        }
-
-        /* Ranking */
-        .participants-ranking {
-            margin-top: 30px;
-        }
-
-        .participant-card {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            background-color: #fff;
-            padding: 20px 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            margin-bottom: 15px;
-            border: 1px solid #e0e6eb;
-        }
-
-        .participant-rank {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: #ccc;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            background-color: #f0f4f7;
-        }
-
-        .participant-rank.rank-1 { color: #eebc2c; } /* Gold */
-        .participant-rank.rank-2 { color: #a9b7c6; } /* Silver */
-        .participant-rank.rank-3 { color: #cd7f32; } /* Bronze */
-
-        .participant-info {
-            flex-grow: 1;
-        }
-
-        .participant-name {
-            font-size: 1.2em;
-            font-weight: 600;
-            color: #34495e;
-            margin-bottom: 5px;
-        }
-
-        .participant-stats span {
-            font-size: 0.9em;
-            color: #7f8c8d;
-            margin-right: 15px;
-        }
-
-        .participant-traits {
-            margin-top: 10px;
-        }
-
-        /* Time Activity */
-        .time-activity {
-            margin-top: 30px;
-            overflow-x: auto;
-            padding-bottom: 10px;
-        }
-
-        .time-chart {
-            display: flex;
-            gap: 5px;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: #f8f8f8;
-            min-width: 800px; /* Ensure chart doesn't collapse */
-        }
-
-        .time-slot {
-            flex: 1;
-            padding: 10px 5px;
-            border-radius: 8px;
-            text-align: center;
-            color: #333;
-            font-size: 0.85em;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-width: 30px; /* Prevent shrinking too much */
-        }
-
-        .time-hour {
-            font-weight: 600;
-            color: #667eea;
-        }
-
-        .time-count {
-            font-weight: 500;
-            margin-top: 5px;
-            color: #555;
-        }
-
-        /* Night Owl Card */
-        .night-owl-card {
-            padding: 25px;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: #fff;
-            text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            margin-top: 30px;
-        }
-
-        .owl-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .owl-crown {
-            font-size: 3em;
-            margin-bottom: 15px;
-            color: #eebc2c;
-            text-shadow: 0 0 10px rgba(255,255,0,0.5);
-        }
-
-        .owl-info h4 {
-            margin: 0;
-            font-size: 1.6em;
-            font-weight: 700;
-            color: #e0e6eb;
-        }
-
-        .owl-title {
-            font-size: 1em;
-            color: #a9b7c6;
-            margin: 8px 0 15px;
-            font-style: italic;
-        }
-
-        .owl-stats span {
-            font-size: 0.9em;
-            margin: 0 10px;
-            color: #e0e6eb;
-        }
-
-        .owl-quote {
-            margin-top: 20px;
-            font-size: 1.05em;
-            font-style: italic;
-            color: #e0e6eb;
-            opacity: 0.9;
-        }
-        
-        /* Word Cloud */
-        .word-cloud {
-            text-align: center;
-        }
-        .cloud-container {
-            position: relative;
-            height: 350px; /* Adjust height as needed */
-            margin-top: 20px;
-            background-color: #f8f8f8;
-            border-radius: 10px;
-            padding: 20px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .cloud-3d {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            perspective: 1000px; /* For 3D effect */
-        }
-        .cloud-layer {
-            position: relative;
-            width: 90%;
-            height: 90%;
-            transform-style: preserve-3d;
-        }
-        .cloud-word {
-            position: absolute;
-            font-weight: bold;
-            white-space: nowrap;
-            opacity: 0.9;
-            transition: all 0.3s ease;
-            cursor: default;
-        }
-        .cloud-word:hover {
-            opacity: 1;
-            transform: scale(1.1) translateZ(200px) !important;
-            text-shadow: 0 0 8px rgba(0,0,0,0.2);
-        }
-        
-        .cloud-legend {
-            margin-top: 25px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding-top: 20px;
-            border-top: 1px dashed #eee;
-        }
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9em;
-            color: #555;
-        }
-        .legend-dot {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        /* Summary Section */
-        .summary .card {
-            padding: 30px;
-        }
-        .summary h3 {
-            font-size: 1.4em;
-            color: #34495e;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        .summary ul {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 25px;
-        }
-        .summary ul li {
-            margin-bottom: 12px;
-            font-size: 0.95em;
-            color: #555;
-            position: relative;
-            padding-left: 25px;
-        }
-        .summary ul li:before {
-            content: '✔️';
-            position: absolute;
-            left: 0;
-            color: #28a745;
-        }
-        .summary p {
-            font-size: 0.95em;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
-            margin-top: 40px;
-            font-size: 0.85em;
-            color: #7f8c8d;
-        }
-
-        .footer-info span {
-            margin: 0 15px;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-
-        .disclaimer {
-            margin-top: 20px;
-            font-size: 0.8em;
-            color: #a9b7c6;
-            line-height: 1.5;
+        /* Minimal inline CSS for demonstration, as external CSS is not requested for generation */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f4f7f6; margin: 0; padding: 20px; }
+        .container { max-width: 1000px; margin: 20px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        header { text-align: center; margin-bottom: 40px; }
+        header .report-type { font-size: 1.2em; color: #667eea; font-weight: bold; margin-bottom: 5px; }
+        header h1 { font-size: 2.8em; color: #333; margin: 10px 0; letter-spacing: -0.5px; }
+        header .date { font-size: 1.1em; color: #777; margin-top: 5px; }
+        .meta-info { display: flex; justify-content: center; gap: 30px; margin-top: 25px; flex-wrap: wrap; }
+        .meta-info-item { background-color: #eef1f9; padding: 10px 20px; border-radius: 8px; display: flex; align-items: center; gap: 8px; font-size: 0.95em; color: #555; }
+        .meta-info-item strong { color: #333; font-weight: 600; }
+        .meta-icon { font-size: 1.3em; color: #667eea; }
+
+        section { margin-bottom: 40px; padding: 20px 0; border-top: 1px solid #eee; }
+        section h2 { font-size: 2em; color: #444; margin-bottom: 25px; border-left: 5px solid #667eea; padding-left: 15px; }
+        section h3 { font-size: 1.5em; color: #555; margin-top: 30px; margin-bottom: 15px; border-bottom: 1px dashed #eee; padding-bottom: 5px; }
+
+        .card-grid { display: grid; gap: 25px; }
+        .card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); }
+        .card { background: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+
+        .topic-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .topic-card-header h3 { margin: 0; font-size: 1.4em; color: #333; border-bottom: none; padding-bottom: 0; }
+        .topic-heat { background: linear-gradient(45deg, #ff6b6b, #ee5253); color: white; padding: 5px 12px; border-radius: 20px; font-weight: bold; font-size: 0.9em; display: flex; align-items: center; gap: 5px; }
+        .badge { display: inline-block; padding: 6px 12px; border-radius: 15px; font-size: 0.85em; margin-right: 8px; margin-bottom: 8px; }
+        .badge-primary { background-color: #667eea; color: white; }
+        .badge-info { background-color: #e0f2f7; color: #3182ce; }
+        .badge-secondary { background-color: #f0f0f0; color: #666; }
+        .topic-summary { font-size: 0.95em; color: #666; margin-bottom: 15px; }
+        .topic-keywords { margin-top: 15px; }
+        .keyword { background-color: #eef1f9; color: #667eea; padding: 4px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 6px; margin-bottom: 6px; display: inline-block; }
+        .topic-stats { margin-top: 15px; display: flex; gap: 15px; flex-wrap: wrap; }
+
+        .deep-comment { background-color: #f7f9fc; border-left: 4px solid #a8dadc; padding: 15px; border-radius: 8px; margin-top: 20px; }
+        .comment-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+        .comment-icon { font-size: 1.3em; color: #a8dadc; }
+        .comment-label { font-weight: bold; color: #457b9d; }
+        .comment-content .comment-text { font-style: italic; color: #333; margin: 0; font-size: 0.95em; }
+
+        .analytics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .stat-card { background-color: #eef1f9; padding: 20px; border-radius: 10px; text-align: center; }
+        .stat-label { font-size: 0.9em; color: #666; margin-bottom: 8px; }
+        .stat-number { font-size: 2.2em; font-weight: bold; color: #667eea; }
+
+        .heat-distribution .heat-item { margin-bottom: 20px; }
+        .heat-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+        .heat-topic { font-weight: bold; color: #555; }
+        .heat-percentage { font-weight: bold; color: #667eea; }
+        .heat-bar { background-color: #e0e0e0; height: 10px; border-radius: 5px; overflow: hidden; }
+        .heat-fill { height: 100%; border-radius: 5px; }
+        .heat-stats { font-size: 0.85em; color: #777; margin-top: 5px; }
+
+        .participants-ranking .participant-card { display: flex; align-items: flex-start; background: #fefefe; padding: 15px 20px; border-radius: 10px; border: 1px solid #eee; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.03); }
+        .participant-rank { font-size: 1.8em; font-weight: bold; margin-right: 15px; width: 35px; text-align: center; }
+        .rank-1 { color: #ffd700; }
+        .rank-2 { color: #c0c0c0; }
+        .rank-3 { color: #cd7f32; }
+        .participant-info { flex-grow: 1; }
+        .participant-name { font-weight: bold; font-size: 1.2em; color: #333; margin-bottom: 5px; }
+        .participant-stats span { display: inline-block; margin-right: 15px; font-size: 0.9em; color: #777; }
+        .participant-traits { margin-top: 8px; }
+
+        .time-activity { overflow-x: auto; padding-bottom: 10px; }
+        .time-chart { display: flex; gap: 5px; padding: 10px 0; min-width: 800px; /* Ensure chart takes enough space for 24 bars */ }
+        .time-slot { flex: 1; min-width: 30px; background-color: #eef1f9; border-radius: 5px; text-align: center; padding: 10px 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; position: relative; height: 100px; /* Base height */ }
+        .time-hour { font-size: 0.8em; color: #888; position: absolute; top: 5px; }
+        .time-count { font-size: 0.9em; font-weight: bold; color: #444; position: absolute; bottom: 5px; }
+        /* Dynamic height for activity bars will need JS or more complex CSS if representing value */
+        .time-bar-fill { width: 100%; background: #667eea; border-radius: 5px; position: absolute; bottom: 0; left: 0; }
+
+
+        .night-owl-card { background: linear-gradient(135deg, #2c3e50, #4a69bd); color: white; padding: 30px; text-align: center; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; }
+        .owl-crown { font-size: 3em; color: #f1c40f; margin-bottom: 10px; }
+        .owl-info h4 { margin: 0; font-size: 1.8em; color: #fff; }
+        .owl-title { font-style: italic; font-size: 1em; opacity: 0.9; margin-top: 5px; }
+        .owl-stats { margin-top: 15px; font-size: 0.95em; opacity: 0.8; }
+        .owl-stats span { margin: 0 10px; display: inline-block; }
+        .owl-quote { font-size: 1.1em; margin-top: 20px; padding: 0 20px; font-style: italic; opacity: 0.95; }
+
+        .word-cloud .cloud-container { position: relative; height: 300px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #fdfdfd; border-radius: 10px; border: 1px dashed #e0e0e0; }
+        .cloud-word { position: absolute; font-weight: bold; white-space: nowrap; transition: all 0.3s ease-out; }
+        .cloud-legend { text-align: center; margin-top: 20px; }
+        .legend-item { display: inline-flex; align-items: center; margin: 0 15px; font-size: 0.9em; color: #555; }
+        .legend-dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+
+        .summary ul { list-style: none; padding: 0; margin: 0; }
+        .summary ul li { margin-bottom: 10px; padding-left: 20px; position: relative; font-size: 1em; color: #444; }
+        .summary ul li:before { content: '•'; position: absolute; left: 0; color: #667eea; font-size: 1.2em; font-weight: bold; }
+        .summary h3 { margin-top: 25px; border-bottom: none; }
+        .summary p { font-size: 0.95em; color: #666; }
+
+        footer { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; font-size: 0.85em; color: #888; }
+        .footer-info span { margin: 0 15px; display: inline-block; }
+        .disclaimer { margin-top: 20px; line-height: 1.5; color: #a0a0a0; font-size: 0.75em; }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            header h1 { font-size: 2.2em; }
+            .meta-info { flex-direction: column; gap: 15px; }
+            .card-grid-2 { grid-template-columns: 1fr; }
+            .analytics-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -595,374 +116,304 @@
         <header>
             <div class="report-type">日报</div>
             <h1>Asp.Net Java Tech group群聊日报</h1>
-            <p class="date">2025年6月23日</p>
+            <p class="date">2025年06月26日</p>
             <div class="meta-info">
                 <div class="meta-info-item">
                     <span class="meta-icon">💬</span>
-                    <span>总消息数：<strong>180</strong></span>
+                    <span>总消息数：<strong>430</strong></span>
                 </div>
                 <div class="meta-info-item">
                     <span class="meta-icon">👥</span>
-                    <span>活跃用户：<strong>27</strong></span>
+                    <span>活跃用户：<strong>40</strong></span>
                 </div>
                 <div class="meta-info-item">
                     <span class="meta-icon">⏱️</span>
-                    <span>统计周期：<strong>2025-06-23 全天</strong></span>
+                    <span>统计周期：<strong>2025-06-26 全天</strong></span>
                 </div>
             </div>
         </header>
 
         <!-- 1. 讨论热点 -->
         <section class="hot-topics">
-            <h2>📊 2025年6月23日讨论热点</h2>
+            <h2>📊 2025-06-26讨论热点</h2>
             <div class="card-grid card-grid-2">
+                <!-- 话题卡片模板 - 根据报告类型重复相应数量 -->
                 <div class="card topic-card">
                     <div class="topic-card-header">
-                        <h3>早安问候与日常分享</h3>
+                        <h3>早间闲聊与娱乐八卦</h3>
                         <div class="topic-heat">
-                            🔥 <span>2.8%</span>
+                            🔥 <span>85</span>
                         </div>
                     </div>
-                    <span class="badge badge-primary">日常互动</span>
-                    <p class="topic-summary">群友们在清晨用图片、表情和问候开启新的一天，分享日常瞬间。</p>
-                    
+                    <span class="badge badge-primary">生活娱乐</span>
+                    <p class="topic-summary">一天的聊天从分享图片和链接开始，其中陈翔被查的新闻链接引发关注，随后的性感图片和动画表情为群里带来轻松甚至有些暧昧的氛围，引出调侃。</p>
                     <div class="deep-comment">
                         <div class="comment-header">
                             <span class="comment-icon">🎯</span>
                             <span class="comment-label">评论</span>
                         </div>
                         <div class="comment-content">
-                            <p class="comment-text">当互联网的曙光穿透屏幕，群友们习惯性地发送表情包，仿佛在说：'我们是数字时代的农耕者，日出而作，日落而息，只不过麦田变成了聊天框。'</p>
+                            <p class="comment-text">“互联网就是一面魔镜，你以为在偷窥别人，其实它在记录你最真实的欲望和反应。”</p>
                         </div>
                     </div>
-                    
                     <div class="topic-keywords">
-                        <span class="keyword">#早安</span>
-                        <span class="keyword">#图片</span>
-                        <span class="keyword">#表情</span>
-                        <span class="keyword">#咖啡</span>
-                        <span class="keyword">#日常</span>
+                        <span class="keyword">#陈翔</span>
+                        <span class="keyword">#娱乐八卦</span>
+                        <span class="keyword">#图片分享</span>
+                        <span class="keyword">#闲聊</span>
                     </div>
                     <div class="topic-stats">
-                        <span class="badge badge-info">💬 4条讨论</span>
-                        <span class="badge badge-info">👥 1人参与</span>
-                        <span class="badge badge-info">🕐 7小时7分</span>
-                    </div>
-                </div>
-                <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>教育与天赋的深度思辨</h3>
-                        <div class="topic-heat">
-                            🔥 <span>0.7%</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">职场发展</span>
-                    <p class="topic-summary">关宇分享TED演讲，引发对文凭贬值、天赋自由的思考，探讨教育系统对个体创造力的影响。</p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">文凭贬值，天赋钝化？看来我们的教育系统，致力于将鲜活的灵魂塑造成批量生产的合格零件，最后再抱怨为何创新总是从角落里偷偷冒出来。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#TED</span>
-                        <span class="keyword">#教育</span>
-                        <span class="keyword">#文凭</span>
-                        <span class="keyword">#天赋</span>
-                        <span class="keyword">#职业</span>
-                        <span class="keyword">#演讲</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 1条讨论</span>
-                        <span class="badge badge-info">👥 1人参与</span>
-                        <span class="badge badge-info">🕐 0秒</span>
-                    </div>
-                </div>
-                <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>天气与心情的蓝白论战</h3>
-                        <div class="topic-heat">
-                            🔥 <span>5.6%</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">生活分享</span>
-                    <p class="topic-summary">群友分享天空照片，围绕“蓝天白云”展开审美讨论，反映个体对自然景象的不同感受和表达。</p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">连天空都要分个美丑，看来现代人的审美疲劳，已经蔓延到宇宙的边角，连那片亘古不变的蓝天，都逃不过被品头论足的命运。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#蓝天</span>
-                        <span class="keyword">#白云</span>
-                        <span class="keyword">#天气</span>
-                        <span class="keyword">#照片</span>
-                        <span class="keyword">#审美</span>
-                        <span class="keyword">#乌云</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 8条讨论</span>
-                        <span class="badge badge-info">👥 2人参与</span>
-                        <span class="badge badge-info">🕐 25分钟57秒</span>
-                    </div>
-                </div>
-                <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>程序员形象与幽默自嘲</h3>
-                        <div class="topic-heat">
-                            🔥 <span>6.3%</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">职场生活</span>
-                    <p class="topic-summary">寂墨分享程序员特征图片，引发群友对“络腮胡寸头眼镜”等刻板印象及“黑眼圈”、“Gay圈”的幽默互动与自嘲。</p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">当程序员的形象被精准锁定，大家便开始自嘲。毕竟，在代码的世界里，外表只是肉身，灵魂早已献给了加班和咖啡，至于圈子？‘黑眼圈’才是我们共同的勋章。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#程序员</span>
-                        <span class="keyword">#刻板印象</span>
-                        <span class="keyword">#幽默</span>
-                        <span class="keyword">#黑眼圈</span>
-                        <span class="keyword">#成都</span>
-                        <span class="keyword">#同行</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 9条讨论</span>
-                        <span class="badge badge-info">👥 3人参与</span>
-                        <span class="badge badge-info">🕐 10分钟10秒</span>
-                    </div>
-                </div>
-                <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>“勇于尝试”的群聊接龙</h3>
-                        <div class="topic-heat">
-                            🔥 <span>4.9%</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">休闲娱乐</span>
-                    <p class="topic-summary">一句“年轻人要勇于尝试”在群内引发病毒式传播，多名群友接力复读，展现了群聊特有的趣味互动文化。</p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">‘年轻人要勇于尝试’，这句话本身就是一种尝试，大家争相复读，仿佛是在用口号填补精神世界的空虚，或者，只是在证明我们还能熟练使用复制粘贴功能。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#尝试</span>
-                        <span class="keyword">#年轻人</span>
-                        <span class="keyword">#接龙</span>
-                        <span class="keyword">#复读机</span>
-                        <span class="keyword">#娱乐</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 7条讨论</span>
+                        <span class="badge badge-info">💬 10条讨论</span>
                         <span class="badge badge-info">👥 6人参与</span>
-                        <span class="badge badge-info">🕐 43分钟17秒</span>
+                        <span class="badge badge-info">🕐 14分钟</span>
                     </div>
                 </div>
+
                 <div class="card topic-card">
                     <div class="topic-card-header">
-                        <h3>两性关系的办公室幽默</h3>
+                        <h3>高考志愿与教育困惑</h3>
                         <div class="topic-heat">
-                            🔥 <span>11.2%</span>
+                            🔥 <span>75</span>
                         </div>
                     </div>
-                    <span class="badge badge-primary">生活趣谈</span>
-                    <p class="topic-summary">书墨关于“软软女友”的感慨，引发群友对两性关系“软硬”之道的幽默探讨，从日常情感延伸至成人间的俏皮话。</p>
-                    
+                    <span class="badge badge-primary">教育发展</span>
+                    <p class="topic-summary">群友咨询高考志愿填报问题，涉及到北京科技大学、北邮等高校选择，以及计算机、通信工程、电子信息技术等热门专业，引发对高考制度和教育内卷的讨论。</p>
                     <div class="deep-comment">
                         <div class="comment-header">
                             <span class="comment-icon">🎯</span>
                             <span class="comment-label">评论</span>
                         </div>
                         <div class="comment-content">
-                            <p class="comment-text">当办公室的枯燥被‘软硬兼施’的哲学打破，大家开始探讨女友的‘弹性’问题，看来人性的底层代码，无论在何种语境下，总能找到通往‘形而上’的隐秘通道。</p>
+                            <p class="comment-text">“孩子的未来，是家长们手中的六合彩，买定离手，却不知庄家早已看穿所有赔率。”</p>
                         </div>
                     </div>
-                    
                     <div class="topic-keywords">
-                        <span class="keyword">#女友</span>
-                        <span class="keyword">#两性</span>
-                        <span class="keyword">#幽默</span>
-                        <span class="keyword">#办公室</span>
-                        <span class="keyword">#软硬</span>
-                        <span class="keyword">#舒服</span>
+                        <span class="keyword">#高考</span>
+                        <span class="keyword">#志愿填报</span>
+                        <span class="keyword">#教育内卷</span>
+                        <span class="keyword">#就业前景</span>
                     </div>
                     <div class="topic-stats">
-                        <span class="badge badge-info">💬 16条讨论</span>
-                        <span class="badge badge-info">👥 9人参与</span>
-                        <span class="badge badge-info">🕐 8分钟27秒</span>
+                        <span class="badge badge-info">💬 30条讨论</span>
+                        <span class="badge badge-info">👥 6人参与</span>
+                        <span class="badge badge-info">🕐 20分钟</span>
                     </div>
                 </div>
+
                 <div class="card topic-card">
                     <div class="topic-card-header">
-                        <h3>儿童智能硬件的商业构想</h3>
+                        <h3>社会新闻与低俗探讨</h3>
                         <div class="topic-heat">
-                            🔥 <span>7.7%</span>
+                            🔥 <span>95</span>
                         </div>
                     </div>
-                    <span class="badge badge-primary">科技创新</span>
-                    <p class="topic-summary">群友们深入探讨了将机械臂融入遥控汽车的儿童玩具创意，并细致分析了其市场前景、成本控制及多轴控制等技术实现挑战。</p>
-                    
+                    <span class="badge badge-primary">社会话题</span>
+                    <p class="topic-summary">从一起“男子殴打妻子后性关系被控强奸”的社会新闻开始，话题迅速转变为对色情服务的讨论，包括价格、地点（如无锡梁溪大桥），以及相关的法律风险。</p>
                     <div class="deep-comment">
                         <div class="comment-header">
                             <span class="comment-icon">🎯</span>
                             <span class="comment-label">评论</span>
                         </div>
                         <div class="comment-content">
-                            <p class="comment-text">从‘铁臂阿童木’到‘机械臂遥控车’，科技创新的灵魂永远在‘如何把别人的梦想变成自己的印钞机’中闪耀，只是‘成本不低，价格不能高’，这大概就是理想与现实之间那条‘多轴控制’的鸿沟。</p>
+                            <p class="comment-text">“有人在讨论法治的边界，有人在计算快餐的价格，这大概就是人类文明在互联网上的并行演进。”</p>
                         </div>
                     </div>
-                    
                     <div class="topic-keywords">
-                        <span class="keyword">#机器人</span>
-                        <span class="keyword">#玩具</span>
-                        <span class="keyword">#创新</span>
-                        <span class="keyword">#量产</span>
-                        <span class="keyword">#机械臂</span>
-                        <span class="keyword">#成本</span>
-                        <span class="keyword">#硬件</span>
-                        <span class="keyword">#软件</span>
-                        <span class="keyword">#智能</span>
+                        <span class="keyword">#社会新闻</span>
+                        <span class="keyword">#强奸</span>
+                        <span class="keyword">#性服务</span>
+                        <span class="keyword">#灰色产业</span>
                     </div>
                     <div class="topic-stats">
-                        <span class="badge badge-info">💬 11条讨论</span>
-                        <span class="badge badge-info">👥 4人参与</span>
-                        <span class="badge badge-info">🕐 54分钟</span>
+                        <span class="badge badge-info">💬 60条讨论</span>
+                        <span class="badge badge-info">👥 11人参与</span>
+                        <span class="badge badge-info">🕐 2小时10分钟</span>
                     </div>
                 </div>
+
                 <div class="card topic-card">
                     <div class="topic-card-header">
-                        <h3>数码产品购物攻略与避坑指南</h3>
+                        <h3>ASP.NET部署与国产数据库</h3>
                         <div class="topic-heat">
-                            🔥 <span>45.5%</span>
+                            🔥 <span>90</span>
                         </div>
                     </div>
-                    <span class="badge badge-primary">消费决策</span>
-                    <p class="topic-summary">群友们围绕iPhone和电动车购买，深度对比了拼多多、京东与实体店的优劣，探讨了“后封机”、价格差异及Esim卡的国内应用现状等消费热点。</p>
-                    
+                    <span class="badge badge-primary">技术交流</span>
+                    <p class="topic-summary">围绕ASP.NET项目发布与部署的技术问题展开，讨论了独立部署、IIS、Nginx、NSSM工具的使用，随后延伸至国内数据库（达梦、yashanDB）的现状和兼容性问题。</p>
                     <div class="deep-comment">
                         <div class="comment-header">
                             <span class="comment-icon">🎯</span>
                             <span class="comment-label">评论</span>
                         </div>
                         <div class="comment-content">
-                            <p class="comment-text">购物指南犹如现代版《易经》，P**、J**、线下店各有玄机，唯有洞悉人性的贪婪与恐惧，才能在消费迷宫中觅得一线生机，至于那些‘后封机’与‘Esim卡’，不过是这迷宫里更高级的陷阱。</p>
+                            <p class="comment-text">“当技术人开始讨论是部署IIS还是Nginx时，总有人已经在悄悄地把代码部署到国产数据库里，毕竟，性能再好也抵不过‘政治正确’。”</p>
                         </div>
                     </div>
-                    
                     <div class="topic-keywords">
-                        <span class="keyword">#iPhone</span>
-                        <span class="keyword">#电动车</span>
-                        <span class="keyword">#拼多多</span>
-                        <span class="keyword">#京东</span>
-                        <span class="keyword">#免税店</span>
-                        <span class="keyword">#Esim</span>
-                        <span class="keyword">#购物</span>
-                        <span class="keyword">#套路</span>
-                        <span class="keyword">#价格</span>
-                        <span class="keyword">#正品</span>
+                        <span class="keyword">#ASP.NET</span>
+                        <span class="keyword">#Nginx</span>
+                        <span class="keyword">#达梦数据库</span>
+                        <span class="keyword">#信创</span>
                     </div>
                     <div class="topic-stats">
-                        <span class="badge badge-info">💬 65条讨论</span>
-                        <span class="badge badge-info">👥 9人参与</span>
-                        <span class="badge badge-info">🕐 56分钟7秒</span>
+                        <span class="badge badge-info">💬 70条讨论</span>
+                        <span class="badge badge-info">👥 10人参与</span>
+                        <span class="badge badge-info">🕐 47分钟</span>
                     </div>
                 </div>
+
                 <div class="card topic-card">
                     <div class="topic-card-header">
-                        <h3>公司网络端口的技术困境</h3>
+                        <h3>毕业生就业与学历贬值</h3>
                         <div class="topic-heat">
-                            🔥 <span>17.5%</span>
+                            🔥 <span>80</span>
                         </div>
                     </div>
-                    <span class="badge badge-primary">技术讨论</span>
-                    <p class="topic-summary">面对公司禁用22端口连接Linux服务器的难题，群友们积极分享了端口映射、VPN、堡垒机等多元化解决方案，并对公司奇葩的网络管理政策进行吐槽。</p>
-                    
+                    <span class="badge badge-primary">职场洞察</span>
+                    <p class="topic-summary">一位西安交通大学研究生毕业的年轻人送外卖的经历引发群友热议，讨论了当前就业市场的严峻形势、学历的贬值以及对个人职业规划的影响。</p>
                     <div class="deep-comment">
                         <div class="comment-header">
                             <span class="comment-icon">🎯</span>
                             <span class="comment-label">评论</span>
                         </div>
                         <div class="comment-content">
-                            <p class="comment-text">当公司网络成了‘局域网的楚门世界’，程序员们只好在螺蛳壳里做道场，VPN和堡垒机成了‘翻墙’的方舟，而那些奇葩的端口策略，无非是领导在‘以安全之名，行折腾之实’。</p>
+                            <p class="comment-text">“当名校研究生选择送外卖，我们才发现，文凭只是旧世界的船票，而新世界的入场券，可能需要你学会如何高效地送餐。”</p>
                         </div>
                     </div>
-                    
                     <div class="topic-keywords">
-                        <span class="keyword">#网络</span>
-                        <span class="keyword">#端口</span>
-                        <span class="keyword">#Linux</span>
-                        <span class="keyword">#服务器</span>
-                        <span class="keyword">#VPN</span>
-                        <span class="keyword">#宝塔</span>
-                        <span class="keyword">#堡垒机</span>
-                        <span class="keyword">#公司</span>
-                        <span class="keyword">#技术</span>
-                        <span class="keyword">#解决办法</span>
+                        <span class="keyword">#就业</span>
+                        <span class="keyword">#学历贬值</span>
+                        <span class="keyword">#研究生</span>
+                        <span class="keyword">#职业规划</span>
                     </div>
                     <div class="topic-stats">
-                        <span class="badge badge-info">💬 25条讨论</span>
+                        <span class="badge badge-info">💬 20条讨论</span>
                         <span class="badge badge-info">👥 8人参与</span>
-                        <span class="badge badge-info">🕐 2小时33分钟22秒</span>
+                        <span class="badge badge-info">🕐 18分钟</span>
                     </div>
                 </div>
+
                 <div class="card topic-card">
                     <div class="topic-card-header">
-                        <h3>午后摸鱼与下班期待</h3>
+                        <h3>股市波动与经济展望</h3>
                         <div class="topic-heat">
-                            🔥 <span>11.9%</span>
+                            🔥 <span>70</span>
                         </div>
                     </div>
-                    <span class="badge badge-primary">职场吐槽</span>
-                    <p class="topic-summary">下午时段，群内气氛逐渐轻松，图片、表情和对下班时间的探讨成为主流，生动反映了职场人对工作结束的渴望与摸鱼状态。</p>
-                    
+                    <span class="badge badge-primary">财经观察</span>
+                    <p class="topic-summary">群友讨论股市今日的“跳水”行情，分析其背后的政策影响和市场情绪，并对中国经济的未来发展趋势和普通人的投资策略发表看法。</p>
                     <div class="deep-comment">
                         <div class="comment-header">
                             <span class="comment-icon">🎯</span>
                             <span class="comment-label">评论</span>
                         </div>
                         <div class="comment-content">
-                            <p class="comment-text">下班，一个看似普通的动词，却蕴含着现代打工人全部的诗意和远方，至于‘努力’？那只是为下一次‘优雅地浪费时间’寻找的冠冕堂皇的借口。</p>
+                            <p class="comment-text">“股市就像一面哈哈镜，当权力在镜前扭捏作态时，韭菜们却被告知要相信镜中的虚假繁荣。”</p>
                         </div>
                     </div>
-                    
                     <div class="topic-keywords">
-                        <span class="keyword">#下班</span>
-                        <span class="keyword">#摸鱼</span>
-                        <span class="keyword">#职场</span>
-                        <span class="keyword">#轻松</span>
-                        <span class="keyword">#努力</span>
-                        <span class="keyword">#吐槽</span>
+                        <span class="keyword">#股市</span>
+                        <span class="keyword">#经济</span>
+                        <span class="keyword">#政策</span>
+                        <span class="keyword">#投资</span>
                     </div>
                     <div class="topic-stats">
-                        <span class="badge badge-info">💬 17条讨论</span>
+                        <span class="badge badge-info">💬 30条讨论</span>
                         <span class="badge badge-info">👥 8人参与</span>
-                        <span class="badge badge-info">🕐 1小时49分钟55秒</span>
+                        <span class="badge badge-info">🕐 18分钟</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>婚姻、置业与人生选择</h3>
+                        <div class="topic-heat">
+                            🔥 <span>100</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">人生规划</span>
+                    <p class="topic-summary">围绕结婚成本（彩礼、房产）、县城与大城市周边（花桥）置业选择、以及是否应该结婚等个人人生大事展开深入讨论，体现了现实压力与个人追求的冲突。</p>
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">“与其在婚姻的围城里，为一套贬值的房子和一堆看不见的账单挣扎，不如在自由的旷野上，优雅地挥霍掉那些本该给彩礼的钱。”</p>
+                        </div>
+                    </div>
+                    <div class="topic-keywords">
+                        <span class="keyword">#婚姻</span>
+                        <span class="keyword">#买房</span>
+                        <span class="keyword">#人生选择</span>
+                        <span class="keyword">#花桥</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 100条讨论</span>
+                        <span class="badge badge-info">👥 17人参与</span>
+                        <span class="badge badge-info">🕐 1小时24分钟</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>旅游体验与地方特色</h3>
+                        <div class="topic-heat">
+                            🔥 <span>65</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">休闲生活</span>
+                    <p class="topic-summary">讨论旅游的成本、体验（挤人头、花钱买罪受），以及不同地区的特色（江西的辣、贵州的麻辣），并延伸到国内外旅游地的选择。</p>
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">“当旅行成为一场关于‘排队与消费’的竞赛，我们才发现，远方的风景不过是朋友圈的背景板，真正的冒险，在你的银行账单里。”</p>
+                        </div>
+                    </div>
+                    <div class="topic-keywords">
+                        <span class="keyword">#旅游</span>
+                        <span class="keyword">#美食</span>
+                        <span class="keyword">#三亚</span>
+                        <span class="keyword">#日本</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 50条讨论</span>
+                        <span class="badge badge-info">👥 9人参与</span>
+                        <span class="badge badge-info">🕐 23分钟</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>健康养生与生活习惯</h3>
+                        <div class="topic-heat">
+                            🔥 <span>60</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">生活健康</span>
+                    <p class="topic-summary">从吃辣导致胃痛的话题，意外地深入到个人健康问题（腹泻、痔疮、囊肿），并讨论了长时间上厕所等日常不良习惯。</p>
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">“现代人的健康，就像一把锈迹斑斑的钥匙，总在不经意间，打开你身体里最尴尬的‘秘密’之门。”</p>
+                        </div>
+                    </div>
+                    <div class="topic-keywords">
+                        <span class="keyword">#健康</span>
+                        <span class="keyword">#生活习惯</span>
+                        <span class="keyword">#痔疮</span>
+                        <span class="keyword">#办公室哲学</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 30条讨论</span>
+                        <span class="badge badge-info">👥 11人参与</span>
+                        <span class="badge badge-info">🕐 38分钟</span>
                     </div>
                 </div>
             </div>
@@ -976,15 +427,15 @@
             <div class="analytics-grid">
                 <div class="stat-card">
                     <div class="stat-label">总消息数</div>
-                    <div class="stat-number">180</div>
+                    <div class="stat-number">430</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">活跃用户</div>
-                    <div class="stat-number">27</div>
+                    <div class="stat-number">40</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">平均响应时间(分钟)</div>
-                    <div class="stat-number">8</div>
+                    <div class="stat-number">3.5</div>
                 </div>
             </div>
             
@@ -993,122 +444,110 @@
             <div class="heat-distribution">
                 <div class="heat-item">
                     <div class="heat-header">
-                        <span class="heat-topic">数码产品购物攻略与避坑指南</span>
-                        <span class="heat-percentage">45.5%</span>
+                        <span class="heat-topic">婚姻、置业与人生选择</span>
+                        <span class="heat-percentage">23.3%</span>
                     </div>
                     <div class="heat-bar">
-                        <div class="heat-fill" style="width: 45.5%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                        <div class="heat-fill" style="width: 23.3%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
                     </div>
                     <div class="heat-stats">
-                        <span>65条消息</span> · <span>9人参与</span>
+                        <span>100条消息</span> · <span>17人参与</span>
                     </div>
                 </div>
                 <div class="heat-item">
                     <div class="heat-header">
-                        <span class="heat-topic">公司网络端口的技术困境</span>
-                        <span class="heat-percentage">17.5%</span>
+                        <span class="heat-topic">ASP.NET部署与国产数据库</span>
+                        <span class="heat-percentage">16.3%</span>
                     </div>
                     <div class="heat-bar">
-                        <div class="heat-fill" style="width: 17.5%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                        <div class="heat-fill" style="width: 16.3%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
                     </div>
                     <div class="heat-stats">
-                        <span>25条消息</span> · <span>8人参与</span>
+                        <span>70条消息</span> · <span>10人参与</span>
                     </div>
                 </div>
                 <div class="heat-item">
                     <div class="heat-header">
-                        <span class="heat-topic">午后摸鱼与下班期待</span>
-                        <span class="heat-percentage">11.9%</span>
+                        <span class="heat-topic">社会新闻与低俗探讨</span>
+                        <span class="heat-percentage">14.0%</span>
                     </div>
                     <div class="heat-bar">
-                        <div class="heat-fill" style="width: 11.9%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                        <div class="heat-fill" style="width: 14.0%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
                     </div>
                     <div class="heat-stats">
-                        <span>17条消息</span> · <span>8人参与</span>
+                        <span>60条消息</span> · <span>11人参与</span>
                     </div>
                 </div>
                 <div class="heat-item">
                     <div class="heat-header">
-                        <span class="heat-topic">两性关系的办公室幽默</span>
-                        <span class="heat-percentage">11.2%</span>
+                        <span class="heat-topic">旅游体验与地方特色</span>
+                        <span class="heat-percentage">11.6%</span>
                     </div>
                     <div class="heat-bar">
-                        <div class="heat-fill" style="width: 11.2%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                        <div class="heat-fill" style="width: 11.6%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
                     </div>
                     <div class="heat-stats">
-                        <span>16条消息</span> · <span>9人参与</span>
+                        <span>50条消息</span> · <span>9人参与</span>
                     </div>
                 </div>
                 <div class="heat-item">
                     <div class="heat-header">
-                        <span class="heat-topic">儿童智能硬件的商业构想</span>
-                        <span class="heat-percentage">7.7%</span>
+                        <span class="heat-topic">高考志愿与教育困惑</span>
+                        <span class="heat-percentage">7.0%</span>
                     </div>
                     <div class="heat-bar">
-                        <div class="heat-fill" style="width: 7.7%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                        <div class="heat-fill" style="width: 7.0%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
                     </div>
                     <div class="heat-stats">
-                        <span>11条消息</span> · <span>4人参与</span>
+                        <span>30条消息</span> · <span>6人参与</span>
                     </div>
                 </div>
                 <div class="heat-item">
                     <div class="heat-header">
-                        <span class="heat-topic">程序员形象与幽默自嘲</span>
-                        <span class="heat-percentage">6.3%</span>
+                        <span class="heat-topic">股市波动与经济展望</span>
+                        <span class="heat-percentage">7.0%</span>
                     </div>
                     <div class="heat-bar">
-                        <div class="heat-fill" style="width: 6.3%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                        <div class="heat-fill" style="width: 7.0%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
                     </div>
                     <div class="heat-stats">
-                        <span>9条消息</span> · <span>3人参与</span>
+                        <span>30条消息</span> · <span>8人参与</span>
                     </div>
                 </div>
                 <div class="heat-item">
                     <div class="heat-header">
-                        <span class="heat-topic">天气与心情的蓝白论战</span>
-                        <span class="heat-percentage">5.6%</span>
+                        <span class="heat-topic">健康养生与生活习惯</span>
+                        <span class="heat-percentage">7.0%</span>
                     </div>
                     <div class="heat-bar">
-                        <div class="heat-fill" style="width: 5.6%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                        <div class="heat-fill" style="width: 7.0%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
                     </div>
                     <div class="heat-stats">
-                        <span>8条消息</span> · <span>2人参与</span>
+                        <span>30条消息</span> · <span>11人参与</span>
                     </div>
                 </div>
                 <div class="heat-item">
                     <div class="heat-header">
-                        <span class="heat-topic">“勇于尝试”的群聊接龙</span>
-                        <span class="heat-percentage">4.9%</span>
+                        <span class="heat-topic">毕业生就业与学历贬值</span>
+                        <span class="heat-percentage">4.7%</span>
                     </div>
                     <div class="heat-bar">
-                        <div class="heat-fill" style="width: 4.9%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                        <div class="heat-fill" style="width: 4.7%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
                     </div>
                     <div class="heat-stats">
-                        <span>7条消息</span> · <span>6人参与</span>
+                        <span>20条消息</span> · <span>8人参与</span>
                     </div>
                 </div>
                 <div class="heat-item">
                     <div class="heat-header">
-                        <span class="heat-topic">早安问候与日常分享</span>
-                        <span class="heat-percentage">2.8%</span>
+                        <span class="heat-topic">早间闲聊与娱乐八卦</span>
+                        <span class="heat-percentage">2.3%</span>
                     </div>
                     <div class="heat-bar">
-                        <div class="heat-fill" style="width: 2.8%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                        <div class="heat-fill" style="width: 2.3%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
                     </div>
                     <div class="heat-stats">
-                        <span>4条消息</span> · <span>1人参与</span>
-                    </div>
-                </div>
-                <div class="heat-item">
-                    <div class="heat-header">
-                        <span class="heat-topic">教育与天赋的深度思辨</span>
-                        <span class="heat-percentage">0.7%</span>
-                    </div>
-                    <div class="heat-bar">
-                        <div class="heat-fill" style="width: 0.7%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
-                    </div>
-                    <div class="heat-stats">
-                        <span>1条消息</span> · <span>1人参与</span>
+                        <span>10条消息</span> · <span>6人参与</span>
                     </div>
                 </div>
             </div>
@@ -1119,85 +558,49 @@
                 <div class="participant-card">
                     <div class="participant-rank rank-1">1</div>
                     <div class="participant-info">
-                        <div class="participant-name">强得飞起</div>
+                        <div class="participant-name">江南(wxid_4olw952u803542)</div>
                         <div class="participant-stats">
-                            <span>💬 27条</span>
-                            <span>⏱️ 平均N/A分钟</span>
+                            <span>💬 72条</span>
+                            <span>⏱️ 平均3.5分钟</span>
                             <span>🎯 7个话题</span>
                         </div>
                         <div class="participant-traits">
-                            <span class="badge badge-secondary">图片分享者</span>
-                            <span class="badge badge-secondary">段子手</span>
-                            <span class="badge badge-secondary">数码达人</span>
-                            <span class="badge badge-secondary">聊天氛围组</span>
+                            <span class="badge badge-secondary">话痨</span>
+                            <span class="badge badge-secondary">技术探讨者</span>
+                            <span class="badge badge-secondary">生活哲学家</span>
+                            <span class="badge badge-secondary">健康关注者</span>
                         </div>
                     </div>
                 </div>
                 <div class="participant-card">
                     <div class="participant-rank rank-2">2</div>
                     <div class="participant-info">
-                        <div class="participant-name">子思</div>
+                        <div class="participant-name">书墨(wxid_68wu7gfr2lvc21)</div>
                         <div class="participant-stats">
-                            <span>💬 20条</span>
-                            <span>⏱️ 平均N/A分钟</span>
-                            <span>🎯 1个话题</span>
+                            <span>💬 61条</span>
+                            <span>⏱️ 平均3.5分钟</span>
+                            <span>🎯 6个话题</span>
                         </div>
                         <div class="participant-traits">
-                            <span class="badge badge-secondary">购物专家</span>
-                            <span class="badge badge-secondary">价格敏感</span>
-                            <span class="badge badge-secondary">京东信徒</span>
-                            <span class="badge badge-secondary">精打细算</span>
+                            <span class="badge badge-secondary">提问者</span>
+                            <span class="badge badge-secondary">生活分享家</span>
+                            <span class="badge badge-secondary">技术讨论者</span>
                         </div>
                     </div>
                 </div>
                 <div class="participant-card">
                     <div class="participant-rank rank-3">3</div>
                     <div class="participant-info">
-                        <div class="participant-name">尘世逍遥游</div>
+                        <div class="participant-name">十四(wxid_26cuos6p2y3r22)</div>
                         <div class="participant-stats">
-                            <span>💬 16条</span>
-                            <span>⏱️ 平均N/A分钟</span>
-                            <span>🎯 5个话题</span>
+                            <span>💬 57条</span>
+                            <span>⏱️ 平均3.5分钟</span>
+                            <span>🎯 6个话题</span>
                         </div>
                         <div class="participant-traits">
-                            <span class="badge badge-secondary">梗王</span>
-                            <span class="badge badge-secondary">哲学家</span>
-                            <span class="badge badge-secondary">下班积极分子</span>
-                            <span class="badge badge-secondary">吐槽先锋</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="participant-card">
-                    <div class="participant-rank">4</div>
-                    <div class="participant-info">
-                        <div class="participant-name">书墨</div>
-                        <div class="participant-stats">
-                            <span>💬 15条</span>
-                            <span>⏱️ 平均N/A分钟</span>
-                            <span>🎯 4个话题</span>
-                        </div>
-                        <div class="participant-traits">
-                            <span class="badge badge-secondary">硬件专家</span>
-                            <span class="badge badge-secondary">人生导师</span>
-                            <span class="badge badge-secondary">幽默大师</span>
-                            <span class="badge badge-secondary">技术解答</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="participant-card">
-                    <div class="participant-rank">5</div>
-                    <div class="participant-info">
-                        <div class="participant-name">常常喜乐</div>
-                        <div class="participant-stats">
-                            <span>💬 12条</span>
-                            <span>⏱️ 平均N/A分钟</span>
-                            <span>🎯 2个话题</span>
-                        </div>
-                        <div class="participant-traits">
-                            <span class="badge badge-secondary">购物狂人</span>
-                            <span class="badge badge-secondary">疑惑发问</span>
-                            <span class="badge badge-secondary">价格考究</span>
-                            <span class="badge badge-secondary">生活达人</span>
+                            <span class="badge badge-secondary">幽默达人</span>
+                            <span class="badge badge-secondary">社会评论员</span>
+                            <span class="badge badge-secondary">直言不讳</span>
                         </div>
                     </div>
                 </div>
@@ -1207,101 +610,77 @@
             <h3>⏰ 时段活跃度分析</h3>
             <div class="time-activity">
                 <div class="time-chart">
-                    <div class="time-slot" style="height: 21.53846153846154px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">00</div>
-                        <div class="time-count">1</div>
+                    <div class="time-slot" style="height: 15px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">00</div><div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">01</div>
-                        <div class="time-count">0</div>
+                    <div class="time-slot" style="height: 15px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">01</div><div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">02</div>
-                        <div class="time-count">0</div>
+                    <div class="time-slot" style="height: 15px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">02</div><div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: 21.53846153846154px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">03</div>
-                        <div class="time-count">1</div>
+                    <div class="time-slot" style="height: 15px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">03</div><div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">04</div>
-                        <div class="time-count">0</div>
+                    <div class="time-slot" style="height: 15px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">04</div><div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">05</div>
-                        <div class="time-count">0</div>
+                    <div class="time-slot" style="height: 15px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">05</div><div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">06</div>
-                        <div class="time-count">0</div>
+                    <div class="time-slot" style="height: 15px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">06</div><div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: 23.076923076923077px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">07</div>
-                        <div class="time-count">2</div>
+                    <div class="time-slot" style="height: 30px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">07</div><div class="time-count">6</div>
                     </div>
-                    <div class="time-slot" style="height: 50.76923076923077px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">08</div>
-                        <div class="time-count">20</div>
+                    <div class="time-slot" style="height: 40px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">08</div><div class="time-count">14</div>
                     </div>
-                    <div class="time-slot" style="height: 35.38461538461539px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">09</div>
-                        <div class="time-count">10</div>
+                    <div class="time-slot" style="height: 35px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">09</div><div class="time-count">10</div>
                     </div>
-                    <div class="time-slot" style="height: 39.23076923076923px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">10</div>
-                        <div class="time-count">13</div>
+                    <div class="time-slot" style="height: 90px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">10</div><div class="time-count">77</div>
                     </div>
-                    <div class="time-slot" style="height: 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">11</div>
-                        <div class="time-count">0</div>
+                    <div class="time-slot" style="height: 100px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">11</div><div class="time-count">83</div>
                     </div>
-                    <div class="time-slot" style="height: 24.615384615384617px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">12</div>
-                        <div class="time-count">3</div>
+                    <div class="time-slot" style="height: 45px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">12</div><div class="time-count">19</div>
                     </div>
-                    <div class="time-slot" style="height: 27.692307692307693px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">13</div>
-                        <div class="time-count">5</div>
+                    <div class="time-slot" style="height: 50px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">13</div><div class="time-count">25</div>
                     </div>
-                    <div class="time-slot" style="height: 120px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">14</div>
-                        <div class="time-count">65</div>
+                    <div class="time-slot" style="height: 40px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">14</div><div class="time-count">15</div>
                     </div>
-                    <div class="time-slot" style="height: 49.23076923076923px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">15</div>
-                        <div class="time-count">19</div>
+                    <div class="time-slot" style="height: 75px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">15</div><div class="time-count">55</div>
                     </div>
-                    <div class="time-slot" style="height: 33.84615384615385px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">16</div>
-                        <div class="time-count">9</div>
+                    <div class="time-slot" style="height: 85px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">16</div><div class="time-count">71</div>
                     </div>
-                    <div class="time-slot" style="height: 32.30769230769231px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">17</div>
-                        <div class="time-count">8</div>
+                    <div class="time-slot" style="height: 70px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">17</div><div class="time-count">53</div>
                     </div>
-                    <div class="time-slot" style="height: 23.076923076923077px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">18</div>
-                        <div class="time-count">2</div>
+                    <div class="time-slot" style="height: 25px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">18</div><div class="time-count">2</div>
                     </div>
-                    <div class="time-slot" style="height: 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">19</div>
-                        <div class="time-count">0</div>
+                    <div class="time-slot" style="height: 15px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">19</div><div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">20</div>
-                        <div class="time-count">0</div>
+                    <div class="time-slot" style="height: 15px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">20</div><div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">21</div>
-                        <div class="time-count">0</div>
+                    <div class="time-slot" style="height: 15px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">21</div><div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">22</div>
-                        <div class="time-count">0</div>
+                    <div class="time-slot" style="height: 15px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">22</div><div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: 20px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">23</div>
-                        <div class="time-count">0</div>
+                    <div class="time-slot" style="height: 15px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">23</div><div class="time-count">0</div>
                     </div>
                 </div>
             </div>
@@ -1312,13 +691,13 @@
                 <div class="owl-content">
                     <div class="owl-crown">👑</div>
                     <div class="owl-info">
-                        <h4>为“人民”币服务</h4>
-                        <p class="owl-title">"全天候活跃者"</p>
+                        <h4>深圳～淡定(wxid_ev1m8miauv6s22)</h4>
+                        <p class="owl-title">"日落前加班王"</p>
                         <div class="owl-stats">
-                            <span>🕐 最晚活跃：18:08:07</span>
-                            <span>🌙 深夜消息：0条</span>
+                            <span>🕐 最晚活跃：18:22:54</span>
+                            <span>🌙 深夜消息：2条 (18:00后)</span>
                         </div>
-                        <p class="owl-quote">"法律把他们保护太好了"</p>
+                        <p class="owl-quote">"上班时间～"</p>
                     </div>
                 </div>
             </div>
@@ -1329,68 +708,74 @@
             <h2>☁️ 热词云图</h2>
             <div class="cloud-container">
                 <div class="cloud-3d">
-                    <div class="cloud-layer">
-                        <span class="cloud-word" style="left: 63%; top: 73%; font-size: 46px; color: #764ba2; transform: translateZ(92px);">pdd</span>
-                        <span class="cloud-word" style="left: 77%; top: 40%; font-size: 44px; color: #764ba2; transform: translateZ(95px);">电动车</span>
-                        <span class="cloud-word" style="left: 64%; top: 60%; font-size: 44px; color: #667eea; transform: translateZ(28px);">公司</span>
-                        <span class="cloud-word" style="left: 68%; top: 57%; font-size: 42px; color: #667eea; transform: translateZ(28px);">服务器</span>
-                        <span class="cloud-word" style="left: 50%; top: 70%; font-size: 42px; color: #764ba2; transform: translateZ(36px);">esim</span>
-                        <span class="cloud-word" style="left: 20%; top: 59%; font-size: 41px; color: #667eea; transform: translateZ(48px);">端口</span>
-                        <span class="cloud-word" style="left: 31%; top: 62%; font-size: 38px; color: #764ba2; transform: translateZ(149px);">京东</span>
-                        <span class="cloud-word" style="left: 47%; top: 65%; font-size: 38px; color: #764ba2; transform: translateZ(13px);">免税店</span>
-                        <span class="cloud-word" style="left: 21%; top: 67%; font-size: 37px; color: #667eea; transform: translateZ(105px);">vpn</span>
-                        <span class="cloud-word" style="left: 49%; top: 22%; font-size: 37px; color: #667eea; transform: translateZ(143px);">技术</span>
-                        <span class="cloud-word" style="left: 60%; top: 16%; font-size: 36px; color: #667eea; transform: translateZ(35px);">网络</span>
-                        <span class="cloud-word" style="left: 27%; top: 22%; font-size: 36px; color: #eebc2c; transform: translateZ(35px);">女友</span>
-                        <span class="cloud-word" style="left: 20%; top: 44%; font-size: 34px; color: #764ba2; transform: translateZ(94px);">价格</span>
-                        <span class="cloud-word" style="left: 77%; top: 21%; font-size: 32px; color: #00bcd4; transform: translateZ(46px);">机械臂</span>
-                        <span class="cloud-word" style="left: 55%; top: 46%; font-size: 30px; color: #764ba2; transform: translateZ(131px);">店里</span>
-                        <span class="cloud-word" style="left: 36%; top: 79%; font-size: 29px; color: #667eea; transform: translateZ(77px);">宝塔</span>
-                        <span class="cloud-word" style="left: 81%; top: 68%; font-size: 28px; color: #eebc2c; transform: translateZ(66px);">教育</span>
-                        <span class="cloud-word" style="left: 14%; top: 31%; font-size: 28px; color: #5cb85c; transform: translateZ(128px);">下班</span>
-                        <span class="cloud-word" style="left: 34%; top: 52%; font-size: 27px; color: #764ba2; transform: translateZ(118px);">网上</span>
-                        <span class="cloud-word" style="left: 49%; top: 88%; font-size: 27px; color: #eebc2c; transform: translateZ(130px);">天赋</span>
-                        <span class="cloud-word" style="left: 59%; top: 30%; font-size: 27px; color: #eebc2c; transform: translateZ(111px);">黑眼圈</span>
-                        <span class="cloud-word" style="left: 38%; top: 43%; font-size: 27px; color: #667eea; transform: translateZ(148px);">堡垒机</span>
-                        <span class="cloud-word" style="left: 77%; top: 84%; font-size: 26px; color: #5cb85c; transform: translateZ(77px);">努力</span>
-                        <span class="cloud-word" style="left: 80%; top: 3%; font-size: 25px; color: #eebc2c; transform: translateZ(65px);">成都</span>
-                        <span class="cloud-word" style="left: 5%; top: 85%; font-size: 25px; color: #5cb85c; transform: translateZ(126px);">表情</span>
-                        <span class="cloud-word" style="left: 54%; top: 9%; font-size: 24px; color: #eebc2c; transform: translateZ(119px);">文凭</span>
-                        <span class="cloud-word" style="left: 17%; top: 76%; font-size: 24px; color: #00bcd4; transform: translateZ(64px);">机器人</span>
-                        <span class="cloud-word" style="left: 28%; top: 31%; font-size: 23px; color: #eebc2c; transform: translateZ(35px);">舒服</span>
-                        <span class="cloud-word" style="left: 10%; top: 12%; font-size: 23px; color: #5cb85c; transform: translateZ(79px);">天气</span>
-                        <span class="cloud-word" style="left: 8%; top: 69%; font-size: 22px; color: #eebc2c; transform: translateZ(10px);">尝试</span>
-                        <span class="cloud-word" style="left: 71%; top: 79%; font-size: 22px; color: #5cb85c; transform: translateZ(118px);">哈哈哈</span>
-                        <span class="cloud-word" style="left: 14%; top: 3%; font-size: 21px; color: #eebc2c; transform: translateZ(76px);">工作</span>
-                        <span class="cloud-word" style="left: 54%; top: 38%; font-size: 21px; color: #eebc2c; transform: translateZ(149px);">圈</span>
-                        <span class="cloud-word" style="left: 71%; top: 48%; font-size: 21px; color: #eebc2c; transform: translateZ(32px);">职业</span>
-                        <span class="cloud-word" style="left: 5%; top: 53%; font-size: 21px; color: #00bcd4; transform: translateZ(89px);">量产</span>
-                        <span class="cloud-word" style="left: 69%; top: 92%; font-size: 20px; color: #eebc2c; transform: translateZ(43px);">演讲</span>
-                        <span class="cloud-word" style="left: 32%; top: 11%; font-size: 20px; color: #5cb85c; transform: translateZ(105px);">蓝天</span>
-                        <span class="cloud-word" style="left: 45%; top: 33%; font-size: 20px; color: #eebc2c; transform: translateZ(131px);">同行</span>
-                        <span class="cloud-word" style="left: 46%; top: 10%; font-size: 19px; color: #eebc2c; transform: translateZ(126px);">大学</span>
-                        <span class="cloud-word" style="left: 67%; top: 36%; font-size: 19px; color: #eebc2c; transform: translateZ(130px);">毕业</span>
-                        <span class="cloud-word" style="left: 81%; top: 5%; font-size: 19px; color: #764ba2; transform: translateZ(116px);">iphone</span>
-                        <span class="cloud-word" style="left: 7%; top: 90%; font-size: 19px; color: #eebc2c; transform: translateZ(132px);">阅读</span>
-                        <span class="cloud-word" style="left: 3%; top: 22%; font-size: 18px; color: #5cb85c; transform: translateZ(107px);">咖啡</span>
-                        <span class="cloud-word" style="left: 2%; top: 40%; font-size: 18px; color: #eebc2c; transform: translateZ(132px);">找工作</span>
-                        <span class="cloud-word" style="left: 20%; top: 50%; font-size: 18px; color: #5cb85c; transform: translateZ(33px);">乌云</span>
-                        <span class="cloud-word" style="left: 5%; top: 8%; font-size: 18px; color: #eebc2c; transform: translateZ(75px);">好书</span>
-                        <span class="cloud-word" style="left: 59%; top: 5%; font-size: 17px; color: #eebc2c; transform: translateZ(114px);">罗宾逊</span>
-                        <span class="cloud-word" style="left: 29%; top: 93%; font-size: 17px; color: #eebc2c; transform: translateZ(107px);">文化</span>
-                        <span class="cloud-word" style="left: 88%; top: 58%; font-size: 17px; color: #00bcd4; transform: translateZ(108px);">汽车</span>
-                        <span class="cloud-word" style="left: 86%; top: 9%; font-size: 16px; color: #eebc2c; transform: translateZ(104px);">湛庐</span>
-                    </div>
+                    <span class="cloud-word" style="left: 40%; top: 20%; font-size: 36px; color: #667eea; transform: translateZ(100px);">房子</span>
+                    <span class="cloud-word" style="left: 60%; top: 30%; font-size: 28px; color: #764ba2; transform: translateZ(80px);">结婚</span>
+                    <span class="cloud-word" style="left: 30%; top: 50%; font-size: 32px; color: #a8dadc; transform: translateZ(120px);">辣</span>
+                    <span class="cloud-word" style="left: 70%; top: 60%; font-size: 24px; color: #457b9d; transform: translateZ(60px);">旅游</span>
+                    <span class="cloud-word" style="left: 20%; top: 40%; font-size: 26px; color: #e63946; transform: translateZ(90px);">部署</span>
+                    <span class="cloud-word" style="left: 55%; top: 15%; font-size: 20px; color: #f4a261; transform: translateZ(50px);">高考</span>
+                    <span class="cloud-word" style="left: 15%; top: 65%; font-size: 22px; color: #2a9d8f; transform: translateZ(70px);">股市</span>
+                    <span class="cloud-word" style="left: 80%; top: 45%; font-size: 18px; color: #264653; transform: translateZ(40px);">健康</span>
+                    <span class="cloud-word" style="left: 10%; top: 10%; font-size: 16px; color: #8d99ae; transform: translateZ(30px);">县城</span>
+                    <span class="cloud-word" style="left: 90%; top: 80%; font-size: 14px; color: #ef233c; transform: translateZ(20px);">iis</span>
+                    <span class="cloud-word" style="left: 5%; top: 90%; font-size: 12px; color: #d90429; transform: translateZ(10px);">Nginx</span>
+                    <span class="cloud-word" style="left: 25%; top: 75%; font-size: 18px; color: #ffc107; transform: translateZ(55px);">学历贬值</span>
+                    <span class="cloud-word" style="left: 75%; top: 10%; font-size: 20px; color: #00b894; transform: translateZ(75px);">数据库</span>
+                    <span class="cloud-word" style="left: 35%; top: 85%; font-size: 16px; color: #6c5ce7; transform: translateZ(45px);">三亚</span>
+                    <span class="cloud-word" style="left: 45%; top: 5%; font-size: 14px; color: #fdcb6e; transform: translateZ(35px);">政策</span>
+                    <span class="cloud-word" style="left: 65%; top: 70%; font-size: 15px; color: #a29bfe; transform: translateZ(25px);">就业</span>
+                    <span class="cloud-word" style="left: 85%; top: 25%; font-size: 13px; color: #ffeaa7; transform: translateZ(15px);">生活习惯</span>
+                    <span class="cloud-word" style="left: 12%; top: 25%; font-size: 17px; color: #7f8c8d; transform: translateZ(65px);">社会</span>
+                    <span class="cloud-word" style="left: 48%; top: 78%; font-size: 19px; color: #1abc9c; transform: translateZ(78px);">河南</span>
+                    <span class="cloud-word" style="left: 68%; top: 52%; font-size: 21px; color: #34495e; transform: translateZ(82px);">花桥</span>
                 </div>
                 
                 <div class="cloud-legend">
                     <div class="legend-item">
                         <span class="legend-dot" style="background-color: #667eea;"></span>
-                        <span>技术 相关</span>
+                        <span>人生规划/经济</span>
                     </div>
                     <div class="legend-item">
-                        <span class="legend-dot" style="background-color: #764ba2;"></span>
-                        <span>消费 相关</span>
+                        <span class="legend-dot" style="background-color: #a8dadc;"></span>
+                        <span>生活/娱乐</span>
                     </div>
                     <div class="legend-item">
-                        <span class="legend-dot" style="background-color
+                        <span class="legend-dot" style="background-color: #e63946;"></span>
+                        <span>技术/职场</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4. 报告总结 -->
+        <section class="summary">
+            <h2>📝 2025-06-26总结</h2>
+            <div class="card">
+                <h3>核心洞察</h3>
+                <ul>
+                    <li><strong>经济与就业压力：</strong> 高考志愿填报、研究生送外卖、股市波动等话题，共同反映了当前就业市场和经济环境的严峻性。</li>
+                    <li><strong>个体与家庭困境：</strong> 婚姻、购房等人生大事，在经济下行背景下变得更具挑战，凸显了个人在家庭期望和社会压力下的挣扎。</li>
+                    <li><strong>技术与社会底线：</strong> 从严肃的技术讨论到低俗话题的迅速转变，展示了群聊内容的多样性，也反映了互联网社群中对敏感话题的开放度。</li>
+                    <li><strong>休闲与消费观念：</strong> 旅游和日常消费习惯的讨论，揭示了不同个体在面对经济压力时，对生活品质和娱乐方式的不同权衡。</li>
+                    <li><strong>健康意识提升：</strong> 对个人健康问题的分享，表明了群友对生活质量和健康状况的关注。</li>
+                </ul>
+                
+                <h3>趋势分析</h3>
+                <p>今日群聊活跃度在上午10点至12点以及下午3点至5点达到高峰，显示了群友在工作间隙进行交流的习惯。群聊内容从轻松娱乐八卦开场，迅速拓展至社会热点、技术难题、个人人生困惑等多个维度，呈现出高度多元化和深入化的趋势。在讨论中，群友们普遍流露出对现实压力的共鸣，并善于通过幽默和自嘲进行情绪管理。预计未来群聊仍将保持高活跃度，并持续关注与个人生活、职业发展紧密相关的社会经济议题。</p>
+            </div>
+        </section>
+        
+        <!-- 页脚信息 -->
+        <footer>
+            <div class="footer-info">
+                <span>📊 数据来源：Asp.Net Java Tech group</span>
+                <span>📅 统计周期：2025-06-26 全天</span>
+                <span>🕐 生成时间：2025-06-26 18:30:00</span>
+            </div>
+            <p class="disclaimer">
+                免责声明：本报告基于群聊公开讨论内容自动生成，仅供参考。如有不当内容，请联系管理员处理。
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
