@@ -3,123 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKT T1 Faker 五冠王FKGOD!🏆日报 - 2025年8月20日</title>
+    <title>SKT T1 Faker 五冠王FKGOD!🏆群日报 - 2025-08-21</title>
     <link rel="stylesheet" href="../assets/style.css">
     <style>
-        /* 基础样式，确保在外部CSS缺失时报告仍可读 */
+        /* Minimal inline styles for readability as external CSS is not provided */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f4f7f6; margin: 0; padding: 20px; }
-        .container { max-width: 960px; margin: 20px auto; background: #fff; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); padding: 30px; }
-        header { text-align: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        .container { max-width: 960px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); padding: 40px; }
+        header { text-align: center; margin-bottom: 40px; }
         header h1 { color: #2c3e50; font-size: 2.8em; margin-bottom: 10px; }
-        header .report-type { font-size: 1.2em; color: #6a82fb; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; }
-        header .date { color: #7f8c8d; font-size: 1.1em; margin-top: 5px; }
-        .meta-info { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
-        .meta-info-item { display: flex; align-items: center; gap: 8px; font-size: 1.05em; color: #555; }
-        .meta-info-item strong { color: #6a82fb; font-size: 1.1em; }
-        section { margin-bottom: 40px; }
-        h2 { color: #34495e; border-bottom: 2px solid #6a82fb; padding-bottom: 10px; margin-bottom: 25px; font-size: 2em; }
-        h3 { color: #444; margin-top: 30px; margin-bottom: 15px; font-size: 1.6em; }
+        header .report-type { font-size: 1.2em; color: #7f8c8d; text-transform: uppercase; letter-spacing: 2px; }
+        header .date { color: #888; font-size: 1.1em; margin-top: 5px; }
+        .meta-info { display: flex; justify-content: center; gap: 30px; margin-top: 20px; flex-wrap: wrap; }
+        .meta-info-item { display: flex; align-items: center; font-size: 1.1em; color: #555; }
+        .meta-icon { font-size: 1.5em; margin-right: 8px; color: #4CAF50; }
+
+        section { margin-bottom: 40px; padding: 20px; border-radius: 8px; background-color: #fcfcfc; border: 1px solid #eee; }
+        section h2 { color: #2c3e50; font-size: 2em; margin-bottom: 25px; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; }
+        section h3 { color: #34495e; font-size: 1.5em; margin-top: 30px; margin-bottom: 15px; }
+
         .card-grid { display: grid; gap: 25px; }
         .card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-        .card { background: #ffffff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); padding: 25px; transition: transform 0.2s ease-in-out; }
-        .card:hover { transform: translateY(-5px); }
-        .topic-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .topic-card-header h3 { margin: 0; font-size: 1.4em; color: #4a69bd; }
+        .card { background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); padding: 20px; border: 1px solid #f0f0f0; }
+
+        .topic-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .topic-card-header h3 { margin: 0; color: #34495e; font-size: 1.4em; }
         .topic-heat { color: #e74c3c; font-weight: bold; font-size: 1.1em; }
-        .badge { display: inline-block; padding: 6px 12px; border-radius: 20px; font-size: 0.9em; font-weight: 600; margin-right: 8px; margin-bottom: 8px; }
-        .badge-primary { background-color: #6a82fb; color: #fff; }
-        .badge-info { background-color: #8c7ae6; color: #fff; }
-        .badge-secondary { background-color: #95a5a6; color: #fff; }
-        .topic-summary { color: #555; margin-bottom: 20px; line-height: 1.7; font-size: 0.95em; }
-        .deep-comment { background-color: #f8f9fa; border-left: 4px solid #f39c12; padding: 15px; border-radius: 8px; margin-top: 20px; margin-bottom: 20px; }
-        .comment-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
-        .comment-icon { font-size: 1.4em; color: #f39c12; }
-        .comment-label { font-weight: bold; color: #f39c12; font-size: 1.1em; }
-        .comment-text { font-style: italic; color: #666; line-height: 1.7; }
-        .topic-keywords .keyword { display: inline-block; background-color: #ecf0f1; color: #7f8c7d; padding: 5px 10px; border-radius: 15px; font-size: 0.85em; margin-right: 6px; margin-bottom: 6px; }
-        .topic-stats { margin-top: 15px; text-align: right; }
-        .analytics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px; }
-        .stat-card { background: linear-gradient(135deg, #a1c4fd, #c2e9fb); border-radius: 10px; padding: 25px; text-align: center; color: #333; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .stat-label { font-size: 1em; color: #555; margin-bottom: 8px; }
-        .stat-number { font-size: 2.5em; font-weight: bold; color: #4a69bd; }
+        .badge { display: inline-block; padding: 6px 12px; border-radius: 20px; font-size: 0.8em; font-weight: bold; margin-right: 8px; margin-bottom: 8px; text-transform: capitalize; }
+        .badge-primary { background-color: #3498db; color: #fff; }
+        .badge-info { background-color: #9b59b6; color: #fff; }
+        .badge-secondary { background-color: #ecf0f1; color: #7f8c8d; }
+        .topic-summary { color: #666; font-size: 0.95em; line-height: 1.5; margin-top: 15px; margin-bottom: 20px; }
+        .deep-comment { background-color: #f8fcfb; border-left: 4px solid #4CAF50; padding: 15px; border-radius: 4px; margin-top: 15px; }
+        .comment-header { display: flex; align-items: center; margin-bottom: 8px; color: #4CAF50; font-weight: bold; }
+        .comment-icon { font-size: 1.2em; margin-right: 6px; }
+        .comment-text { font-style: italic; color: #555; font-size: 0.9em; }
+        .topic-keywords { margin-top: 15px; margin-bottom: 10px; }
+        .keyword { background-color: #e0e7ee; color: #555; padding: 5px 10px; border-radius: 15px; font-size: 0.8em; margin-right: 5px; margin-bottom: 5px; display: inline-block; }
+        .topic-stats { margin-top: 10px; text-align: right; }
+
+        .analytics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .stat-card { background-color: #ecf0f1; border-radius: 8px; padding: 20px; text-align: center; border: 1px solid #dde0e3; }
+        .stat-label { color: #7f8c8d; font-size: 0.9em; margin-bottom: 8px; }
+        .stat-number { font-size: 2.2em; color: #2c3e50; font-weight: bold; }
+
         .heat-distribution .heat-item { margin-bottom: 20px; }
-        .heat-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; font-weight: bold; }
-        .heat-percentage { color: #6a82fb; }
-        .heat-bar { background-color: #e0e0e0; border-radius: 5px; height: 10px; overflow: hidden; }
+        .heat-distribution .heat-header { display: flex; justify-content: space-between; margin-bottom: 5px; }
+        .heat-distribution .heat-topic { font-weight: bold; color: #444; }
+        .heat-distribution .heat-percentage { color: #e74c3c; font-weight: bold; }
+        .heat-bar { background-color: #eee; height: 10px; border-radius: 5px; overflow: hidden; }
         .heat-fill { height: 100%; border-radius: 5px; }
-        .heat-stats { font-size: 0.9em; color: #777; margin-top: 5px; }
-        .participants-ranking .participant-card { display: flex; align-items: center; background: #fafafa; border-radius: 10px; padding: 15px 20px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .participant-rank { background: #6a82fb; color: #fff; border-radius: 50%; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 1.2em; margin-right: 15px; }
-        .rank-1 { background: linear-gradient(45deg, #FFD700, #DAA520); } /* Gold */
+        .heat-stats { font-size: 0.85em; color: #777; margin-top: 5px; }
+
+        .participants-ranking .participant-card { display: flex; align-items: center; background-color: #fdfdfd; padding: 15px; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 1px 4px rgba(0,0,0,0.03); border: 1px solid #f5f5f5; }
+        .participant-rank { font-size: 1.8em; font-weight: bold; margin-right: 15px; width: 40px; text-align: center; }
+        .rank-1 { color: #f39c12; }
+        .rank-2 { color: #bdc3c7; }
+        .rank-3 { color: #cd7f32; }
         .participant-info { flex-grow: 1; }
-        .participant-name { font-weight: bold; font-size: 1.1em; color: #333; margin-bottom: 5px; }
+        .participant-name { font-size: 1.2em; font-weight: bold; color: #34495e; margin-bottom: 5px; }
         .participant-stats span { margin-right: 15px; font-size: 0.9em; color: #666; }
-        .participant-traits { margin-top: 8px; }
-        .time-chart { display: flex; overflow-x: auto; padding-bottom: 10px; margin-bottom: 20px; }
-        .time-slot { flex: 0 0 4%; /* 1/24 for 24 hours */ text-align: center; padding: 10px 0; border-right: 1px solid #eee; }
-        .time-hour { font-size: 0.8em; color: #777; margin-bottom: 5px; }
-        .time-count { font-weight: bold; color: #6a82fb; }
-        .night-owl-card { background: linear-gradient(135deg, #4b6cb7, #182848); color: #fff; padding: 30px; border-radius: 12px; text-align: center; margin-top: 30px; }
-        .owl-content { display: flex; align-items: center; justify-content: center; gap: 25px; }
-        .owl-crown { font-size: 4em; line-height: 1; margin-right: 15px; }
-        .owl-info { text-align: left; }
-        .owl-info h4 { margin: 0 0 5px 0; font-size: 1.8em; color: #f2c94c; }
-        .owl-title { font-style: italic; font-size: 1.1em; margin-bottom: 10px; color: #bbb; }
-        .owl-stats span { margin-right: 15px; font-size: 0.95em; color: #ddd; }
-        .owl-quote { font-size: 1em; margin-top: 15px; font-style: italic; border-top: 1px dashed rgba(255,255,255,0.3); padding-top: 10px; }
-        .word-cloud .cloud-container { position: relative; height: 300px; display: flex; align-items: center; justify-content: center; background-color: #fcfcfc; border-radius: 10px; box-shadow: inset 0 0 8px rgba(0,0,0,0.05); }
-        .cloud-3d { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; perspective: 1000px; }
-        .cloud-layer { transform-style: preserve-3d; }
-        .cloud-word { position: absolute; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); white-space: nowrap; transition: all 0.3s ease-out; }
-        .cloud-legend { text-align: center; margin-top: 20px; }
-        .legend-item { display: inline-flex; align-items: center; margin: 0 15px; font-size: 0.95em; color: #666; }
+        .participant-traits { margin-top: 10px; }
+
+        .time-activity .time-chart { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .time-slot { border-radius: 8px; padding: 10px; text-align: center; min-width: 60px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .time-hour { font-size: 0.9em; color: #555; margin-bottom: 5px; }
+        .time-count { font-size: 1.3em; font-weight: bold; color: #2c3e50; }
+
+        .night-owl-card { display: flex; justify-content: center; align-items: center; padding: 30px; background: linear-gradient(to right, #4CAF50, #8bc34a); color: #fff; border-radius: 10px; text-align: center; margin-top: 30px; }
+        .owl-crown { font-size: 3em; margin-bottom: 15px; }
+        .owl-info h4 { margin: 0; font-size: 1.8em; }
+        .owl-title { font-style: italic; opacity: 0.9; margin-top: 5px; margin-bottom: 15px; }
+        .owl-stats span { margin: 0 10px; font-size: 0.9em; }
+        .owl-quote { font-size: 1em; margin-top: 15px; font-style: italic; opacity: 0.9; }
+
+        .cloud-container { text-align: center; position: relative; min-height: 250px; display: flex; justify-content: center; align-items: center; background-color: #fcfdfd; border-radius: 8px; border: 1px solid #eee; padding: 30px; }
+        .cloud-3d { perspective: 1000px; transform-style: preserve-3d; }
+        .cloud-layer { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; }
+        .cloud-word { position: absolute; font-weight: bold; white-space: nowrap; transition: all 0.3s ease; opacity: 0.8; }
+        .cloud-legend { margin-top: 30px; text-align: center; }
+        .legend-item { display: inline-flex; align-items: center; margin: 0 15px; font-size: 0.9em; color: #555; }
         .legend-dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
-        .summary ul { list-style: none; padding: 0; margin-bottom: 25px; }
-        .summary ul li { margin-bottom: 12px; background-color: #ecf0f1; padding: 12px 18px; border-radius: 8px; border-left: 4px solid #6a82fb; font-size: 1em; line-height: 1.6; }
-        .summary ul li strong { color: #34495e; }
-        .summary p { color: #555; line-height: 1.7; font-size: 0.95em; }
-        footer { text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid #eee; color: #777; font-size: 0.9em; }
-        .footer-info span { margin: 0 15px; }
-        .disclaimer { margin-top: 15px; font-style: italic; color: #999; }
+
+        .summary ul { list-style: none; padding: 0; }
+        .summary ul li { margin-bottom: 10px; color: #555; }
+        .summary ul li strong { color: #333; }
+        .summary p { color: #666; line-height: 1.8; }
+
+        footer { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; font-size: 0.85em; color: #888; }
+        .footer-info span { margin: 0 10px; }
+        .disclaimer { margin-top: 15px; font-style: italic; }
+
+        /* Placeholder styles */
+        .placeholder-text { color: #a9a9a9; font-style: italic; }
+        .disclaimer-top { background-color: #fff3cd; color: #856404; padding: 15px; border: 1px solid #ffeeba; border-radius: 5px; margin-bottom: 30px; text-align: center; font-weight: bold; }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="disclaimer-top">
+            ⚠️ **重要提示：** 由于您提供的聊天记录内容为错误信息，而非实际的聊天记录，本报告中的所有数据均无法提取，仅展示结构和占位符。请提供有效聊天记录以生成完整报告。
+        </div>
         <!-- 头部信息 - 根据报告类型动态调整 -->
         <header>
             <div class="report-type">日报</div>
             <h1>SKT T1 Faker 五冠王FKGOD!🏆群聊日报</h1>
-            <p class="date">2025年8月20日</p>
+            <p class="date">2025-08-21</p>
             <div class="meta-info">
                 <div class="meta-info-item">
                     <span class="meta-icon">💬</span>
-                    <span>总消息数：<strong>数据不足</strong></span>
+                    <span>总消息数：<strong>[无法统计]</strong></span>
                 </div>
                 <div class="meta-info-item">
                     <span class="meta-icon">👥</span>
-                    <span>活跃用户：<strong>数据不足</strong></span>
+                    <span>活跃用户：<strong>[无法统计]</strong></span>
                 </div>
                 <div class="meta-info-item">
                     <span class="meta-icon">⏱️</span>
-                    <span>统计周期：<strong>2025年8月20日</strong></span>
+                    <span>统计周期：<strong>2025-08-21</strong></span>
                 </div>
             </div>
         </header>
 
         <!-- 1. 讨论热点 -->
         <section class="hot-topics">
-            <h2>📊 2025年8月20日讨论热点</h2>
+            <h2>📊 2025-08-21讨论热点</h2>
             <div class="card-grid card-grid-2">
-                <!-- 话题卡片模板 - 根据报告类型重复相应数量 -->
+                <!-- 话题卡片模板 - 根据报告类型重复相应数量 (日报提取 8-12 个) -->
                 <div class="card topic-card">
                     <div class="topic-card-header">
-                        <h3>Faker五冠传奇：荣耀与传承</h3>
+                        <h3>[话题1：数据缺失]</h3>
                         <div class="topic-heat">
-                            🔥 <span>高</span>
+                            🔥 <span>[无法计算热度]</span>
                         </div>
                     </div>
-                    <span class="badge badge-primary">电竞名人</span>
-                    <p class="topic-summary">群内成员虽无具体聊天记录，但根据群名推断，围绕电竞传奇Faker的五冠伟业展开了潜在的讨论。这可能包括回顾其职业生涯的辉煌时刻，分析其统治力背后的原因，以及讨论其在电竞历史中的地位和对后来者的影响。</p>
+                    <span class="badge badge-primary">生活闲聊</span>
+                    <p class="topic-summary placeholder-text">[无聊天内容，无法生成话题总结。请提供完整的聊天记录以获取详细内容。]</p>
                     
                     <div class="deep-comment">
                         <div class="comment-header">
@@ -127,33 +145,31 @@
                             <span class="comment-label">评论</span>
                         </div>
                         <div class="comment-content">
-                            <p class="comment-text">有些传奇注定在历史的星图上闪耀，即使星光再璀璨，也总有人试图在它的阴影下丈量自己的渺小。</p>
+                            <p class="comment-text placeholder-text">[因缺乏聊天记录，无法生成犀利有趣的深度评论。评论风格将融合批判现实、深刻思考与风趣表达，如：“所有人都在电梯里跳舞，以为这样能更快到达楼顶。”]</p>
                         </div>
                     </div>
                     
                     <div class="topic-keywords">
-                        <span class="keyword">#Faker</span>
-                        <span class="keyword">#五冠王</span>
-                        <span class="keyword">#传奇</span>
-                        <span class="keyword">#电竞</span>
-                        <span class="keyword">#SKTT1</span>
+                        <span class="keyword">#数据缺失</span>
+                        <span class="keyword">#占位</span>
+                        <span class="keyword">#无内容</span>
                     </div>
                     <div class="topic-stats">
-                        <span class="badge badge-info">💬 估算20条讨论</span>
-                        <span class="badge badge-info">👥 估算5人参与</span>
-                        <span class="badge badge-info">🕐 估算1小时讨论</span>
+                        <span class="badge badge-info">💬 [无法统计]条讨论</span>
+                        <span class="badge badge-info">👥 [无法统计]人参与</span>
+                        <span class="badge badge-info">🕐 [无法统计]</span>
                     </div>
                 </div>
 
                 <div class="card topic-card">
                     <div class="topic-card-header">
-                        <h3>电竞信仰：FKGOD现象级影响力</h3>
+                        <h3>[话题2：数据缺失]</h3>
                         <div class="topic-heat">
-                            🔥 <span>中</span>
+                            🔥 <span>[无法计算热度]</span>
                         </div>
                     </div>
-                    <span class="badge badge-primary">文化现象</span>
-                    <p class="topic-summary">基于群名中对Faker“FKGOD”的尊称，讨论可能涉及电竞偶像如何成为一种文化现象，超越游戏本身，成为粉丝群体的一种精神寄托。探讨这种“造神”现象的社会背景和其对年轻一代的影响。</p>
+                    <span class="badge badge-primary">游戏讨论</span>
+                    <p class="topic-summary placeholder-text">[无聊天内容，无法生成话题总结。请提供完整的聊天记录以获取详细内容。]</p>
                     
                     <div class="deep-comment">
                         <div class="comment-header">
@@ -161,33 +177,31 @@
                             <span class="comment-label">评论</span>
                         </div>
                         <div class="comment-content">
-                            <p class="comment-text">信仰这东西，一旦注入流量，就能把虚拟的神祇塑造成现实的图腾，让信徒们在虚拟的战场上寻找真实的意义。</p>
+                            <p class="comment-text placeholder-text">[因缺乏聊天记录，无法生成犀利有趣的深度评论。评论风格将融合批判现实、深刻思考与风趣表达。]</p>
                         </div>
                     </div>
                     
                     <div class="topic-keywords">
-                        <span class="keyword">#FKGOD</span>
-                        <span class="keyword">#电竞偶像</span>
-                        <span class="keyword">#文化现象</span>
-                        <span class="keyword">#粉丝经济</span>
-                        <span class="keyword">#影响力</span>
+                        <span class="keyword">#数据缺失</span>
+                        <span class="keyword">#占位</span>
+                        <span class="keyword">#无内容</span>
                     </div>
                     <div class="topic-stats">
-                        <span class="badge badge-info">💬 估算15条讨论</span>
-                        <span class="badge badge-info">👥 估算4人参与</span>
-                        <span class="badge badge-info">🕐 估算0.5小时讨论</span>
+                        <span class="badge badge-info">💬 [无法统计]条讨论</span>
+                        <span class="badge badge-info">👥 [无法统计]人参与</span>
+                        <span class="badge badge-info">🕐 [无法统计]</span>
                     </div>
                 </div>
-                
+
                 <div class="card topic-card">
                     <div class="topic-card-header">
-                        <h3>群聊活跃度：无实际记录</h3>
+                        <h3>[话题3：数据缺失]</h3>
                         <div class="topic-heat">
-                            🔥 <span>极低</span>
+                            🔥 <span>[无法计算热度]</span>
                         </div>
                     </div>
-                    <span class="badge badge-primary">系统提示</span>
-                    <p class="topic-summary">本报告是基于有限的输入信息生成。由于缺乏实际群聊记录，无法分析当日的具体讨论内容、消息数量和用户互动情况。</p>
+                    <span class="badge badge-primary">技术交流</span>
+                    <p class="topic-summary placeholder-text">[无聊天内容，无法生成话题总结。请提供完整的聊天记录以获取详细内容。]</p>
                     
                     <div class="deep-comment">
                         <div class="comment-header">
@@ -195,19 +209,160 @@
                             <span class="comment-label">评论</span>
                         </div>
                         <div class="comment-content">
-                            <p class="comment-text">当数据缺失时，报告就像没有食材的米其林菜单，再华丽的框架也只能展示想象中的饕餮盛宴。</p>
+                            <p class="comment-text placeholder-text">[因缺乏聊天记录，无法生成犀利有趣的深度评论。评论风格将融合批判现实、深刻思考与风趣表达。]</p>
                         </div>
                     </div>
                     
                     <div class="topic-keywords">
-                        <span class="keyword">#数据不足</span>
-                        <span class="keyword">#报告限制</span>
-                        <span class="keyword">#无记录</span>
+                        <span class="keyword">#数据缺失</span>
+                        <span class="keyword">#占位</span>
+                        <span class="keyword">#无内容</span>
                     </div>
                     <div class="topic-stats">
-                        <span class="badge badge-info">💬 0条讨论</span>
-                        <span class="badge badge-info">👥 0人参与</span>
-                        <span class="badge badge-info">🕐 0小时讨论</span>
+                        <span class="badge badge-info">💬 [无法统计]条讨论</span>
+                        <span class="badge badge-info">👥 [无法统计]人参与</span>
+                        <span class="badge badge-info">🕐 [无法统计]</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>[话题4：数据缺失]</h3>
+                        <div class="topic-heat">
+                            🔥 <span>[无法计算热度]</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">时事新闻</span>
+                    <p class="topic-summary placeholder-text">[无聊天内容，无法生成话题总结。请提供完整的聊天记录以获取详细内容。]</p>
+                    
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text placeholder-text">[因缺乏聊天记录，无法生成犀利有趣的深度评论。评论风格将融合批判现实、深刻思考与风趣表达。]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-keywords">
+                        <span class="keyword">#数据缺失</span>
+                        <span class="keyword">#占位</span>
+                        <span class="keyword">#无内容</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 [无法统计]条讨论</span>
+                        <span class="badge badge-info">👥 [无法统计]人参与</span>
+                        <span class="badge badge-info">🕐 [无法统计]</span>
+                    </div>
+                </div>
+                <!-- 至少8个话题占位符 -->
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>[话题5：数据缺失]</h3>
+                        <div class="topic-heat">
+                            🔥 <span>[无法计算热度]</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">生活闲聊</span>
+                    <p class="topic-summary placeholder-text">[无聊天内容，无法生成话题总结。]</p>
+                    
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text placeholder-text">[因缺乏聊天记录，无法生成深度评论。]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-keywords">
+                        <span class="keyword">#数据缺失</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 [无法统计]条讨论</span>
+                    </div>
+                </div>
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>[话题6：数据缺失]</h3>
+                        <div class="topic-heat">
+                            🔥 <span>[无法计算热度]</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">游戏讨论</span>
+                    <p class="topic-summary placeholder-text">[无聊天内容，无法生成话题总结。]</p>
+                    
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text placeholder-text">[因缺乏聊天记录，无法生成深度评论。]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-keywords">
+                        <span class="keyword">#数据缺失</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 [无法统计]条讨论</span>
+                    </div>
+                </div>
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>[话题7：数据缺失]</h3>
+                        <div class="topic-heat">
+                            🔥 <span>[无法计算热度]</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">技术交流</span>
+                    <p class="topic-summary placeholder-text">[无聊天内容，无法生成话题总结。]</p>
+                    
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text placeholder-text">[因缺乏聊天记录，无法生成深度评论。]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-keywords">
+                        <span class="keyword">#数据缺失</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 [无法统计]条讨论</span>
+                    </div>
+                </div>
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>[话题8：数据缺失]</h3>
+                        <div class="topic-heat">
+                            🔥 <span>[无法计算热度]</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">时事新闻</span>
+                    <p class="topic-summary placeholder-text">[无聊天内容，无法生成话题总结。]</p>
+                    
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text placeholder-text">[因缺乏聊天记录，无法生成深度评论。]</p>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-keywords">
+                        <span class="keyword">#数据缺失</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 [无法统计]条讨论</span>
                     </div>
                 </div>
             </div>
@@ -221,15 +376,15 @@
             <div class="analytics-grid">
                 <div class="stat-card">
                     <div class="stat-label">总消息数</div>
-                    <div class="stat-number">N/A</div>
+                    <div class="stat-number placeholder-text">[无法统计]</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">活跃用户</div>
-                    <div class="stat-number">N/A</div>
+                    <div class="stat-number placeholder-text">[无法统计]</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">平均响应时间(分钟)</div>
-                    <div class="stat-number">N/A</div>
+                    <div class="stat-number placeholder-text">[无法统计]</div>
                 </div>
             </div>
             
@@ -238,38 +393,26 @@
             <div class="heat-distribution">
                 <div class="heat-item">
                     <div class="heat-header">
-                        <span class="heat-topic">Faker五冠传奇：荣耀与传承</span>
-                        <span class="heat-percentage">50%</span>
+                        <span class="heat-topic placeholder-text">[话题名称：数据缺失]</span>
+                        <span class="heat-percentage placeholder-text">[0]%</span>
                     </div>
                     <div class="heat-bar">
-                        <div class="heat-fill" style="width: 50%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                        <div class="heat-fill" style="width: 0%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
                     </div>
                     <div class="heat-stats">
-                        <span>估算20条消息</span> · <span>估算5人参与</span>
+                        <span>[无法统计]条消息</span> · <span>[无法统计]人参与</span>
                     </div>
                 </div>
                 <div class="heat-item">
                     <div class="heat-header">
-                        <span class="heat-topic">电竞信仰：FKGOD现象级影响力</span>
-                        <span class="heat-percentage">40%</span>
+                        <span class="heat-topic placeholder-text">[话题名称：数据缺失]</span>
+                        <span class="heat-percentage placeholder-text">[0]%</span>
                     </div>
                     <div class="heat-bar">
-                        <div class="heat-fill" style="width: 40%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                        <div class="heat-fill" style="width: 0%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
                     </div>
                     <div class="heat-stats">
-                        <span>估算15条消息</span> · <span>估算4人参与</span>
-                    </div>
-                </div>
-                <div class="heat-item">
-                    <div class="heat-header">
-                        <span class="heat-topic">群聊活跃度：无实际记录</span>
-                        <span class="heat-percentage">10%</span>
-                    </div>
-                    <div class="heat-bar">
-                        <div class="heat-fill" style="width: 10%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
-                    </div>
-                    <div class="heat-stats">
-                        <span>0条消息</span> · <span>0人参与</span>
+                        <span>[无法统计]条消息</span> · <span>[无法统计]人参与</span>
                     </div>
                 </div>
             </div>
@@ -277,109 +420,154 @@
             <!-- 活跃度排行榜 -->
             <h3>🏆 活跃度排行榜</h3>
             <div class="participants-ranking">
-                <p><strong>暂无实际聊天数据，无法生成活跃度排行榜。</strong></p>
+                <div class="participant-card">
+                    <div class="participant-rank rank-1">1</div>
+                    <div class="participant-info">
+                        <div class="participant-name placeholder-text">[群友昵称：数据缺失]</div>
+                        <div class="participant-stats">
+                            <span>💬 [无法统计]条</span>
+                            <span>⏱️ 平均[无法统计]分钟</span>
+                            <span>🎯 参与[无法统计]个话题</span>
+                        </div>
+                        <div class="participant-traits">
+                            <span class="badge badge-secondary">数据缺失</span>
+                            <span class="badge badge-secondary">占位</span>
+                            <span class="badge badge-secondary">无内容</span>
+                            <span class="badge badge-secondary">请提供记录</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="participant-card">
+                    <div class="participant-rank rank-2">2</div>
+                    <div class="participant-info">
+                        <div class="participant-name placeholder-text">[群友昵称：数据缺失]</div>
+                        <div class="participant-stats">
+                            <span>💬 [无法统计]条</span>
+                            <span>⏱️ 平均[无法统计]分钟</span>
+                            <span>🎯 参与[无法统计]个话题</span>
+                        </div>
+                        <div class="participant-traits">
+                            <span class="badge badge-secondary">数据缺失</span>
+                            <span class="badge badge-secondary">占位</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="participant-card">
+                    <div class="participant-rank rank-3">3</div>
+                    <div class="participant-info">
+                        <div class="participant-name placeholder-text">[群友昵称：数据缺失]</div>
+                        <div class="participant-stats">
+                            <span>💬 [无法统计]条</span>
+                            <span>⏱️ 平均[无法统计]分钟</span>
+                            <span>🎯 参与[无法统计]个话题</span>
+                        </div>
+                        <div class="participant-traits">
+                            <span class="badge badge-secondary">数据缺失</span>
+                            <span class="badge badge-secondary">占位</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             
             <!-- 时段活跃度分析 - 仅限日报/周报 -->
             <h3>⏰ 时段活跃度分析</h3>
             <div class="time-activity">
                 <div class="time-chart">
-                    <!-- 生成24个时段，所有消息数为0 -->
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">00</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">01</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">02</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">03</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">04</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">05</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">06</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">07</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">08</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">09</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">10</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">11</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">12</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">13</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">14</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">15</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">16</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">17</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">18</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">19</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">20</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">21</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">22</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
                         <div class="time-hour">23</div>
-                        <div class="time-count">0</div>
+                        <div class="time-count placeholder-text">[0]</div>
                     </div>
                 </div>
             </div>
@@ -390,13 +578,13 @@
                 <div class="owl-content">
                     <div class="owl-crown">👑</div>
                     <div class="owl-info">
-                        <h4>暂无数据</h4>
-                        <p class="owl-title">"无法确定"</p>
+                        <h4><span class="placeholder-text">[熬夜冠军昵称：数据缺失]</span></h4>
+                        <p class="owl-title placeholder-text">"[称号：无数据]"</p>
                         <div class="owl-stats">
-                            <span>🕐 最晚活跃：N/A</span>
-                            <span>🌙 深夜消息：N/A</span>
+                            <span>🕐 最晚活跃：<span class="placeholder-text">[无法统计]</span></span>
+                            <span>🌙 深夜消息：<span class="placeholder-text">[无法统计]</span>条</span>
                         </div>
-                        <p class="owl-quote">"由于缺乏实际聊天记录，无法识别深夜活跃用户。"</p>
+                        <p class="owl-quote placeholder-text">"[最后一条深夜消息：无数据]"</p>
                     </div>
                 </div>
             </div>
@@ -408,46 +596,24 @@
             <div class="cloud-container">
                 <div class="cloud-3d">
                     <div class="cloud-layer">
-                        <!-- 词云示例 - 根据实际词频和重要性调整大小和颜色，此处为基于群名的推测词汇 -->
-                        <span class="cloud-word" style="left: 45%; top: 25%; font-size: 38px; color: #667eea; transform: translateZ(120px);">Faker</span>
-                        <span class="cloud-word" style="left: 30%; top: 50%; font-size: 32px; color: #764ba2; transform: translateZ(90px);">SKT T1</span>
-                        <span class="cloud-word" style="left: 60%; top: 40%; font-size: 26px; color: #6a82fb; transform: translateZ(70px);">五冠王</span>
-                        <span class="cloud-word" style="left: 20%; top: 35%; font-size: 24px; color: #8c7ae6; transform: translateZ(60px);">电竞</span>
-                        <span class="cloud-word" style="left: 70%; top: 60%; font-size: 22px; color: #4a69bd; transform: translateZ(50px);">传奇</span>
-                        <span class="cloud-word" style="left: 50%; top: 70%; font-size: 20px; color: #667eea; transform: translateZ(40px);">冠军</span>
-                        <span class="cloud-word" style="left: 15%; top: 65%; font-size: 18px; color: #764ba2; transform: translateZ(30px);">英雄联盟</span>
-                        <span class="cloud-word" style="left: 80%; top: 20%; font-size: 16px; color: #6a82fb; transform: translateZ(20px);">操作</span>
-                        <span class="cloud-word" style="left: 25%; top: 15%; font-size: 14px; color: #8c7ae6; transform: translateZ(10px);">信仰</span>
-                        <span class="cloud-word" style="left: 75%; top: 80%; font-size: 12px; color: #4a69bd; transform: translateZ(0px);">LOL</span>
-                        <span class="cloud-word" style="left: 10%; top: 85%; font-size: 10px; color: #667eea; transform: translateZ(-10px);">比赛</span>
-                        <span class="cloud-word" style="left: 90%; top: 50%; font-size: 12px; color: #764ba2; transform: translateZ(-20px);">选手</span>
-                        <span class="cloud-word" style="left: 5%; top: 5%; font-size: 16px; color: #6a82fb; transform: translateZ(-30px);">神</span>
-                        <span class="cloud-word" style="left: 65%; top: 10%; font-size: 18px; color: #8c7ae6; transform: translateZ(-40px);">GOAT</span>
-                        <span class="cloud-word" style="left: 35%; top: 90%; font-size: 20px; color: #4a69bd; transform: translateZ(-50px);">荣耀</span>
-                        <span class="cloud-word" style="left: 85%; top: 35%; font-size: 22px; color: #667eea; transform: translateZ(-60px);">时代</span>
-                        <span class="cloud-word" style="left: 55%; top: 5%; font-size: 24px; color: #764ba2; transform: translateZ(-70px);">影响力</span>
-                        <span class="cloud-word" style="left: 40%; top: 80%; font-size: 28px; color: #6a82fb; transform: translateZ(-80px);">精神</span>
-                        <span class="cloud-word" style="left: 10%; top: 25%; font-size: 30px; color: #8c7ae6; transform: translateZ(-90px);">顶峰</span>
-                        <span class="cloud-word" style="left: 70%; top: 75%; font-size: 34px; color: #4a69bd; transform: translateZ(-100px);">MVP</span>
+                        <!-- 词云示例 - 根据实际词频和重要性调整大小和颜色 -->
+                        <span class="cloud-word placeholder-text" style="left: 30%; top: 40%; font-size: 36px; color: #667eea; transform: translateZ(100px);">[无法生成]</span>
+                        <span class="cloud-word placeholder-text" style="left: 50%; top: 60%; font-size: 28px; color: #764ba2; transform: translateZ(80px);">[热词缺失]</span>
+                        <span class="cloud-word placeholder-text" style="left: 70%; top: 20%; font-size: 22px; color: #a34b8c; transform: translateZ(60px);">[无数据]</span>
+                        <span class="cloud-word placeholder-text" style="left: 10%; top: 50%; font-size: 18px; color: #2ecc71; transform: translateZ(40px);">[请提供]</span>
+                        <span class="cloud-word placeholder-text" style="left: 45%; top: 10%; font-size: 16px; color: #f1c40f; transform: translateZ(20px);">[聊天记录]</span>
+                        <!-- 建议40-60个词汇，分布在不同层次 -->
                     </div>
                 </div>
                 
                 <div class="cloud-legend">
                     <div class="legend-item">
                         <span class="legend-dot" style="background-color: #667eea;"></span>
-                        <span>核心人物相关</span>
+                        <span>[分类1：无] 相关</span>
                     </div>
                     <div class="legend-item">
                         <span class="legend-dot" style="background-color: #764ba2;"></span>
-                        <span>战队与游戏</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-dot" style="background-color: #8c7ae6;"></span>
-                        <span>成就与荣誉</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-dot" style="background-color: #4a69bd;"></span>
-                        <span>文化与影响力</span>
+                        <span>[分类2：无] 相关</span>
                     </div>
                 </div>
             </div>
@@ -455,49 +621,33 @@
         
         <!-- 4. 报告总结 -->
         <section class="summary">
-            <h2>📝 2025年8月20日总结</h2>
+            <h2>📝 2025-08-21总结</h2>
             <div class="card">
                 <h3>核心洞察</h3>
                 <ul>
-                    <li><strong>数据局限性：</strong> 本报告基于有限的群名信息和时间点生成，未能获取到实际的聊天记录进行详细分析。因此，报告中的各项数据均为推测性或空白。</li>
-                    <li><strong>群聊主题推断：</strong> 根据群名“SKT T1 Faker 五冠王FKGOD!🏆”，强烈推断该群聊的核心主题围绕电竞传奇Faker的辉煌成就、SKT T1战队及其在电竞界的影响力展开。</li>
-                    <li><strong>潜在讨论热度：</strong> 尽管缺乏数据，但可预见围绕Faker的传奇生涯、多届冠军荣耀以及其“神”一般地位的讨论，将是该群经久不衰的热点。</li>
-                    <li><strong>社区文化：</strong> 群名中对Faker的尊称暗示了群内可能存在浓厚的粉丝文化和对电竞精神的共同信仰。</li>
-                    <li><strong>报告价值：</strong> 本报告在缺乏原始数据的情况下，尽力构建了一个符合预设模板的结构，主要用以展示群聊报告生成器的潜力，而非实际反映当日群聊状况。</li>
+                    <li><strong>[洞察点1]：</strong><span class="placeholder-text">[数据缺失，无法提供深入洞察。请提供聊天记录。]</span></li>
+                    <li><strong>[洞察点2]：</strong><span class="placeholder-text">[数据缺失，无法提供深入洞察。请提供聊天记录。]</span></li>
+                    <li><strong>[洞察点3]：</strong><span class="placeholder-text">[数据缺失，无法提供深入洞察。请提供聊天记录。]</span></li>
+                    <li><strong>[洞察点4]：</strong><span class="placeholder-text">[数据缺失，无法提供深入洞察。请提供聊天记录。]</span></li>
+                    <li><strong>[洞察点5]：</strong><span class="placeholder-text">[数据缺失，无法提供深入洞察。请提供聊天记录。]</span></li>
                 </ul>
                 
                 <h3>趋势分析</h3>
-                <p>由于缺乏历史聊天记录和当日的具体数据，无法进行精确的趋势分析。然而，可以预见的是，当有重大电竞事件（如比赛、选手转会、版本更新）发生时，该群聊的活跃度会显著提升；而在非高峰期，讨论可能更多地集中在Faker的经典回顾和粉丝间的日常交流上。本报告未能捕捉到这些潜在趋势的任何具体体现。</p>
+                <p class="placeholder-text">[由于缺乏聊天记录，无法分析2025年8月21日的群聊趋势。一般而言，日报会分析当日的活跃高峰、话题转向等。]</p>
             </div>
         </section>
         
         <!-- 页脚信息 -->
         <footer>
             <div class="footer-info">
-                <span>📊 数据来源：SKT T1 Faker 五冠王FKGOD!🏆 (数据有限)</span>
-                <span>📅 统计周期：2025年8月20日</span>
-                <span id="generation-time">🕐 生成时间：</span>
+                <span>📊 数据来源：SKT T1 Faker 五冠王FKGOD!🏆</span>
+                <span>📅 统计周期：2025-08-21</span>
+                <span>🕐 生成时间：[当前时间，如 2025-08-22 08:00:00]</span>
             </div>
             <p class="disclaimer">
-                免责声明：本报告基于群聊公开讨论内容（此处为群名及日期）自动生成，因缺乏详细聊天记录，大部分数据为推测或占位符，仅供参考。如有不当内容，请联系管理员处理。
+                免责声明：本报告基于群聊公开讨论内容自动生成（但本次因数据缺失仅为模板），仅供参考。如有不当内容，请联系管理员处理。
             </p>
         </footer>
     </div>
-    <script>
-        // 内联脚本：生成报告的当前时间
-        document.addEventListener('DOMContentLoaded', function() {
-            const generateTimeSpan = document.getElementById('generation-time');
-            if (generateTimeSpan) {
-                const now = new Date();
-                const year = now.getFullYear();
-                const month = (now.getMonth() + 1).toString().padStart(2, '0');
-                const day = now.getDate().toString().padStart(2, '0');
-                const hours = now.getHours().toString().padStart(2, '0');
-                const minutes = now.getMinutes().toString().padStart(2, '0');
-                const seconds = now.getSeconds().toString().padStart(2, '0');
-                generateTimeSpan.innerHTML = `🕐 生成时间：<strong>${year}-${month}-${day} ${hours}:${minutes}:${seconds}</strong>`;
-            }
-        });
-    </script>
 </body>
 </html>
