@@ -3,550 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKT T1 Faker 五冠王FKGOD!🏆粉丝应援群日报 - 2025年10月11日</title>
-    <!-- <link rel="stylesheet" href="../assets/style.css"> -->
-    <style>
-        /* 基础样式 */
-        body {
-            font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f2f5;
-            color: #333;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-            padding: 40px;
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-        h1 { font-size: 2.5em; text-align: center; margin-bottom: 10px; }
-        h2 { font-size: 1.8em; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; margin-top: 40px; }
-        h3 { font-size: 1.4em; margin-top: 30px; }
-        p { margin-bottom: 10px; }
-
-        /* Header */
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        header .report-type {
-            font-size: 1.1em;
-            color: #764ba2;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        header .date {
-            color: #666;
-            font-size: 1.0em;
-            margin-top: -10px;
-            margin-bottom: 20px;
-        }
-        .meta-info {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        .meta-info-item {
-            display: flex;
-            align-items: center;
-            background-color: #e8f5e9;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            color: #388e3c;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-        .meta-info-item .meta-icon {
-            margin-right: 8px;
-            font-size: 1.2em;
-        }
-        .meta-info-item strong {
-            color: #2e7d32;
-        }
-
-        /* Card Grid */
-        .card-grid {
-            display: grid;
-            gap: 25px;
-            margin-top: 25px;
-        }
-        .card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-        .card {
-            background-color: #ffffff;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            border: 1px solid #f0f0f0;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Topic Card */
-        .topic-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .topic-card-header h3 {
-            margin: 0;
-            font-size: 1.2em;
-            color: #34495e;
-        }
-        .topic-heat {
-            display: flex;
-            align-items: center;
-            background-color: #ffe0b2;
-            color: #e65100;
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 0.85em;
-            font-weight: 600;
-        }
-        .badge {
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.75em;
-            font-weight: 600;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            color: #fff;
-        }
-        .badge-primary { background-color: #667eea; }
-        .badge-info { background-color: #3498db; }
-        .badge-secondary { background-color: #95a5a6; }
-        .topic-summary {
-            font-size: 0.9em;
-            color: #555;
-            margin-top: 15px;
-            margin-bottom: 15px;
-        }
-
-        /* Deep Comment */
-        .deep-comment {
-            background-color: #ecf0f1;
-            border-left: 4px solid #764ba2;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        .comment-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 8px;
-            color: #764ba2;
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-        .comment-icon {
-            margin-right: 8px;
-            font-size: 1.1em;
-        }
-        .comment-text {
-            font-style: italic;
-            color: #4a4a4a;
-            font-size: 0.95em;
-        }
-        .topic-keywords .keyword {
-            display: inline-block;
-            background-color: #f2f2f2;
-            color: #777;
-            padding: 4px 8px;
-            border-radius: 8px;
-            font-size: 0.7em;
-            margin-right: 6px;
-            margin-bottom: 6px;
-        }
-        .topic-stats {
-            margin-top: 15px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        /* Analytics */
-        .analytics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        .stat-card {
-            background-color: #e3f2fd;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-        .stat-label {
-            font-size: 0.9em;
-            color: #555;
-            margin-bottom: 8px;
-        }
-        .stat-number {
-            font-size: 2.2em;
-            font-weight: 700;
-            color: #2196f3;
-        }
-
-        /* Heat Distribution */
-        .heat-distribution {
-            margin-bottom: 40px;
-        }
-        .heat-item {
-            margin-bottom: 15px;
-        }
-        .heat-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 5px;
-        }
-        .heat-topic {
-            font-weight: 600;
-            color: #444;
-            font-size: 0.95em;
-        }
-        .heat-percentage {
-            font-weight: 700;
-            color: #667eea;
-            font-size: 0.95em;
-        }
-        .heat-bar {
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            height: 12px;
-            overflow: hidden;
-            margin-bottom: 5px;
-        }
-        .heat-fill {
-            height: 100%;
-            border-radius: 5px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            transition: width 0.5s ease-out;
-        }
-        .heat-stats {
-            font-size: 0.8em;
-            color: #777;
-        }
-
-        /* Participants Ranking */
-        .participants-ranking {
-            margin-bottom: 40px;
-        }
-        .participant-card {
-            display: flex;
-            align-items: center;
-            background-color: #fafafa;
-            border: 1px solid #eee;
-            border-radius: 10px;
-            padding: 15px 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-        }
-        .participant-rank {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: #764ba2;
-            width: 40px;
-            text-align: center;
-            margin-right: 15px;
-        }
-        .participant-rank.rank-1 { color: #ffd700; } /* Gold */
-        .participant-rank.rank-2 { color: #c0c0c0; } /* Silver */
-        .participant-rank.rank-3 { color: #cd7f32; } /* Bronze */
-        .participant-info {
-            flex-grow: 1;
-        }
-        .participant-name {
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #34495e;
-            margin-bottom: 5px;
-        }
-        .participant-stats span {
-            font-size: 0.85em;
-            color: #666;
-            margin-right: 15px;
-        }
-        .participant-traits {
-            margin-top: 10px;
-        }
-        .participant-traits .badge {
-            background-color: #e0f2f7;
-            color: #00796b;
-        }
-
-        /* Time Activity */
-        .time-activity {
-            margin-bottom: 40px;
-            overflow-x: auto;
-            padding-bottom: 10px;
-        }
-        .time-chart {
-            display: flex;
-            align-items: flex-end;
-            gap: 5px;
-            min-width: 800px; /* Ensure chart is wide enough */
-            height: 150px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 10px;
-        }
-        .time-slot {
-            flex: 1;
-            min-width: 30px;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));
-            border-radius: 4px 4px 0 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            align-items: center;
-            position: relative;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
-        }
-        .time-hour {
-            position: absolute;
-            bottom: -25px;
-            font-size: 0.7em;
-            color: #777;
-        }
-        .time-count {
-            position: absolute;
-            top: -18px;
-            font-size: 0.7em;
-            font-weight: 600;
-            color: #555;
-        }
-
-        /* Night Owl Card */
-        .night-owl-card {
-            background: linear-gradient(135deg, #2c3e50, #4a6980);
-            color: #f0f2f5;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-        .owl-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .owl-crown {
-            font-size: 3em;
-            margin-bottom: 10px;
-            color: #ffd700;
-        }
-        .owl-info h4 {
-            margin: 0;
-            font-size: 1.6em;
-            color: #fff;
-        }
-        .owl-title {
-            font-size: 0.9em;
-            color: #bbb;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-        .owl-stats span {
-            font-size: 0.85em;
-            margin: 0 10px;
-            color: #ccc;
-        }
-        .owl-quote {
-            margin-top: 20px;
-            font-size: 1em;
-            font-style: italic;
-            border-top: 1px dashed #666;
-            padding-top: 15px;
-            color: #f0f0f5;
-        }
-
-        /* Word Cloud */
-        .word-cloud {
-            margin-top: 50px;
-        }
-        .cloud-container {
-            position: relative;
-            height: 350px;
-            perspective: 1000px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            background-color: #fcfcfc;
-            border-radius: 10px;
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
-        }
-        .cloud-3d {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-            animation: rotateCloud 60s linear infinite;
-        }
-        @keyframes rotateCloud {
-            from { transform: rotateY(0deg) rotateX(0deg); }
-            to { transform: rotateY(360deg) rotateX(360deg); }
-        }
-        .cloud-layer {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transform-style: preserve-3d;
-        }
-        .cloud-word {
-            position: absolute;
-            font-weight: bold;
-            white-space: nowrap;
-            padding: 5px 8px;
-            border-radius: 5px;
-            opacity: 0.9;
-            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-            cursor: pointer;
-        }
-        .cloud-word:hover {
-            opacity: 1;
-            transform: scale(1.1) translateZ(150px) !important;
-        }
-
-        .cloud-legend {
-            margin-top: 20px;
-            text-align: center;
-        }
-        .legend-item {
-            display: inline-flex;
-            align-items: center;
-            margin: 0 15px;
-            font-size: 0.9em;
-            color: #555;
-        }
-        .legend-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 8px;
-        }
-
-        /* Summary */
-        .summary ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .summary ul li {
-            margin-bottom: 10px;
-            font-size: 1em;
-            color: #444;
-        }
-        .summary ul li strong {
-            color: #333;
-        }
-        .summary p {
-            background-color: #f8f8f8;
-            border-left: 3px solid #667eea;
-            padding: 15px;
-            border-radius: 5px;
-            font-size: 0.95em;
-            color: #555;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
-            color: #777;
-            font-size: 0.85em;
-        }
-        .footer-info span {
-            margin: 0 10px;
-        }
-        .disclaimer {
-            margin-top: 15px;
-            font-style: italic;
-            color: #999;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .container {
-                margin: 20px;
-                padding: 25px;
-            }
-            .card-grid-2 {
-                grid-template-columns: 1fr;
-            }
-            h1 { font-size: 2em; }
-            h2 { font-size: 1.5em; }
-            .meta-info {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .time-chart {
-                min-width: unset;
-                width: 100%;
-            }
-            .cloud-3d {
-                animation: none; /* Disable 3D rotation on smaller screens */
-            }
-        }
-    </style>
+    <title>SKT T1 Faker 五冠王FKGOD!🏆日报 - 2025-10-12</title>
+    <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
     <div class="container">
-        <!-- 头部信息 -->
+        <!-- 头部信息 - 根据报告类型动态调整 -->
         <header>
             <div class="report-type">日报</div>
-            <h1>SKT T1 Faker 五冠王FKGOD!🏆粉丝应援群聊日报</h1>
-            <p class="date">2025年10月11日</p>
+            <h1>SKT T1 Faker 五冠王FKGOD!🏆群聊日报</h1>
+            <p class="date">2025年10月12日</p>
             <div class="meta-info">
                 <div class="meta-info-item">
                     <span class="meta-icon">💬</span>
-                    <span>总消息数：<strong>723</strong></span>
+                    <span>总消息数：<strong>0</strong></span>
                 </div>
                 <div class="meta-info-item">
                     <span class="meta-icon">👥</span>
-                    <span>活跃用户：<strong>48</strong></span>
+                    <span>活跃用户：<strong>0</strong></span>
                 </div>
                 <div class="meta-info-item">
                     <span class="meta-icon">⏱️</span>
-                    <span>统计周期：<strong>2025年10月11日</strong></span>
+                    <span>统计周期：<strong>2025年10月12日</strong></span>
                 </div>
             </div>
         </header>
 
         <!-- 1. 讨论热点 -->
         <section class="hot-topics">
-            <h2>📊 2025年10月11日讨论热点</h2>
+            <h2>📊 2025年10月12日讨论热点</h2>
             <div class="card-grid card-grid-2">
+                <!-- 话题卡片模板 - 根据报告类型重复相应数量 -->
                 <div class="card topic-card">
                     <div class="topic-card-header">
-                        <h3>Faker五冠王荣誉回顾</h3>
+                        <h3>寂静岭传说：今日无声</h3>
                         <div class="topic-heat">
-                            🔥 <span>150</span>
+                            🔥 <span>0</span>
                         </div>
                     </div>
-                    <span class="badge badge-primary">传奇回顾</span>
-                    <p class="topic-summary">群友热烈讨论Faker职业生涯中的五次世界赛冠军成就，回顾其辉煌时刻，感叹其电竞统治力。</p>
+                    <span class="badge badge-primary">系统提示</span>
+                    <p class="topic-summary">很抱歉，根据提供的聊天记录，未检测到2025年10月12日的任何群聊消息。本报告无法生成具体的讨论热点、热门话题或互动内容，所有统计数据均为空白。或许，这是一个属于深思的，静谧的一天。</p>
                     
                     <div class="deep-comment">
                         <div class="comment-header">
@@ -554,317 +50,20 @@
                             <span class="comment-label">评论</span>
                         </div>
                         <div class="comment-content">
-                            <p class="comment-text">冠军奖杯并非仅承载荣光，它们更是岁月留下的磨损与新秀们眼中的无形压力。</p>
+                            <p class="comment-text">“群聊若无言，便胜却人间无数。毕竟，沉默有时比喧嚣更能掩盖一无所有。”</p>
                         </div>
                     </div>
                     
                     <div class="topic-keywords">
-                        <span class="keyword">#Faker</span>
-                        <span class="keyword">#冠军</span>
-                        <span class="keyword">#S赛</span>
-                        <span class="keyword">#荣誉</span>
+                        <span class="keyword">#空白</span>
+                        <span class="keyword">#寂静</span>
+                        <span class="keyword">#无数据</span>
+                        <span class="keyword">#等待</span>
                     </div>
                     <div class="topic-stats">
-                        <span class="badge badge-info">💬 150条讨论</span>
-                        <span class="badge badge-info">👥 35人参与</span>
-                        <span class="badge badge-info">🕐 180分钟</span>
-                    </div>
-                </div>
-
-                <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>T1战队未来展望</h3>
-                        <div class="topic-heat">
-                            🔥 <span>120</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">团队分析</span>
-                    <p class="topic-summary">围绕T1战队在未来赛事中的表现展开讨论，分析当前阵容优势与潜在挑战，对新赛季抱有期待。</p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">一支曾经的王者之师，如今的每次出场都像是背负着历史的沉重包袱，观众期待的不是胜利，是奇迹的复刻。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#T1</span>
-                        <span class="keyword">#战队</span>
-                        <span class="keyword">#未来</span>
-                        <span class="keyword">#S赛</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 120条讨论</span>
-                        <span class="badge badge-info">👥 28人参与</span>
-                        <span class="badge badge-info">🕐 150分钟</span>
-                    </div>
-                </div>
-                
-                <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>"FKGOD"称号的由来与意义</h3>
-                        <div class="topic-heat">
-                            🔥 <span>80</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">粉丝文化</span>
-                    <p class="topic-summary">探讨Faker“FKGOD”这一称号的起源，以及它在粉丝心目中的特殊地位和文化象征意义。</p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">当神话被凡人反复传颂，它便不再是神话本身，而成了我们投射期望的镜子，映照着自己的英雄梦。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#FKGOD</span>
-                        <span class="keyword">#称号</span>
-                        <span class="keyword">#粉丝</span>
-                        <span class="keyword">#象征</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 80条讨论</span>
-                        <span class="badge badge-info">👥 22人参与</span>
-                        <span class="badge badge-info">🕐 90分钟</span>
-                    </div>
-                </div>
-
-                <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>Esports产业发展趋势</h3>
-                        <div class="topic-heat">
-                            🔥 <span>70</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">行业观察</span>
-                    <p class="topic-summary">群友们对电竞产业的整体发展趋势发表看法，包括商业化、生态建设和国际影响力等方面。</p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">每个人都在争抢这块巨大的蛋糕，却忘了蛋糕最终会引来一群只看热闹的苍蝇，而非真正的食客。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#电竞</span>
-                        <span class="keyword">#产业</span>
-                        <span class="keyword">#发展</span>
-                        <span class="keyword">#商业化</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 70条讨论</span>
-                        <span class="badge badge-info">👥 18人参与</span>
-                        <span class="badge badge-info">🕐 60分钟</span>
-                    </div>
-                </div>
-
-                <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>Faker影响力与个人品牌</h3>
-                        <div class="topic-heat">
-                            🔥 <span>60</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">选手价值</span>
-                    <p class="topic-summary">分析Faker作为电竞选手的巨大影响力，以及他如何构建和维护自己的个人品牌价值，超越游戏本身。</p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">在一个流量至上的时代，他的存在仿佛在提醒我们，有些东西比瞬时的喧嚣更值得被记住，比如纯粹和坚持。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#Faker</span>
-                        <span class="keyword">#影响力</span>
-                        <span class="keyword">#品牌</span>
-                        <span class="keyword">#偶像</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 60条讨论</span>
-                        <span class="badge badge-info">👥 15人参与</span>
-                        <span class="badge badge-info">🕐 75分钟</span>
-                    </div>
-                </div>
-                
-                <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>如何看待老将坚持职业生涯</h3>
-                        <div class="topic-heat">
-                            🔥 <span>55</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">职业生涯</span>
-                    <p class="topic-summary">结合Faker的例子，讨论电竞领域老将选手坚持职业生涯的意义、挑战与价值，引发对职业寿命的思考。</p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">在汹涌的后浪中，老兵们还在努力划桨，与其说是热爱，不如说是对过往辉煌的最后一丝留恋，或是对年轻人无声的教诲。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#老将</span>
-                        <span class="keyword">#坚持</span>
-                        <span class="keyword">#职业</span>
-                        <span class="keyword">#寿命</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 55条讨论</span>
-                        <span class="badge badge-info">👥 13人参与</span>
-                        <span class="badge badge-info">🕐 50分钟</span>
-                    </div>
-                </div>
-
-                <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>英雄联盟S赛预测与讨论</h3>
-                        <div class="topic-heat">
-                            🔥 <span>50</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">赛事前瞻</span>
-                    <p class="topic-summary">群友们对即将到来的英雄联盟全球总决赛进行预测，讨论各赛区强队及潜在黑马，充满期待。</p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">预测未来就像在雾里看花，你以为看到了花，其实只是看到了自己的想象力，而真正的结局往往在意料之外。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#S赛</span>
-                        <span class="keyword">#预测</span>
-                        <span class="keyword">#英雄联盟</span>
-                        <span class="keyword">#比赛</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 50条讨论</span>
-                        <span class="badge badge-info">👥 20人参与</span>
-                        <span class="badge badge-info">🕐 100分钟</span>
-                    </div>
-                </div>
-
-                <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>游戏与现实生活的平衡</h3>
-                        <div class="topic-heat">
-                            🔥 <span>45</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">生活讨论</span>
-                    <p class="topic-summary">讨论电竞玩家如何在沉浸游戏的同时，保持与现实生活的健康平衡，避免过度沉迷。</p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">我们都是数字世界的囚徒，试图在虚拟的方寸间寻找现实的意义，最终发现，最贵的门票是离开屏幕的勇气。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#游戏</span>
-                        <span class="keyword">#生活</span>
-                        <span class="keyword">#平衡</span>
-                        <span class="keyword">#健康</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 45条讨论</span>
-                        <span class="badge badge-info">👥 10人参与</span>
-                        <span class="badge badge-info">🕐 40分钟</span>
-                    </div>
-                </div>
-
-                <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>粉丝文化与应援方式</h3>
-                        <div class="topic-heat">
-                            🔥 <span>45</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">粉丝互动</span>
-                    <p class="topic-summary">探讨不同类型的粉丝文化，以及各种新颖的应援方式，如何更好地支持自己喜爱的选手和战队。</p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">粉丝的热情就像一场盛大的表演，每个人都在用自己的方式为舞台添砖加瓦，但最终，掌声是给台上的人的，不是舞台本身。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#粉丝</span>
-                        <span class="keyword">#应援</span>
-                        <span class="keyword">#文化</span>
-                        <span class="keyword">#互动</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 45条讨论</span>
-                        <span class="badge badge-info">👥 11人参与</span>
-                        <span class="badge badge-info">🕐 45分钟</span>
-                    </div>
-                </div>
-
-                <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>电竞选手的退役生活</h3>
-                        <div class="topic-heat">
-                            🔥 <span>48</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">职业规划</span>
-                    <p class="topic-summary">讨论电竞选手退役后的职业发展和生活状况，思考他们如何从高强度竞争中转型，寻找新的道路。</p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">从万人瞩目的舞台走向平凡，就像潮水退去后的海滩，留下了无数贝壳，而每颗贝壳都曾是汹涌波涛的一部分。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#退役</span>
-                        <span class="keyword">#转型</span>
-                        <span class="keyword">#职业生涯</span>
-                        <span class="keyword">#发展</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 48条讨论</span>
-                        <span class="badge badge-info">👥 14人参与</span>
-                        <span class="badge badge-info">🕐 55分钟</span>
+                        <span class="badge badge-info">💬 0条讨论</span>
+                        <span class="badge badge-info">👥 0人参与</span>
+                        <span class="badge badge-info">🕐 0分钟</span>
                     </div>
                 </div>
             </div>
@@ -878,15 +77,15 @@
             <div class="analytics-grid">
                 <div class="stat-card">
                     <div class="stat-label">总消息数</div>
-                    <div class="stat-number">723</div>
+                    <div class="stat-number">0</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">活跃用户</div>
-                    <div class="stat-number">48</div>
+                    <div class="stat-number">0</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">平均响应时间(分钟)</div>
-                    <div class="stat-number">7.5</div>
+                    <div class="stat-number">无数据</div>
                 </div>
             </div>
             
@@ -895,122 +94,14 @@
             <div class="heat-distribution">
                 <div class="heat-item">
                     <div class="heat-header">
-                        <span class="heat-topic">Faker五冠王荣誉回顾</span>
-                        <span class="heat-percentage">20.75%</span>
+                        <span class="heat-topic">（无话题）</span>
+                        <span class="heat-percentage">0%</span>
                     </div>
                     <div class="heat-bar">
-                        <div class="heat-fill" style="width: 20.75%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                        <div class="heat-fill" style="width: 0%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
                     </div>
                     <div class="heat-stats">
-                        <span>150条消息</span> · <span>35人参与</span>
-                    </div>
-                </div>
-                <div class="heat-item">
-                    <div class="heat-header">
-                        <span class="heat-topic">T1战队未来展望</span>
-                        <span class="heat-percentage">16.60%</span>
-                    </div>
-                    <div class="heat-bar">
-                        <div class="heat-fill" style="width: 16.60%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
-                    </div>
-                    <div class="heat-stats">
-                        <span>120条消息</span> · <span>28人参与</span>
-                    </div>
-                </div>
-                <div class="heat-item">
-                    <div class="heat-header">
-                        <span class="heat-topic">"FKGOD"称号的由来与意义</span>
-                        <span class="heat-percentage">11.06%</span>
-                    </div>
-                    <div class="heat-bar">
-                        <div class="heat-fill" style="width: 11.06%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
-                    </div>
-                    <div class="heat-stats">
-                        <span>80条消息</span> · <span>22人参与</span>
-                    </div>
-                </div>
-                <div class="heat-item">
-                    <div class="heat-header">
-                        <span class="heat-topic">Esports产业发展趋势</span>
-                        <span class="heat-percentage">9.68%</span>
-                    </div>
-                    <div class="heat-bar">
-                        <div class="heat-fill" style="width: 9.68%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
-                    </div>
-                    <div class="heat-stats">
-                        <span>70条消息</span> · <span>18人参与</span>
-                    </div>
-                </div>
-                <div class="heat-item">
-                    <div class="heat-header">
-                        <span class="heat-topic">Faker影响力与个人品牌</span>
-                        <span class="heat-percentage">8.30%</span>
-                    </div>
-                    <div class="heat-bar">
-                        <div class="heat-fill" style="width: 8.30%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
-                    </div>
-                    <div class="heat-stats">
-                        <span>60条消息</span> · <span>15人参与</span>
-                    </div>
-                </div>
-                <div class="heat-item">
-                    <div class="heat-header">
-                        <span class="heat-topic">如何看待老将坚持职业生涯</span>
-                        <span class="heat-percentage">7.61%</span>
-                    </div>
-                    <div class="heat-bar">
-                        <div class="heat-fill" style="width: 7.61%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
-                    </div>
-                    <div class="heat-stats">
-                        <span>55条消息</span> · <span>13人参与</span>
-                    </div>
-                </div>
-                <div class="heat-item">
-                    <div class="heat-header">
-                        <span class="heat-topic">英雄联盟S赛预测与讨论</span>
-                        <span class="heat-percentage">6.92%</span>
-                    </div>
-                    <div class="heat-bar">
-                        <div class="heat-fill" style="width: 6.92%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
-                    </div>
-                    <div class="heat-stats">
-                        <span>50条消息</span> · <span>20人参与</span>
-                    </div>
-                </div>
-                <div class="heat-item">
-                    <div class="heat-header">
-                        <span class="heat-topic">电竞选手的退役生活</span>
-                        <span class="heat-percentage">6.64%</span>
-                    </div>
-                    <div class="heat-bar">
-                        <div class="heat-fill" style="width: 6.64%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
-                    </div>
-                    <div class="heat-stats">
-                        <span>48条消息</span> · <span>14人参与</span>
-                    </div>
-                </div>
-                <div class="heat-item">
-                    <div class="heat-header">
-                        <span class="heat-topic">游戏与现实生活的平衡</span>
-                        <span class="heat-percentage">6.22%</span>
-                    </div>
-                    <div class="heat-bar">
-                        <div class="heat-fill" style="width: 6.22%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
-                    </div>
-                    <div class="heat-stats">
-                        <span>45条消息</span> · <span>10人参与</span>
-                    </div>
-                </div>
-                <div class="heat-item">
-                    <div class="heat-header">
-                        <span class="heat-topic">粉丝文化与应援方式</span>
-                        <span class="heat-percentage">6.22%</span>
-                    </div>
-                    <div class="heat-bar">
-                        <div class="heat-fill" style="width: 6.22%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
-                    </div>
-                    <div class="heat-stats">
-                        <span>45条消息</span> · <span>11人参与</span>
+                        <span>0条消息</span> · <span>0人参与</span>
                     </div>
                 </div>
             </div>
@@ -1019,53 +110,19 @@
             <h3>🏆 活跃度排行榜</h3>
             <div class="participants-ranking">
                 <div class="participant-card">
-                    <div class="participant-rank rank-1">1</div>
+                    <div class="participant-rank rank-placeholder">?</div>
                     <div class="participant-info">
-                        <div class="participant-name">Faker超粉LGD</div>
+                        <div class="participant-name">（无活跃用户）</div>
                         <div class="participant-stats">
-                            <span>💬 112条</span>
-                            <span>⏱️ 平均3分钟</span>
-                            <span>🎯 参与8个话题</span>
+                            <span>💬 0条</span>
+                            <span>⏱️ 平均无数据分钟</span>
+                            <span>🎯 参与0个话题</span>
                         </div>
                         <div class="participant-traits">
-                            <span class="badge badge-secondary">深度分析</span>
-                            <span class="badge badge-secondary">数据控</span>
-                            <span class="badge badge-secondary">活跃分子</span>
-                            <span class="badge badge-secondary">Faker信仰者</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="participant-card">
-                    <div class="participant-rank rank-2">2</div>
-                    <div class="participant-info">
-                        <div class="participant-name">电竞看客小明</div>
-                        <div class="participant-stats">
-                            <span>💬 85条</span>
-                            <span>⏱️ 平均6分钟</span>
-                            <span>🎯 参与7个话题</span>
-                        </div>
-                        <div class="participant-traits">
-                            <span class="badge badge-secondary">节奏大师</span>
-                            <span class="badge badge-secondary">毒舌评论</span>
-                            <span class="badge badge-secondary">见解独到</span>
-                            <span class="badge badge-secondary">幽默风趣</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="participant-card">
-                    <div class="participant-rank rank-3">3</div>
-                    <div class="participant-info">
-                        <div class="participant-name">T1应援团长</div>
-                        <div class="participant-stats">
-                            <span>💬 70条</span>
-                            <span>⏱️ 平均5分钟</span>
-                            <span>🎯 参与6个话题</span>
-                        </div>
-                        <div class="participant-traits">
-                            <span class="badge badge-secondary">热情支持</span>
-                            <span class="badge badge-secondary">组织者</span>
-                            <span class="badge badge-secondary">积极互动</span>
-                            <span class="badge badge-secondary">团队粉</span>
+                            <span class="badge badge-secondary">#沉默是金</span>
+                            <span class="badge badge-secondary">#潜水大师</span>
+                            <span class="badge badge-secondary">#等待</span>
+                            <span class="badge badge-secondary">#未知</span>
                         </div>
                     </div>
                 </div>
@@ -1075,101 +132,101 @@
             <h3>⏰ 时段活跃度分析</h3>
             <div class="time-activity">
                 <div class="time-chart">
-                    <div class="time-slot" style="height: calc((12 / 72) * 100%);">
-                        <div class="time-count">12</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">00</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((8 / 72) * 100%);">
-                        <div class="time-count">8</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">01</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((4 / 72) * 100%);">
-                        <div class="time-count">4</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">02</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((2 / 72) * 100%);">
-                        <div class="time-count">2</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">03</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((1 / 72) * 100%);">
-                        <div class="time-count">1</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">04</div>
-                    </div>
-                    <div class="time-slot" style="height: calc((0 / 72) * 100%);">
                         <div class="time-count">0</div>
+                    </div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">05</div>
-                    </div>
-                    <div class="time-slot" style="height: calc((0 / 72) * 100%);">
                         <div class="time-count">0</div>
+                    </div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">06</div>
-                    </div>
-                    <div class="time-slot" style="height: calc((0 / 72) * 100%);">
                         <div class="time-count">0</div>
+                    </div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">07</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((4 / 72) * 100%);">
-                        <div class="time-count">4</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">08</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((8 / 72) * 100%);">
-                        <div class="time-count">8</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">09</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((16 / 72) * 100%);">
-                        <div class="time-count">16</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">10</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((24 / 72) * 100%);">
-                        <div class="time-count">24</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">11</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((32 / 72) * 100%);">
-                        <div class="time-count">32</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">12</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((28 / 72) * 100%);">
-                        <div class="time-count">28</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">13</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((24 / 72) * 100%);">
-                        <div class="time-count">24</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">14</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((36 / 72) * 100%);">
-                        <div class="time-count">36</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">15</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((40 / 72) * 100%);">
-                        <div class="time-count">40</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">16</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((48 / 72) * 100%);">
-                        <div class="time-count">48</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">17</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((56 / 72) * 100%);">
-                        <div class="time-count">56</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">18</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((64 / 72) * 100%);">
-                        <div class="time-count">64</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">19</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((72 / 72) * 100%);">
-                        <div class="time-count">72</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">20</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((68 / 72) * 100%);">
-                        <div class="time-count">68</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">21</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((48 / 72) * 100%);">
-                        <div class="time-count">48</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">22</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="height: calc((24 / 72) * 100%);">
-                        <div class="time-count">24</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.1));">
                         <div class="time-hour">23</div>
+                        <div class="time-count">0</div>
                     </div>
                 </div>
             </div>
@@ -1178,15 +235,15 @@
             <h3>🌙 熬夜冠军</h3>
             <div class="night-owl-card card">
                 <div class="owl-content">
-                    <div class="owl-crown">👑</div>
+                    <div class="owl-crown">❓</div>
                     <div class="owl-info">
-                        <h4>熬夜冠军小李</h4>
-                        <p class="owl-title">"午夜守护者"</p>
+                        <h4>（无人熬夜）</h4>
+                        <p class="owl-title">"静谧的夜晚守护者"</p>
                         <div class="owl-stats">
-                            <span>🕐 最晚活跃：02:47:33</span>
-                            <span>🌙 深夜消息：12条</span>
+                            <span>🕐 最晚活跃：无数据</span>
+                            <span>🌙 深夜消息：0条</span>
                         </div>
-                        <p class="owl-quote">"Faker的职业生涯就像一部史诗，永远值得反复品味，熬夜也值！"</p>
+                        <p class="owl-quote">"今日无声，唯月光为伴。"</p>
                     </div>
                 </div>
             </div>
@@ -1198,79 +255,20 @@
             <div class="cloud-container">
                 <div class="cloud-3d">
                     <div class="cloud-layer">
-                        <span class="cloud-word" style="left: 40%; top: 20%; font-size: 36px; color: #667eea; transform: translateZ(100px) rotateY(10deg);">Faker</span>
-                        <span class="cloud-word" style="left: 60%; top: 30%; font-size: 28px; color: #764ba2; transform: translateZ(80px) rotateY(-20deg);">T1</span>
-                        <span class="cloud-word" style="left: 20%; top: 50%; font-size: 32px; color: #3498db; transform: translateZ(90px) rotateX(15deg);">冠军</span>
-                        <span class="cloud-word" style="left: 75%; top: 60%; font-size: 25px; color: #2ecc71; transform: translateZ(70px) rotateX(-5deg);">英雄联盟</span>
-                        <span class="cloud-word" style="left: 15%; top: 35%; font-size: 22px; color: #e67e22; transform: translateZ(60px) rotateY(25deg);">电竞</span>
-                        <span class="cloud-word" style="left: 80%; top: 15%; font-size: 30px; color: #9b59b6; transform: translateZ(95px) rotateY(-10deg);">传奇</span>
-                        <span class="cloud-word" style="left: 5%; top: 65%; font-size: 20px; color: #c0392b; transform: translateZ(50px) rotateX(20deg);">S赛</span>
-                        <span class="cloud-word" style="left: 50%; top: 70%; font-size: 27px; color: #f1c40f; transform: translateZ(85px) rotateX(-15deg);">五冠王</span>
-                        <span class="cloud-word" style="left: 30%; top: 5%; font-size: 24px; color: #34495e; transform: translateZ(65px) rotateY(30deg);">FKGOD</span>
-                        <span class="cloud-word" style="left: 70%; top: 40%; font-size: 18px; color: #1abc9c; transform: translateZ(40px) rotateX(10deg);">粉丝</span>
-                        <span class="cloud-word" style="left: 45%; top: 80%; font-size: 26px; color: #e74c3c; transform: translateZ(75px) rotateY(-5deg);">荣誉</span>
-                        <span class="cloud-word" style="left: 10%; top: 10%; font-size: 23px; color: #d35400; transform: translateZ(55px) rotateX(25deg);">未来</span>
-                        <span class="cloud-word" style="left: 90%; top: 50%; font-size: 19px; color: #3498db; transform: translateZ(45px) rotateY(15deg);">坚持</span>
-                        <span class="cloud-word" style="left: 25%; top: 75%; font-size: 21px; color: #8e44ad; transform: translateZ(58px) rotateX(-10deg);">梦想</span>
-                        <span class="cloud-word" style="left: 55%; top: 10%; font-size: 17px; color: #27ae60; transform: translateZ(35px) rotateY(-25deg);">职业</span>
-                        <span class="cloud-word" style="left: 5%; top: 25%; font-size: 20px; color: #f39c12; transform: translateZ(52px) rotateX(30deg);">选手</span>
-                        <span class="cloud-word" style="left: 85%; top: 80%; font-size: 16px; color: #95a5a6; transform: translateZ(30px) rotateY(5deg);">团队</span>
-                        <span class="cloud-word" style="left: 35%; top: 90%; font-size: 29px; color: #16a085; transform: translateZ(88px) rotateX(-20deg);">实力</span>
-                        <span class="cloud-word" style="left: 65%; top: 5%; font-size: 18px; color: #2980b9; transform: translateZ(42px) rotateY(-15deg);">辉煌</span>
-                        <span class="cloud-word" style="left: 10%; top: 90%; font-size: 22px; color: #e74c3c; transform: translateZ(62px) rotateX(8deg);">期待</span>
-                        <span class="cloud-word" style="left: 40%; top: 45%; font-size: 15px; color: #bdc3c7; transform: translateZ(25px) rotateY(20deg);">回顾</span>
-                        <span class="cloud-word" style="left: 60%; top: 90%; font-size: 23px; color: #f39c12; transform: translateZ(68px) rotateX(-8deg);">讨论</span>
-                        <span class="cloud-word" style="left: 20%; top: 15%; font-size: 19px; color: #7f8c8d; transform: translateZ(48px) rotateY(10deg);">游戏</span>
-                        <span class="cloud-word" style="left: 70%; top: 25%; font-size: 17px; color: #c0392b; transform: translateZ(38px) rotateX(12deg);">生活</span>
-                        <span class="cloud-word" style="left: 30%; top: 60%; font-size: 26px; color: #2c3e50; transform: translateZ(78px) rotateY(-20deg);">平衡</span>
-                        <span class="cloud-word" style="left: 80%; top: 70%; font-size: 16px; color: #3498db; transform: translateZ(32px) rotateX(-7deg);">影响力</span>
-                        <span class="cloud-word" style="left: 15%; top: 85%; font-size: 20px; color: #2ecc71; transform: translateZ(53px) rotateY(22deg);">品牌</span>
-                        <span class="cloud-word" style="left: 50%; top: 55%; font-size: 21px; color: #e67e22; transform: translateZ(59px) rotateX(-13deg);">价值</span>
-                        <span class="cloud-word" style="left: 5%; top: 40%; font-size: 18px; color: #9b59b6; transform: translateZ(43px) rotateY(28deg);">时代</span>
-                        <span class="cloud-word" style="left: 90%; top: 20%; font-size: 25px; color: #1abc9c; transform: translateZ(72px) rotateX(5deg);">挑战</span>
-                        <span class="cloud-word" style="left: 25%; top: 25%; font-size: 17px; color: #f1c40f; transform: translateZ(37px) rotateY(18deg);">机遇</span>
-                        <span class="cloud-word" style="left: 75%; top: 90%; font-size: 20px; color: #34495e; transform: translateZ(51px) rotateX(-25deg);">文化</span>
-                        <span class="cloud-word" style="left: 35%; top: 70%; font-size: 22px; color: #d35400; transform: translateZ(67px) rotateY(13deg);">应援</span>
-                        <span class="cloud-word" style="left: 65%; top: 75%; font-size: 16px; color: #bdc3c7; transform: translateZ(31px) rotateX(28deg);">社区</span>
-                        <span class="cloud-word" style="left: 10%; top: 55%; font-size: 28px; color: #e74c3c; transform: translateZ(83px) rotateY(-8deg);">热爱</span>
-                        <span class="cloud-word" style="left: 45%; top: 35%; font-size: 19px; color: #8e44ad; transform: translateZ(47px) rotateX(-18deg);">激情</span>
-                        <span class="cloud-word" style="left: 80%; top: 30%; font-size: 24px; color: #27ae60; transform: translateZ(69px) rotateY(7deg);">世界赛</span>
-                        <span class="cloud-word" style="left: 20%; top: 80%; font-size: 17px; color: #f39c12; transform: translateZ(39px) rotateX(23deg);">王朝</span>
-                        <span class="cloud-word" style="left: 70%; top: 10%; font-size: 26px; color: #16a085; transform: translateZ(77px) rotateY(-12deg);">天赋</span>
-                        <span class="cloud-word" style="left: 55%; top: 85%; font-size: 18px; color: #2980b9; transform: translateZ(41px) rotateX(17deg);">勤奋</span>
-                        <span class="cloud-word" style="left: 5%; top: 5%; font-size: 30px; color: #667eea; transform: translateZ(92px) rotateY(20deg);">精神</span>
-                        <span class="cloud-word" style="left: 90%; top: 65%; font-size: 21px; color: #764ba2; transform: translateZ(56px) rotateX(-10deg);">历史</span>
-                        <span class="cloud-word" style="left: 15%; top: 5%; font-size: 16px; color: #3498db; transform: translateZ(33px) rotateY(30deg);">传承</span>
-                        <span class="cloud-word" style="left: 40%; top: 60%; font-size: 23px; color: #2ecc71; transform: translateZ(64px) rotateX(-5deg);">突破</span>
-                        <span class="cloud-word" style="left: 60%; top: 40%; font-size: 27px; color: #e67e22; transform: translateZ(81px) rotateY(-15deg);">巅峰</span>
-                        <span class="cloud-word" style="left: 25%; top: 40%; font-size: 17px; color: #9b59b6; transform: translateZ(36px) rotateX(10deg);">低谷</span>
-                        <span class="cloud-word" style="left: 75%; top: 5%; font-size: 20px; color: #1abc9c; transform: translateZ(49px) rotateY(25deg);">蜕变</span>
-                        <span class="cloud-word" style="left: 30%; top: 85%; font-size: 28px; color: #f1c40f; transform: translateZ(86px) rotateX(-20deg);">信仰</span>
-                        <span class="cloud-word" style="left: 85%; top: 10%; font-size: 19px; color: #34495e; transform: translateZ(46px) rotateY(5deg);">青春</span>
-                        <span class="cloud-word" style="left: 50%; top: 25%; font-size: 22px; color: #d35400; transform: translateZ(61px) rotateX(15deg);">记忆</span>
+                        <span class="cloud-word" style="left: 45%; top: 45%; font-size: 30px; color: #9B59B6; transform: translateZ(50px);">#静默</span>
+                        <span class="cloud-word" style="left: 30%; top: 60%; font-size: 20px; color: #3498DB; transform: translateZ(30px);">#无语</span>
+                        <span class="cloud-word" style="left: 60%; top: 30%; font-size: 25px; color: #E74C3C; transform: translateZ(40px);">#等待</span>
+                        <span class="cloud-word" style="left: 50%; top: 70%; font-size: 18px; color: #2ECC71; transform: translateZ(20px);">#空白</span>
+                        <span class="cloud-word" style="left: 20%; top: 40%; font-size: 22px; color: #F39C12; transform: translateZ(35px);">#无数据</span>
+                        <span class="cloud-word" style="left: 70%; top: 55%; font-size: 15px; color: #1ABC9C; transform: translateZ(15px);">#思考</span>
+                        <!-- 建议40-60个词汇，分布在不同层次 -->
                     </div>
                 </div>
                 
                 <div class="cloud-legend">
                     <div class="legend-item">
                         <span class="legend-dot" style="background-color: #667eea;"></span>
-                        <span>Faker/T1</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-dot" style="background-color: #3498db;"></span>
-                        <span>赛事/荣誉</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-dot" style="background-color: #2ecc71;"></span>
-                        <span>电竞产业</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-dot" style="background-color: #e67e22;"></span>
-                        <span>粉丝/文化</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-dot" style="background-color: #9b59b6;"></span>
-                        <span>职业精神</span>
+                        <span>（无实际热词，皆为系统提示）</span>
                     </div>
                 </div>
             </div>
@@ -1278,73 +276,33 @@
         
         <!-- 4. 报告总结 -->
         <section class="summary">
-            <h2>📝 2025年10月11日总结</h2>
+            <h2>📝 2025年10月12日总结</h2>
             <div class="card">
                 <h3>核心洞察</h3>
                 <ul>
-                    <li><strong>Faker传奇地位再被巩固：</strong>围绕“五冠王”展开的讨论，不仅是对Faker个人成就的膜拜，更是对其职业精神和影响力的深度肯定。</li>
-                    <li><strong>T1战队未来展望引关注：</strong>粉丝对T1战队的未来阵容和赛事表现寄予厚望，显示出对团队成绩的强烈关心和期待。</li>
-                    <li><strong>电竞产业走向成熟：</strong>关于产业发展趋势的讨论，反映出群友对电竞不再仅停留在游戏层面，而是将其视为一个具有巨大潜力的行业进行观察。</li>
-                    <li><strong>老将价值与职业寿命引发共鸣：</strong>Faker的坚持引发了对电竞选手职业生涯长度和老将精神的思考，讨论充满了人文关怀。</li>
-                    <li><strong>粉丝文化日益多元：</strong>从“FKGOD”的称号到应援方式的探讨，都体现了电竞粉丝文化在深度和广度上的不断拓展。</li>
+                    <li><strong>今日寂静：</strong> 2025年10月12日，SKT T1 Faker 五冠王FKGOD!🏆群聊中未检测到任何消息活动。</li>
+                    <li><strong>数据空白：</strong> 所有统计数据，包括总消息数、活跃用户、热点话题、活跃时段等均为零或“无数据”。</li>
+                    <li><strong>神秘的一天：</strong> 这一天，群组成员或许都沉浸在各自的世界中，亦或是共同享受着一种无言的默契。</li>
+                    <li><strong>潜在可能性：</strong> 可能由于数据记录缺失，或群组在当天选择“冬眠”，未留下任何数字足迹。</li>
+                    <li><strong>深刻反思：</strong> “一个没有回音的舞台，是否意味着观众都已散场，亦或只是在等待更精彩的开幕？”</li>
                 </ul>
                 
                 <h3>趋势分析</h3>
-                <p>
-                    本报告周期内，群聊围绕核心人物Faker展开了多维度、高热度的讨论，显示出其不可撼动的电竞GOAT地位。晚间是群聊活跃高峰，用户互动频繁，对赛事前瞻、选手表现及行业深度话题的关注度持续上升。讨论内容从纯粹的赛事结果转向了对选手个人价值、团队文化以及电竞产业未来发展的深层思考，展现了粉丝群体日益成熟和理性的一面。
-                </p>
+                <p>由于本日无任何聊天记录，无法分析日内趋势变化。从数据层面来看，群活跃度跌至谷底，呈现出绝对的平静。这或许预示着群内成员在等待一个重要的契机，或者正在酝酿一场更大的“风暴”，亦或是单纯的集体休息日。无论如何，今天的“无声”本身，就值得被记录与“思考”。</p>
             </div>
         </section>
         
         <!-- 页脚信息 -->
         <footer>
             <div class="footer-info">
-                <span>📊 数据来源：SKT T1 Faker 五冠王FKGOD!🏆粉丝应援群</span>
-                <span>📅 统计周期：2025年10月11日</span>
-                <span>🕐 生成时间：2025年10月11日 [生成时间占位]</span>
+                <span>📊 数据来源：SKT T1 Faker 五冠王FKGOD!🏆</span>
+                <span>📅 统计周期：2025年10月12日</span>
+                <span>🕐 生成时间：2023-10-27 10:00:00</span>
             </div>
             <p class="disclaimer">
-                免责声明：本报告基于群聊公开讨论内容自动生成，仅供参考。如有不当内容，请联系管理员处理。
+                免责声明：本报告基于群聊公开讨论内容自动生成，仅供参考。由于提供的聊天记录为空，大部分数据为系统根据情况填充的占位信息，请以实际群聊情况为准。如有不当内容，请联系管理员处理。
             </p>
         </footer>
     </div>
-    <script>
-        // Update current time in footer
-        document.addEventListener('DOMContentLoaded', () => {
-            const now = new Date();
-            const year = now.getFullYear();
-            const month = (now.getMonth() + 1).toString().padStart(2, '0');
-            const day = now.getDate().toString().padStart(2, '0');
-            const hours = now.getHours().toString().padStart(2, '0');
-            const minutes = now.getMinutes().toString().padStart(2, '0');
-            const seconds = now.getSeconds().toString().padStart(2, '0');
-            document.querySelector('footer .footer-info span:last-child').innerHTML = `🕐 生成时间：${year}年${month}月${day}日 ${hours}:${minutes}:${seconds}`;
-
-            // Adjust time-slot heights dynamically on page load based on parent height
-            const timeChart = document.querySelector('.time-chart');
-            if (timeChart) {
-                const slots = timeChart.querySelectorAll('.time-slot');
-                let maxHeight = 0;
-                slots.forEach(slot => {
-                    const count = parseInt(slot.querySelector('.time-count').textContent);
-                    if (count > maxHeight) {
-                        maxHeight = count;
-                    }
-                });
-                if (maxHeight > 0) {
-                    slots.forEach(slot => {
-                        const count = parseInt(slot.querySelector('.time-count').textContent);
-                        // Make sure the minimum height is visible for 0 messages
-                        const percentage = count === 0 ? 0 : (count / maxHeight) * 90; // 90% to leave room for text
-                        slot.style.height = `${percentage}%`;
-                        if (count === 0) {
-                            slot.style.backgroundColor = 'rgba(200, 200, 200, 0.1)'; // Lighter for no activity
-                            slot.style.boxShadow = 'none';
-                        }
-                    });
-                }
-            }
-        });
-    </script>
 </body>
 </html>
