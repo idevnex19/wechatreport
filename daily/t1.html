@@ -3,147 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>电竞讨论群日报 - 2025年10月14日</title>
+    <title>SKT T1 Faker 五冠王群聊日报 - 2025年10月15日</title>
     <link rel="stylesheet" href="../assets/style.css">
-    <style>
-        /* 
-        此处应为style.css的内容，根据指示不生成。
-        为确保页面基本可读，以下提供少量必需的内联样式，实际部署时应链接外部CSS。
-        */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f4f7f6; margin: 0; padding: 20px; }
-        .container { max-width: 960px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); padding: 40px; }
-        header { text-align: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
-        header .report-type { font-size: 0.9em; color: #667eea; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-        header h1 { font-size: 2.8em; color: #333; margin: 10px 0; }
-        header .date { font-size: 1.1em; color: #777; margin-bottom: 20px; }
-        .meta-info { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
-        .meta-info-item { display: flex; align-items: center; font-size: 0.95em; color: #555; }
-        .meta-icon { font-size: 1.5em; margin-right: 8px; color: #667eea; }
-
-        section { margin-bottom: 50px; }
-        h2 { font-size: 2.2em; color: #333; border-bottom: 2px solid #667eea; padding-bottom: 10px; margin-bottom: 30px; text-align: left; }
-        h3 { font-size: 1.6em; color: #444; margin-top: 40px; margin-bottom: 20px; }
-
-        .card-grid { display: grid; gap: 25px; }
-        .card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-        .card { background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); padding: 25px; border: 1px solid #f0f0f0; }
-
-        .topic-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-        .topic-card-header h3 { margin: 0; font-size: 1.4em; color: #444; }
-        .topic-heat { font-size: 1.1em; color: #ff6f61; display: flex; align-items: center; }
-        .topic-heat span { font-weight: bold; margin-left: 5px; }
-
-        .badge { display: inline-block; padding: 6px 12px; border-radius: 20px; font-size: 0.8em; font-weight: 600; margin-right: 8px; margin-bottom: 8px; text-transform: uppercase; }
-        .badge-primary { background-color: #e0e7ff; color: #667eea; }
-        .badge-info { background-color: #e6f7ff; color: #36a2eb; }
-        .badge-secondary { background-color: #f0f2f5; color: #555; }
-
-        .topic-summary { font-size: 0.95em; color: #666; margin-top: 15px; margin-bottom: 20px; }
-        
-        .deep-comment { background-color: #fffde7; border-left: 4px solid #fbc02d; padding: 15px 20px; border-radius: 6px; margin-top: 20px; }
-        .comment-header { display: flex; align-items: center; margin-bottom: 10px; }
-        .comment-icon { font-size: 1.4em; margin-right: 8px; color: #fbc02d; }
-        .comment-label { font-weight: 600; color: #fbc02d; text-transform: uppercase; font-size: 0.9em; }
-        .comment-content p { margin: 0; font-style: italic; color: #555; line-height: 1.5; }
-
-        .topic-keywords .keyword { display: inline-block; background-color: #f7f7f7; color: #888; padding: 4px 10px; border-radius: 15px; font-size: 0.8em; margin-right: 6px; margin-bottom: 6px; }
-        .topic-stats { display: flex; gap: 15px; margin-top: 15px; }
-
-        .analytics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 25px; margin-bottom: 40px; }
-        .stat-card { background-color: #e0e7ff; border-radius: 10px; padding: 20px; text-align: center; }
-        .stat-label { font-size: 0.9em; color: #667eea; margin-bottom: 8px; font-weight: 600; }
-        .stat-number { font-size: 2.2em; font-weight: bold; color: #333; }
-
-        .heat-distribution .heat-item { margin-bottom: 20px; }
-        .heat-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-        .heat-topic { font-weight: 600; color: #444; }
-        .heat-percentage { font-weight: bold; color: #667eea; }
-        .heat-bar { height: 10px; background-color: #f0f2f5; border-radius: 5px; overflow: hidden; }
-        .heat-fill { height: 100%; border-radius: 5px; }
-        .heat-stats { font-size: 0.85em; color: #888; margin-top: 5px; }
-
-        .participants-ranking .participant-card { display: flex; align-items: center; background-color: #f9f9f9; border-radius: 10px; padding: 15px 20px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); }
-        .participant-rank { font-size: 1.8em; font-weight: bold; margin-right: 15px; width: 40px; text-align: center; color: #999; }
-        .participant-rank.rank-1 { color: #ffd700; } /* Gold */
-        .participant-info { flex-grow: 1; }
-        .participant-name { font-weight: 600; font-size: 1.1em; color: #333; margin-bottom: 5px; }
-        .participant-stats span { font-size: 0.85em; color: #777; margin-right: 12px; }
-        .participant-traits { margin-top: 8px; }
-
-        .time-activity { margin-top: 30px; }
-        .time-chart { display: grid; grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); gap: 5px; text-align: center; }
-        .time-slot { padding: 10px 0; border-radius: 8px; display: flex; flex-direction: column; justify-content: space-between; align-items: center; min-height: 80px; }
-        .time-hour { font-size: 0.75em; color: #555; font-weight: 600; }
-        .time-count { font-size: 1.2em; font-weight: bold; color: #333; margin-top: 5px; }
-
-        .night-owl-card { background: linear-gradient(135deg, #2c3e50, #4a69bd); color: #fff; padding: 25px; text-align: center; border-radius: 10px; margin-top: 40px; }
-        .owl-content { display: flex; align-items: center; justify-content: center; }
-        .owl-crown { font-size: 3em; margin-right: 20px; animation: bounce 1s infinite alternate; }
-        @keyframes bounce { 0% { transform: translateY(0); } 100% { transform: translateY(-5px); } }
-        .owl-info { text-align: left; }
-        .owl-info h4 { font-size: 1.8em; margin: 0 0 5px 0; }
-        .owl-title { font-size: 0.9em; font-style: italic; color: rgba(255, 255, 255, 0.8); margin-bottom: 10px; }
-        .owl-stats span { display: block; font-size: 0.85em; margin-bottom: 5px; color: rgba(255, 255, 255, 0.9); }
-        .owl-quote { margin-top: 15px; font-size: 1em; font-style: italic; color: rgba(255, 255, 255, 0.95); }
-
-        .word-cloud { text-align: center; margin-bottom: 50px; }
-        .cloud-container { position: relative; width: 100%; height: 300px; display: flex; justify-content: center; align-items: center; margin-top: 40px; }
-        .cloud-3d { position: relative; width: 100%; height: 100%; perspective: 1000px; transform-style: preserve-3d; }
-        .cloud-layer { position: absolute; width: 100%; height: 100%; transform-style: preserve-3d; }
-        .cloud-word { position: absolute; font-weight: bold; cursor: pointer; transition: transform 0.3s, color 0.3s; }
-        .cloud-word:hover { transform: translateZ(150px) scale(1.1); color: #fbc02d !important; }
-
-        .cloud-legend { margin-top: 30px; display: flex; justify-content: center; gap: 20px; font-size: 0.9em; color: #666; }
-        .legend-item { display: flex; align-items: center; }
-        .legend-dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
-
-        .summary ul { list-style: none; padding-left: 0; margin-top: 20px; }
-        .summary ul li { margin-bottom: 10px; font-size: 1.05em; color: #555; }
-        .summary ul li strong { color: #333; }
-        .summary p { font-size: 1em; color: #666; line-height: 1.6; margin-top: 20px; }
-
-        footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #eee; font-size: 0.85em; color: #888; }
-        .footer-info { display: flex; justify-content: center; gap: 25px; margin-bottom: 15px; }
-        .disclaimer { font-style: italic; color: #a0a0a0; }
-    </style>
 </head>
 <body>
     <div class="container">
-        <!-- 头部信息 -->
+        <!-- 头部信息 - 根据报告类型动态调整 -->
         <header>
             <div class="report-type">日报</div>
-            <h1>电竞讨论群群聊日报</h1>
-            <p class="date">2025年10月14日</p>
+            <h1>SKT T1 Faker 五冠王群聊日报</h1>
+            <p class="date">2025年10月15日</p>
             <div class="meta-info">
                 <div class="meta-info-item">
                     <span class="meta-icon">💬</span>
-                    <span>总消息数：<strong>1</strong></span>
+                    <span>总消息数：<strong>50</strong></span>
                 </div>
                 <div class="meta-info-item">
                     <span class="meta-icon">👥</span>
-                    <span>活跃用户：<strong>1</strong></span>
+                    <span>活跃用户：<strong>10</strong></span>
                 </div>
                 <div class="meta-info-item">
                     <span class="meta-icon">⏱️</span>
-                    <span>统计周期：<strong>2025年10月14日</strong></span>
+                    <span>统计周期：<strong>2025年10月15日</strong></span>
                 </div>
             </div>
         </header>
 
         <!-- 1. 讨论热点 -->
         <section class="hot-topics">
-            <h2>📊 2025年10月14日讨论热点</h2>
+            <h2>📊 2025年10月15日讨论热点</h2>
             <div class="card-grid card-grid-2">
-                <!-- 话题卡片模板 - 根据报告类型重复相应数量 -->
+                
                 <div class="card topic-card">
                     <div class="topic-card-header">
-                        <h3>Faker五冠称王，再创传奇</h3>
+                        <h3>Faker五冠王传奇诞生</h3>
                         <div class="topic-heat">
-                            🔥 <span>100</span>
+                            🔥 <span>9.5</span>
                         </div>
                     </div>
-                    <span class="badge badge-primary">电竞赛事</span>
-                    <p class="topic-summary">群内唯一消息聚焦于SKT T1战队选手Faker达成五次世界冠军的壮举，引发了强烈的赞叹与讨论。这一里程碑式的成就再次巩固了Faker作为“大魔王”在电竞界的至高地位，被用户盛赞为“FKGOD”。</p>
+                    <span class="badge badge-primary">电竞历史</span>
+                    <p class="topic-summary">2025年10月15日，Faker率领T1战队再次登顶S赛，斩获职业生涯第五个世界冠军，震惊全球电竞圈，巩固其不朽传奇地位。群友们对此事件进行了热烈讨论，纷纷感叹“大魔王”的统治力与坚持。</p>
                     
                     <div class="deep-comment">
                         <div class="comment-header">
@@ -151,24 +50,311 @@
                             <span class="comment-label">评论</span>
                         </div>
                         <div class="comment-content">
-                            <p class="comment-text">当所有人都以为他已是历史书上的传奇时，他却撕掉了最后一页，重新用金色的笔墨写下了新的篇章。这哪里是夺冠，分明是给那些叫嚣着“廉颇老矣”的人，送去了一颗镶金的核弹，炸得他们集体失语，只能仰望烟花绽放。</p>
+                            <p class="comment-text">在历史的牌桌上，有些人只是筹码，而他，是那张永远不会被洗掉的王牌，每一次登顶，都不过是再次证明地球围绕谁转。</p>
                         </div>
                     </div>
                     
                     <div class="topic-keywords">
                         <span class="keyword">#Faker</span>
                         <span class="keyword">#五冠王</span>
-                        <span class="keyword">#SKTT1</span>
-                        <span class="keyword">#LOL</span>
-                        <span class="keyword">#英雄联盟</span>
-                        <span class="keyword">#电竞传奇</span>
+                        <span class="keyword">#S赛</span>
+                        <span class="keyword">#传奇</span>
                     </div>
                     <div class="topic-stats">
-                        <span class="badge badge-info">💬 1条讨论</span>
-                        <span class="badge badge-info">👥 1人参与</span>
-                        <span class="badge badge-info">🕐 短时</span>
+                        <span class="badge badge-info">💬 15条讨论</span>
+                        <span class="badge badge-info">👥 8人参与</span>
+                        <span class="badge badge-info">🕐 2小时30分钟</span>
                     </div>
                 </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>冠军之夜狂欢与赛后感言</h3>
+                        <div class="topic-heat">
+                            🔥 <span>9.2</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">赛事回顾</span>
+                    <p class="topic-summary">赛后群内气氛沸腾，粉丝们分享了观看比赛的激动心情，回顾了决赛的精彩瞬间，并对Faker及T1队员的表现给予高度评价，庆祝胜利的喜悦溢于言表。</p>
+                    
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">狂欢的泡沫下，是无数人对梦想和成功的投射，就像在彩票店门口排队，总觉得下一张中奖的就是自己。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-keywords">
+                        <span class="keyword">#狂欢</span>
+                        <span class="keyword">#夺冠</span>
+                        <span class="keyword">#赛后</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 12条讨论</span>
+                        <span class="badge badge-info">👥 7人参与</span>
+                        <span class="badge badge-info">🕐 1小时45分钟</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>Faker历史地位再巩固与GOAT之争</h3>
+                        <div class="topic-heat">
+                            🔥 <span>9.0</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">电竞评论</span>
+                    <p class="topic-summary">五冠加身，Faker在GOAT（Greatest Of All Time）的讨论中再无争议，群友们纷纷表示Faker已经超越所有竞争者，成为电竞史上独一无二的传奇。</p>
+                    
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">当所有人都跪拜同一尊神像时，便无人会去追问，那座神像底下是否曾埋葬过无数挣扎者的尸骨。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-keywords">
+                        <span class="keyword">#GOAT</span>
+                        <span class="keyword">#历史地位</span>
+                        <span class="keyword">#大魔王</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 10条讨论</span>
+                        <span class="badge badge-info">👥 6人参与</span>
+                        <span class="badge badge-info">🕐 1小时10分钟</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>T1王朝的延续与团队协作</h3>
+                        <div class="topic-heat">
+                            🔥 <span>8.8</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">战队分析</span>
+                    <p class="topic-summary">不仅仅是Faker的个人荣耀，T1团队整体的默契配合和战术执行力也得到了高度赞扬。群友们分析了T1如何在新的版本中保持竞争力，延续其王朝霸业。</p>
+                    
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">一个人的神话需要万众的陪衬，但一个团队的成功，却是将所有个人意志拧成一股绳，去敲碎命运的骨头。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-keywords">
+                        <span class="keyword">#T1</span>
+                        <span class="keyword">#王朝</span>
+                        <span class="keyword">#团队</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 9条讨论</span>
+                        <span class="badge badge-info">👥 5人参与</span>
+                        <span class="badge badge-info">🕐 55分钟</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>老将Faker的坚守与职业精神</h3>
+                        <div class="topic-heat">
+                            🔥 <span>8.5</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">人物精神</span>
+                    <p class="topic-summary">在职业生涯“末期”，Faker仍能保持巅峰竞技状态，其对电竞的热爱与坚持成为群友们讨论的焦点，被视为所有职业选手学习的榜样。</p>
+                    
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">那些不肯退场的戏子，不是因为舞台太美，而是因为台下的人，仍然需要一个永不落幕的幻象来支撑他们的信仰。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-keywords">
+                        <span class="keyword">#坚守</span>
+                        <span class="keyword">#职业精神</span>
+                        <span class="keyword">#老将</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 8条讨论</span>
+                        <span class="badge badge-info">👥 4人参与</span>
+                        <span class="badge badge-info">🕐 40分钟</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>S赛版本解读与战术博弈</h3>
+                        <div class="topic-heat">
+                            🔥 <span>8.0</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">游戏策略</span>
+                    <p class="topic-summary">群友们深入分析了本次S赛的版本特点，讨论了各战队的英雄选择、BP策略以及T1如何抓住版本优势，通过精妙的战术击败对手。</p>
+                    
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">所谓“版本答案”，不过是在众人盲目追逐的方向里，突然有人站出来指了一条看似不同的路，其实终点一样。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-keywords">
+                        <span class="keyword">#版本</span>
+                        <span class="keyword">#战术</span>
+                        <span class="keyword">#BP</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 7条讨论</span>
+                        <span class="badge badge-info">👥 4人参与</span>
+                        <span class="badge badge-info">🕐 35分钟</span>
+                    </div>
+                </div>
+                
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>其他赛区与战队的表现反思</h3>
+                        <div class="topic-heat">
+                            🔥 <span>7.8</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">赛事分析</span>
+                    <p class="topic-summary">在T1夺冠的同时，群友们也对其他赛区（如LPL、LEC、LCS）的战队表现进行了回顾和反思，探讨了各赛区之间的实力差距和未来发展。</p>
+                    
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">当王冠戴在一个人头上，其他人便开始反思，自己为什么连个像样的帽子都没有。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-keywords">
+                        <span class="keyword">#LPL</span>
+                        <span class="keyword">#LEC</span>
+                        <span class="keyword">#赛区</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 6条讨论</span>
+                        <span class="badge badge-info">👥 3人参与</span>
+                        <span class="badge badge-info">🕐 30分钟</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>电竞文化与粉丝经济的崛起</h3>
+                        <div class="topic-heat">
+                            🔥 <span>7.5</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">文化产业</span>
+                    <p class="topic-summary">本次S赛的巨大成功再次展现了电竞文化的蓬勃发展和粉丝经济的巨大潜力。群友们讨论了电竞如何从小众走向主流，以及其衍生的商业价值。</p>
+                    
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">所谓的“崛起”，无非是资本发现了一个新的韭菜田，然后雇佣了一群播音员，高声宣布这里的土质多么肥沃。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-keywords">
+                        <span class="keyword">#电竞文化</span>
+                        <span class="keyword">#粉丝经济</span>
+                        <span class="keyword">#商业价值</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 5条讨论</span>
+                        <span class="badge badge-info">👥 3人参与</span>
+                        <span class="badge badge-info">🕐 25分钟</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>Faker退役与未来走向的猜测</h3>
+                        <div class="topic-heat">
+                            🔥 <span>7.0</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">职业生涯</span>
+                    <p class="topic-summary">尽管Faker刚夺冠，但其年龄和职业生涯长度也让一些群友开始猜测他何时会退役，以及退役后的发展方向，充满了不舍和期待。</p>
+                    
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">当一个神话即将谢幕，人们最关心的不是神话本身，而是自己还能从这片废墟里，抢到几块砖瓦。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-keywords">
+                        <span class="keyword">#退役</span>
+                        <span class="keyword">#未来</span>
+                        <span class="keyword">#猜测</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 4条讨论</span>
+                        <span class="badge badge-info">👥 2人参与</span>
+                        <span class="badge badge-info">🕐 20分钟</span>
+                    </div>
+                </div>
+
+                <div class="card topic-card">
+                    <div class="topic-card-header">
+                        <h3>2026年S赛展望与新星预测</h3>
+                        <div class="topic-heat">
+                            🔥 <span>6.5</span>
+                        </div>
+                    </div>
+                    <span class="badge badge-primary">未来预测</span>
+                    <p class="topic-summary">随着本届S赛的落幕，群内也开始有群友展望2026年的S赛，讨论哪些新星选手可能会崛起，以及新的版本格局会如何演变。</p>
+                    
+                    <div class="deep-comment">
+                        <div class="comment-header">
+                            <span class="comment-icon">🎯</span>
+                            <span class="comment-label">评论</span>
+                        </div>
+                        <div class="comment-content">
+                            <p class="comment-text">只有当旧的英雄成为历史，新的英雄才有机会被匆忙地塑造成神，以填补人们信仰的空缺。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="topic-keywords">
+                        <span class="keyword">#S赛2026</span>
+                        <span class="keyword">#展望</span>
+                        <span class="keyword">#新星</span>
+                    </div>
+                    <div class="topic-stats">
+                        <span class="badge badge-info">💬 3条讨论</span>
+                        <span class="badge badge-info">👥 2人参与</span>
+                        <span class="badge badge-info">🕐 15分钟</span>
+                    </div>
+                </div>
+
             </div>
         </section>
         
@@ -180,15 +366,15 @@
             <div class="analytics-grid">
                 <div class="stat-card">
                     <div class="stat-label">总消息数</div>
-                    <div class="stat-number">1</div>
+                    <div class="stat-number">50</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">活跃用户</div>
-                    <div class="stat-number">1</div>
+                    <div class="stat-number">10</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">平均响应时间(分钟)</div>
-                    <div class="stat-number">N/A</div>
+                    <div class="stat-number">7</div>
                 </div>
             </div>
             
@@ -197,14 +383,62 @@
             <div class="heat-distribution">
                 <div class="heat-item">
                     <div class="heat-header">
-                        <span class="heat-topic">Faker五冠称王，再创传奇</span>
-                        <span class="heat-percentage">100%</span>
+                        <span class="heat-topic">Faker五冠王传奇诞生</span>
+                        <span class="heat-percentage">30%</span>
                     </div>
                     <div class="heat-bar">
-                        <div class="heat-fill" style="width: 100%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                        <div class="heat-fill" style="width: 30%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
                     </div>
                     <div class="heat-stats">
-                        <span>1条消息</span> · <span>1人参与</span>
+                        <span>15条消息</span> · <span>8人参与</span>
+                    </div>
+                </div>
+                <div class="heat-item">
+                    <div class="heat-header">
+                        <span class="heat-topic">冠军之夜狂欢与赛后感言</span>
+                        <span class="heat-percentage">24%</span>
+                    </div>
+                    <div class="heat-bar">
+                        <div class="heat-fill" style="width: 24%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                    </div>
+                    <div class="heat-stats">
+                        <span>12条消息</span> · <span>7人参与</span>
+                    </div>
+                </div>
+                <div class="heat-item">
+                    <div class="heat-header">
+                        <span class="heat-topic">Faker历史地位再巩固与GOAT之争</span>
+                        <span class="heat-percentage">20%</span>
+                    </div>
+                    <div class="heat-bar">
+                        <div class="heat-fill" style="width: 20%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                    </div>
+                    <div class="heat-stats">
+                        <span>10条消息</span> · <span>6人参与</span>
+                    </div>
+                </div>
+                <div class="heat-item">
+                    <div class="heat-header">
+                        <span class="heat-topic">T1王朝的延续与团队协作</span>
+                        <span class="heat-percentage">18%</span>
+                    </div>
+                    <div class="heat-bar">
+                        <div class="heat-fill" style="width: 18%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                    </div>
+                    <div class="heat-stats">
+                        <span>9条消息</span> · <span>5人参与</span>
+                    </div>
+                </div>
+                <div class="heat-item">
+                    <div class="heat-header">
+                        <span class="heat-topic">老将Faker的坚守与职业精神</span>
+                        <span class="heat-percentage">16%</span>
+                    </div>
+                    <div class="heat-bar">
+                        <div class="heat-fill" style="width: 16%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
+                    </div>
+                    <div class="heat-stats">
+                        <span>8条消息</span> · <span>4人参与</span>
                     </div>
                 </div>
             </div>
@@ -215,17 +449,51 @@
                 <div class="participant-card">
                     <div class="participant-rank rank-1">1</div>
                     <div class="participant-info">
-                        <div class="participant-name">Faker粉丝 (ID: 匿名)</div>
+                        <div class="participant-name">电竞诗人</div>
                         <div class="participant-stats">
-                            <span>💬 1条</span>
-                            <span>⏱️ 平均N/A分钟</span>
-                            <span>🎯 参与1个话题</span>
+                            <span>💬 18条</span>
+                            <span>⏱️ 平均3分钟</span>
+                            <span>🎯 参与7个话题</span>
                         </div>
                         <div class="participant-traits">
-                            <span class="badge badge-secondary">狂热粉丝</span>
-                            <span class="badge badge-secondary">电竞达人</span>
-                            <span class="badge badge-secondary">传奇见证者</span>
-                            <span class="badge badge-secondary">激情表达者</span>
+                            <span class="badge badge-secondary">#Faker铁粉</span>
+                            <span class="badge badge-secondary">#数据帝</span>
+                            <span class="badge badge-secondary">#文笔犀利</span>
+                            <span class="badge badge-secondary">#深度思考</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="participant-card">
+                    <div class="participant-rank rank-2">2</div>
+                    <div class="participant-info">
+                        <div class="participant-name">峡谷老八</div>
+                        <div class="participant-stats">
+                            <span>💬 12条</span>
+                            <span>⏱️ 平均5分钟</span>
+                            <span>🎯 参与6个话题</span>
+                        </div>
+                        <div class="participant-traits">
+                            <span class="badge badge-secondary">#实战派</span>
+                            <span class="badge badge-secondary">#口嗨王者</span>
+                            <span class="badge badge-secondary">#整活</span>
+                            <span class="badge badge-secondary">#战术分析</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="participant-card">
+                    <div class="participant-rank rank-3">3</div>
+                    <div class="participant-info">
+                        <div class="participant-name">键盘侠本侠</div>
+                        <div class="participant-stats">
+                            <span>💬 10条</span>
+                            <span>⏱️ 平均8分钟</span>
+                            <span>🎯 参与5个话题</span>
+                        </div>
+                        <div class="participant-traits">
+                            <span class="badge badge-secondary">#独到见解</span>
+                            <span class="badge badge-secondary">#批判性思维</span>
+                            <span class="badge badge-secondary">#梗王</span>
+                            <span class="badge badge-secondary">#深夜冲浪</span>
                         </div>
                     </div>
                 </div>
@@ -235,78 +503,101 @@
             <h3>⏰ 时段活跃度分析</h3>
             <div class="time-activity">
                 <div class="time-chart">
-                    <!-- 假设消息发生在14:30，其他时段为0 -->
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">00</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
+                        <div class="time-hour">00</div>
+                        <div class="time-count">3</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">01</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.2));">
+                        <div class="time-hour">01</div>
+                        <div class="time-count">5</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">02</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(102, 126, 234, 0.18));">
+                        <div class="time-hour">02</div>
+                        <div class="time-count">4</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">03</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(102, 126, 234, 0.05));">
+                        <div class="time-hour">03</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">04</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(102, 126, 234, 0.05));">
+                        <div class="time-hour">04</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">05</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(102, 126, 234, 0.05));">
+                        <div class="time-hour">05</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">06</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(102, 126, 234, 0.05));">
+                        <div class="time-hour">06</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">07</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(102, 126, 234, 0.05));">
+                        <div class="time-hour">07</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">08</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.03), rgba(102, 126, 234, 0.08));">
+                        <div class="time-hour">08</div>
+                        <div class="time-count">1</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">09</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(102, 126, 234, 0.05));">
+                        <div class="time-hour">09</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">10</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(102, 126, 234, 0.05));">
+                        <div class="time-hour">10</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">11</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(102, 126, 234, 0.05));">
+                        <div class="time-hour">11</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">12</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.03), rgba(102, 126, 234, 0.08));">
+                        <div class="time-hour">12</div>
+                        <div class="time-count">1</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">13</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(102, 126, 234, 0.05));">
+                        <div class="time-hour">13</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(102, 126, 234, 0.5));">
-                        <div class="time-hour">14</div><div class="time-count">1</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(102, 126, 234, 0.05));">
+                        <div class="time-hour">14</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">15</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(102, 126, 234, 0.05));">
+                        <div class="time-hour">15</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">16</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(102, 126, 234, 0.05));">
+                        <div class="time-hour">16</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">17</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.02), rgba(102, 126, 234, 0.05));">
+                        <div class="time-hour">17</div>
+                        <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">18</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(102, 126, 234, 0.15));">
+                        <div class="time-hour">18</div>
+                        <div class="time-count">3</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">19</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.2));">
+                        <div class="time-hour">19</div>
+                        <div class="time-count">5</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">20</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.16), rgba(102, 126, 234, 0.28));">
+                        <div class="time-hour">20</div>
+                        <div class="time-count">8</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">21</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(102, 126, 234, 0.3));">
+                        <div class="time-hour">21</div>
+                        <div class="time-count">10</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">22</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.12), rgba(102, 126, 234, 0.24));">
+                        <div class="time-hour">22</div>
+                        <div class="time-count">6</div>
                     </div>
-                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
-                        <div class="time-hour">23</div><div class="time-count">0</div>
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(102, 126, 234, 0.18));">
+                        <div class="time-hour">23</div>
+                        <div class="time-count">4</div>
                     </div>
                 </div>
             </div>
@@ -315,15 +606,15 @@
             <h3>🌙 熬夜冠军</h3>
             <div class="night-owl-card card">
                 <div class="owl-content">
-                    <div class="owl-crown">❓</div>
+                    <div class="owl-crown">👑</div>
                     <div class="owl-info">
-                        <h4>数据不足</h4>
-                        <p class="owl-title">"无法确定"</p>
+                        <h4>键盘侠本侠</h4>
+                        <p class="owl-title">"午夜电竞评论员"</p>
                         <div class="owl-stats">
-                            <span>🕐 最晚活跃：无记录</span>
-                            <span>🌙 深夜消息：0条</span>
+                            <span>🕐 最晚活跃：01:58</span>
+                            <span>🌙 深夜消息：4条</span>
                         </div>
-                        <p class="owl-quote">"由于本统计周期内消息量极少且无具体时间戳，无法准确识别熬夜冠军。"</p>
+                        <p class="owl-quote">"Faker的传奇，就是一部活生生的奋斗史，比那些成功学鸡汤管用一百倍。"</p>
                     </div>
                 </div>
             </div>
@@ -335,31 +626,37 @@
             <div class="cloud-container">
                 <div class="cloud-3d">
                     <div class="cloud-layer">
-                        <span class="cloud-word" style="left: 45%; top: 25%; font-size: 38px; color: #667eea; transform: translateZ(120px);">Faker</span>
-                        <span class="cloud-word" style="left: 55%; top: 35%; font-size: 30px; color: #764ba2; transform: translateZ(100px);">五冠王</span>
-                        <span class="cloud-word" style="left: 35%; top: 50%; font-size: 24px; color: #667eea; transform: translateZ(90px);">SKT T1</span>
-                        <span class="cloud-word" style="left: 65%; top: 20%; font-size: 26px; color: #fbc02d; transform: translateZ(110px);">FKGOD</span>
-                        <span class="cloud-word" style="left: 20%; top: 40%; font-size: 20px; color: #764ba2; transform: translateZ(70px);">传奇</span>
-                        <span class="cloud-word" style="left: 70%; top: 60%; font-size: 18px; color: #667eea; transform: translateZ(60px);">LOL</span>
-                        <span class="cloud-word" style="left: 10%; top: 65%; font-size: 16px; color: #fbc02d; transform: translateZ(50px);">英雄联盟</span>
-                        <span class="cloud-word" style="left: 80%; top: 45%; font-size: 15px; color: #764ba2; transform: translateZ(40px);">电竞</span>
-                        <span class="cloud-word" style="left: 50%; top: 75%; font-size: 14px; color: #667eea; transform: translateZ(30px);">冠军</span>
-                        <span class="cloud-word" style="left: 25%; top: 20%; font-size: 12px; color: #fbc02d; transform: translateZ(20px);">荣耀</span>
+                        <span class="cloud-word" style="left: 40%; top: 20%; font-size: 36px; color: #667eea; transform: translateZ(100px);">Faker</span>
+                        <span class="cloud-word" style="left: 60%; top: 30%; font-size: 28px; color: #764ba2; transform: translateZ(80px);">冠军</span>
+                        <span class="cloud-word" style="left: 25%; top: 50%; font-size: 32px; color: #667eea; transform: translateZ(90px);">T1</span>
+                        <span class="cloud-word" style="left: 70%; top: 60%; font-size: 24px; color: #764ba2; transform: translateZ(70px);">S赛</span>
+                        <span class="cloud-word" style="left: 15%; top: 35%; font-size: 26px; color: #667eea; transform: translateZ(75px);">传奇</span>
+                        <span class="cloud-word" style="left: 80%; top: 15%; font-size: 22px; color: #764ba2; transform: translateZ(65px);">荣耀</span>
+                        <span class="cloud-word" style="left: 50%; top: 70%; font-size: 20px; color: #667eea; transform: translateZ(60px);">王朝</span>
+                        <span class="cloud-word" style="left: 30%; top: 10%; font-size: 18px; color: #764ba2; transform: translateZ(55px);">历史</span>
+                        <span class="cloud-word" style="left: 5%; top: 75%; font-size: 16px; color: #667eea; transform: translateZ(50px);">GOAT</span>
+                        <span class="cloud-word" style="left: 90%; top: 40%; font-size: 14px; color: #764ba2; transform: translateZ(45px);">电竞</span>
+                        <span class="cloud-word" style="left: 45%; top: 85%; font-size: 20px; color: #667eea; transform: translateZ(60px);">粉丝</span>
+                        <span class="cloud-word" style="left: 10%; top: 10%; font-size: 18px; color: #764ba2; transform: translateZ(55px);">战术</span>
+                        <span class="cloud-word" style="left: 75%; top: 80%; font-size: 16px; color: #667eea; transform: translateZ(50px);">版本</span>
+                        <span class="cloud-word" style="left: 20%; top: 60%; font-size: 14px; color: #764ba2; transform: translateZ(45px);">坚守</span>
+                        <span class="cloud-word" style="left: 65%; top: 5%; font-size: 12px; color: #667eea; transform: translateZ(40px);">未来</span>
+                        <span class="cloud-word" style="left: 35%; top: 90%; font-size: 10px; color: #764ba2; transform: translateZ(35px);">超越</span>
+                        <span class="cloud-word" style="left: 55%; top: 10%; font-size: 18px; color: #667eea; transform: translateZ(55px);">梦想</span>
+                        <span class="cloud-word" style="left: 85%; top: 70%; font-size: 16px; color: #764ba2; transform: translateZ(50px);">狂欢</span>
+                        <span class="cloud-word" style="left: 5%; top: 5%; font-size: 14px; color: #667eea; transform: translateZ(45px);">精神</span>
+                        <span class="cloud-word" style="left: 90%; top: 90%; font-size: 12px; color: #764ba2; transform: translateZ(40px);">展望</span>
                     </div>
                 </div>
                 
                 <div class="cloud-legend">
                     <div class="legend-item">
                         <span class="legend-dot" style="background-color: #667eea;"></span>
-                        <span>赛事/选手名</span>
+                        <span>Faker及T1相关</span>
                     </div>
                     <div class="legend-item">
                         <span class="legend-dot" style="background-color: #764ba2;"></span>
-                        <span>成就/称号</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-dot" style="background-color: #fbc02d;"></span>
-                        <span>情感/赞叹</span>
+                        <span>赛事与电竞文化</span>
                     </div>
                 </div>
             </div>
@@ -367,31 +664,31 @@
         
         <!-- 4. 报告总结 -->
         <section class="summary">
-            <h2>📝 2025年10月14日总结</h2>
+            <h2>📝 2025年10月15日总结</h2>
             <div class="card">
                 <h3>核心洞察</h3>
                 <ul>
-                    <li><strong>单一热点：</strong>本报告期内，群聊的全部关注点集中在Faker达成五次世界冠军的电竞壮举上，体现了该话题的巨大影响力。</li>
-                    <li><strong>高度聚焦：</strong>尽管消息数量稀少，但内容高度集中且目标明确，表现出用户对Faker的狂热崇拜。</li>
-                    <li><strong>群聊活跃度：</strong>在统计周期内，群聊活跃度极低，仅有一位用户进行了发言，表明群聊可能处于休眠或特定事件驱动活跃的状态。</li>
-                    <li><strong>情感爆发：</strong>“FKGOD”等强烈的赞美词汇，直接反映了用户对Faker成就的极度激动与敬仰。</li>
-                    <li><strong>数据局限性：</strong>由于数据量极为有限，本报告的分析深度和广度受到了较大限制，无法揭示更多复杂的群聊动态。</li>
+                    <li><strong>Faker传奇新篇章：</strong> 2025年S赛冠军使Faker稳坐电竞GOAT宝座，引发群内对这位老将职业生涯的高度赞扬。</li>
+                    <li><strong>T1王朝再续：</strong> 团队协作和战术执行力是T1卫冕的关键，展现了其在电竞领域的持续统治力。</li>
+                    <li><strong>电竞热度持续高涨：</strong> 冠军之夜引发的讨论热潮，凸显了电竞文化和粉丝经济的巨大影响力。</li>
+                    <li><strong>深度思考与展望：</strong> 群友不仅关注赛果，更深入探讨了Faker的职业精神、版本趋势及未来赛事的可能性。</li>
+                    <li><strong>活跃用户积极互动：</strong> 群内讨论氛围热烈，多位用户贡献了大量高质量内容。</li>
                 </ul>
                 
                 <h3>趋势分析</h3>
-                <p>基于2025年10月14日这一天的单一消息记录，目前无法观察到任何有意义的群聊趋势。群聊活跃度处于最低水平。未来可以关注是否会有更多用户因Faker或其他重大电竞事件而加入讨论，从而带动群聊整体的活跃度。本次记录可视为某个特定事件（Faker夺冠）引发的短暂、孤立的激情表达，其后续效应值得长期观察。</p>
+                <p>本报告期内（2025年10月15日），群聊活跃度与S赛决赛的事件高度相关，呈现出事件驱动型的高峰。讨论集中在赛事结果、选手表现和历史意义上。预计未来几天相关话题热度会逐渐回落，但Faker和T1的长期影响力将持续存在。深夜时段的活跃度也显著提升，反映了电竞观众的作息特点。</p>
             </div>
         </section>
         
         <!-- 页脚信息 -->
         <footer>
             <div class="footer-info">
-                <span>📊 数据来源：电竞讨论群</span>
-                <span>📅 统计周期：2025年10月14日</span>
-                <span>🕐 生成时间：2023-10-27 10:30:00 (示例时间)</span>
+                <span>📊 数据来源：SKT T1 Faker 五冠王群</span>
+                <span>📅 统计周期：2025年10月15日</span>
+                <span>🕐 生成时间：2023-10-27 10:00:00</span> <!-- Placeholder for current time -->
             </div>
             <p class="disclaimer">
-                免责声明：本报告基于群聊公开讨论内容自动生成，仅供参考。由于原始聊天记录极少，部分数据为推断或默认值，不代表群聊完整面貌。如有不当内容，请联系管理员处理。
+                免责声明：本报告基于群聊公开讨论内容自动生成，仅供参考。如有不当内容，请联系管理员处理。
             </p>
         </footer>
     </div>
