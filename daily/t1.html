@@ -3,129 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>电竞荣耀群日报 - 2025年11月02日</title>
+    <title>SKT T1 Faker 五冠王FKGOD!群日报 - 2025年11月3日</title>
     <link rel="stylesheet" href="../assets/style.css">
-    <style>
-        /* 嵌入基础样式以确保报告显示，如果外部style.css不可用 */
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; line-height: 1.6; color: #333; background-color: #f4f7fa; margin: 0; padding: 20px; }
-        .container { max-width: 960px; margin: 20px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); padding: 40px; }
-        header { text-align: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
-        header .report-type { font-size: 1.2em; color: #764ba2; font-weight: bold; margin-bottom: 10px; }
-        header h1 { font-size: 2.8em; color: #333; margin: 10px 0; letter-spacing: -0.5px; }
-        header .date { font-size: 1.1em; color: #666; margin-bottom: 20px; }
-        .meta-info { display: flex; justify-content: center; gap: 30px; margin-top: 25px; }
-        .meta-info-item { display: flex; align-items: center; gap: 8px; font-size: 1em; color: #555; }
-        .meta-icon { font-size: 1.3em; color: #667eea; }
-        section { margin-bottom: 50px; }
-        h2 { font-size: 2em; color: #333; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 30px; position: relative; }
-        h2::before { content: ''; position: absolute; bottom: -2px; left: 0; width: 60px; height: 2px; background: #667eea; }
-        h3 { font-size: 1.5em; color: #444; margin-top: 30px; margin-bottom: 20px; }
-        .card-grid { display: grid; gap: 25px; }
-        .card-grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-        .card { background: #fff; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 25px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 6px 18px rgba(0,0,0,0.1); }
-        .topic-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .topic-card-header h3 { margin: 0; font-size: 1.4em; color: #333; }
-        .topic-heat { font-size: 1.1em; color: #ff5722; font-weight: bold; display: flex; align-items: center; gap: 5px; }
-        .badge { display: inline-block; padding: 6px 12px; border-radius: 20px; font-size: 0.85em; font-weight: 500; margin-right: 8px; margin-bottom: 8px; }
-        .badge-primary { background-color: #e0e7ff; color: #667eea; }
-        .badge-info { background-color: #e3f2fd; color: #2196f3; }
-        .badge-secondary { background-color: #e0e0e0; color: #757575; }
-        .topic-summary { font-size: 0.95em; color: #555; margin-bottom: 20px; line-height: 1.7; }
-        .deep-comment { background-color: #f8faff; border-left: 4px solid #667eea; padding: 15px 20px; border-radius: 8px; margin-top: 20px; margin-bottom: 20px; }
-        .comment-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
-        .comment-icon { font-size: 1.2em; color: #667eea; }
-        .comment-label { font-weight: bold; color: #667eea; }
-        .comment-content p { margin: 0; font-style: italic; color: #444; font-size: 0.95em; }
-        .topic-keywords .keyword { display: inline-block; background-color: #f0f4f8; color: #555; padding: 4px 10px; border-radius: 5px; font-size: 0.8em; margin-right: 6px; margin-bottom: 6px; }
-        .topic-stats { margin-top: 15px; border-top: 1px dashed #eee; padding-top: 15px; display: flex; flex-wrap: wrap; gap: 10px; }
-        .analytics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-bottom: 40px; }
-        .stat-card { background: #fafafa; border: 1px solid #eee; border-radius: 8px; padding: 20px; text-align: center; }
-        .stat-label { font-size: 0.9em; color: #777; margin-bottom: 8px; }
-        .stat-number { font-size: 2.2em; font-weight: bold; color: #667eea; }
-        .heat-distribution .heat-item { margin-bottom: 25px; }
-        .heat-header { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: bold; }
-        .heat-topic { color: #333; }
-        .heat-percentage { color: #764ba2; }
-        .heat-bar { background-color: #e0e0e0; border-radius: 5px; height: 10px; overflow: hidden; }
-        .heat-fill { height: 100%; border-radius: 5px; }
-        .heat-stats { font-size: 0.85em; color: #777; margin-top: 5px; }
-        .participants-ranking .participant-card { display: flex; align-items: center; background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 15px 20px; margin-bottom: 15px; box-shadow: 0 1px 5px rgba(0,0,0,0.03); }
-        .participant-rank { font-size: 1.8em; font-weight: bold; color: #bbb; width: 40px; text-align: center; flex-shrink: 0; }
-        .participant-rank.rank-1 { color: #ffd700; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
-        .participant-info { margin-left: 15px; flex-grow: 1; }
-        .participant-name { font-size: 1.2em; font-weight: bold; color: #333; margin-bottom: 5px; }
-        .participant-stats span { margin-right: 15px; font-size: 0.85em; color: #777; }
-        .participant-traits { margin-top: 8px; }
-        .time-activity { margin-top: 30px; }
-        .time-chart { display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; /* Simplified for display, real chart would be more complex */ }
-        .time-slot { background: #f0f4f8; border-radius: 5px; padding: 10px; text-align: center; font-size: 0.85em; color: #555; }
-        .time-hour { font-weight: bold; color: #333; margin-bottom: 5px; }
-        .time-count { font-size: 1.1em; color: #667eea; font-weight: bold; }
-        .night-owl-card { background: linear-gradient(135deg, #2c3e50, #4a69bd); color: #fff; padding: 30px; border-radius: 12px; text-align: center; margin-top: 30px; }
-        .owl-content { display: flex; flex-direction: column; align-items: center; }
-        .owl-crown { font-size: 3em; margin-bottom: 10px; }
-        .owl-info h4 { font-size: 1.8em; margin: 0 0 5px 0; }
-        .owl-title { font-size: 1em; opacity: 0.8; margin-bottom: 15px; }
-        .owl-stats span { margin: 0 10px; font-size: 0.9em; opacity: 0.9; }
-        .owl-quote { font-style: italic; margin-top: 20px; font-size: 0.95em; opacity: 0.9; }
-        .cloud-container { position: relative; height: 300px; /* Adjust height as needed */ display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 15px; }
-        .cloud-word { font-weight: bold; position: relative; display: inline-block; /* For simplified display without 3D */ }
-        .cloud-word[style*="font-size: 36px"] { color: #667eea; }
-        .cloud-word[style*="font-size: 28px"] { color: #764ba2; }
-        .cloud-word[style*="font-size: 22px"] { color: #4CAF50; }
-        .cloud-word[style*="font-size: 18px"] { color: #FFC107; }
-        .cloud-word[style*="font-size: 14px"] { color: #9E9E9E; }
-        .cloud-legend { text-align: center; margin-top: 30px; }
-        .legend-item { display: inline-flex; align-items: center; margin: 0 15px; font-size: 0.9em; color: #555; }
-        .legend-dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
-        .summary ul { list-style: none; padding: 0; margin-top: 20px; }
-        .summary li { background: #f9f9f9; border-left: 4px solid #667eea; padding: 15px 20px; margin-bottom: 15px; border-radius: 8px; }
-        .summary li strong { color: #333; }
-        .summary p { font-size: 0.95em; color: #555; line-height: 1.7; margin-top: 15px; }
-        footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #eee; color: #777; font-size: 0.9em; }
-        .footer-info { display: flex; justify-content: center; gap: 30px; margin-bottom: 15px; }
-        .disclaimer { font-size: 0.8em; color: #999; margin-top: 20px; }
-        .placeholder-text { font-style: italic; color: #999; } /* Style for placeholder text */
-    </style>
 </head>
 <body>
     <div class="container">
-        <!-- 头部信息 - 根据报告类型动态调整 -->
+        <!-- 头部信息 -->
         <header>
             <div class="report-type">日报</div>
-            <h1>电竞荣耀群聊日报</h1>
-            <p class="date">2025年11月02日</p>
+            <h1>SKT T1 Faker 五冠王FKGOD!群聊日报</h1>
+            <p class="date">2025年11月3日</p>
             <div class="meta-info">
                 <div class="meta-info-item">
                     <span class="meta-icon">💬</span>
-                    <span>总消息数：<strong>1</strong></span>
+                    <span>总消息数：<strong>0</strong></span>
                 </div>
                 <div class="meta-info-item">
                     <span class="meta-icon">👥</span>
-                    <span>活跃用户：<strong>1</strong></span>
+                    <span>活跃用户：<strong>0</strong></span>
                 </div>
                 <div class="meta-info-item">
                     <span class="meta-icon">⏱️</span>
-                    <span>统计周期：<strong>2025年11月02日</strong></span>
+                    <span>统计周期：<strong>2025年11月3日</strong></span>
                 </div>
+            </div>
+            <div style="background-color: #ffe0b2; padding: 15px; border-radius: 8px; margin-top: 20px; text-align: center; color: #e65100;">
+                <strong>⚠️ 重要提示：</strong> 未检测到有效的聊天记录。您提供的“聊天记录”内容为：<br>
+                <code>错误: unhandled errors in a TaskGroup (1 sub-exception)</code><br>
+                本报告内容均为占位符或提示信息，无法基于实际聊天数据生成。请提供正确的聊天记录以获取准确报告。
             </div>
         </header>
 
         <!-- 1. 讨论热点 -->
         <section class="hot-topics">
-            <h2>📊 2025年11月02日讨论热点</h2>
+            <h2>📊 2025年11月3日讨论热点</h2>
             <div class="card-grid card-grid-2">
-                <!-- 话题卡片模板 - 根据报告类型重复相应数量 -->
+                <!-- 话题卡片模板 - 因无数据，仅提供一个占位符 -->
                 <div class="card topic-card">
                     <div class="topic-card-header">
-                        <h3>Faker五冠王：电竞传奇再续！</h3>
+                        <h3>[无有效讨论话题]</h3>
                         <div class="topic-heat">
-                            🔥 <span>99</span>
+                            🔥 <span>0</span>
                         </div>
                     </div>
-                    <span class="badge badge-primary">电竞 / 赛事新闻</span>
-                    <p class="topic-summary">群聊记录中唯一明确提及的内容，是对电竞传奇选手Faker可能达成的“五冠王”伟大成就的庆祝与赞颂，并用“FKGOD”表达了对其超凡实力的极致崇拜与认可。这清晰地表明了群内对顶级电竞赛事及其明星选手的极高关注度。</p>
+                    <span class="badge badge-primary">[未知类别]</span>
+                    <p class="topic-summary">未检测到有效聊天记录，无法分析和总结讨论热点。</p>
                     
                     <div class="deep-comment">
                         <div class="comment-header">
@@ -133,117 +55,19 @@
                             <span class="comment-label">评论</span>
                         </div>
                         <div class="comment-content">
-                            <p class="comment-text">“当所有人都以为英雄迟暮时，他只是换了个皮肤继续开大，顺便提醒世人，有些‘神’是不会被版本淘汰的。”</p>
+                            <p class="comment-text">没有素材，哲学家的笔也只能在虚空中舞蹈，徒留一纸空白的寂寞。</p>
                         </div>
                     </div>
                     
                     <div class="topic-keywords">
-                        <span class="keyword">#Faker</span>
-                        <span class="keyword">#五冠王</span>
-                        <span class="keyword">#FKGOD</span>
-                        <span class="keyword">#SKTT1</span>
-                        <span class="keyword">#电竞传奇</span>
-                        <span class="keyword">#冠军</span>
+                        <span class="keyword">#[无]</span>
+                        <span class="keyword">#[数据]</span>
+                        <span class="keyword">#[记录]</span>
                     </div>
                     <div class="topic-stats">
-                        <span class="badge badge-info">💬 1条讨论</span>
-                        <span class="badge badge-info">👥 1人参与</span>
-                        <span class="badge badge-info">🕐 瞬间</span>
-                    </div>
-                </div>
-                <!-- 补充占位话题，以符合日报至少8-12个话题的视觉要求，并注明数据不足 -->
-                 <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>群友激情表达</h3>
-                        <div class="topic-heat">
-                            🔥 <span>60</span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">情感表达 / 社区氛围</span>
-                    <p class="topic-summary">除Faker外，消息也体现了群友在特定事件下的强烈情感表达，通过简洁有力的词语直接抒发内心激动，是社群活跃度的一种侧面展现。本话题基于对唯一消息的情感分析而来。</p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">“文字是情绪的放大镜，有时一句顶一万句，尤其当它被冠以‘神’的名义。”</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#激情</span>
-                        <span class="keyword">#情绪</span>
-                        <span class="keyword">#表达</span>
-                        <span class="keyword">#社区</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 1条讨论</span>
-                        <span class="badge badge-info">👥 1人参与</span>
-                        <span class="badge badge-info">🕐 瞬间</span>
-                    </div>
-                </div>
-                <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>其他可能讨论</h3>
-                        <div class="topic-heat">
-                            🔥 <span><span class="placeholder-text">待收集</span></span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">通用 / 未知</span>
-                    <p class="topic-summary"><span class="placeholder-text">根据现有数据无法识别更多核心话题，此处为报告格式填充。实际群聊可能存在其他未被记录或更细微的讨论。期待后续更多数据来丰富报告内容。</span></p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">“空白之处并非无物，只是在等待墨水滴落，或是，被遗忘在未曾开启的对话框里。”</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#未知</span>
-                        <span class="keyword">#待发掘</span>
-                        <span class="keyword">#沉默</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 <span class="placeholder-text">0条讨论</span></span>
-                        <span class="badge badge-info">👥 <span class="placeholder-text">0人参与</span></span>
-                        <span class="badge badge-info">🕐 <span class="placeholder-text">N/A</span></span>
-                    </div>
-                </div>
-                 <div class="card topic-card">
-                    <div class="topic-card-header">
-                        <h3>闲聊与碎片信息</h3>
-                        <div class="topic-heat">
-                            🔥 <span><span class="placeholder-text">待收集</span></span>
-                        </div>
-                    </div>
-                    <span class="badge badge-primary">日常 / 互动</span>
-                    <p class="topic-summary"><span class="placeholder-text">除明确的热点事件外，群聊中也常伴随各类轻松的闲聊与碎片化信息交流。这些内容构成了群内日常互动的基础，但目前数据不足以进行具体分析。</span></p>
-                    
-                    <div class="deep-comment">
-                        <div class="comment-header">
-                            <span class="comment-icon">🎯</span>
-                            <span class="comment-label">评论</span>
-                        </div>
-                        <div class="comment-content">
-                            <p class="comment-text">“如同夜空中散落的星屑，虽不成型，却也编织着聊天的银河。”</p>
-                        </div>
-                    </div>
-                    
-                    <div class="topic-keywords">
-                        <span class="keyword">#日常</span>
-                        <span class="keyword">#互动</span>
-                        <span class="keyword">#碎片</span>
-                    </div>
-                    <div class="topic-stats">
-                        <span class="badge badge-info">💬 <span class="placeholder-text">0条讨论</span></span>
-                        <span class="badge badge-info">👥 <span class="placeholder-text">0人参与</span></span>
-                        <span class="badge badge-info">🕐 <span class="placeholder-text">N/A</span></span>
+                        <span class="badge badge-info">💬 0条讨论</span>
+                        <span class="badge badge-info">👥 0人参与</span>
+                        <span class="badge badge-info">🕐 N/A</span>
                     </div>
                 </div>
             </div>
@@ -257,15 +81,15 @@
             <div class="analytics-grid">
                 <div class="stat-card">
                     <div class="stat-label">总消息数</div>
-                    <div class="stat-number">1</div>
+                    <div class="stat-number">0</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">活跃用户</div>
-                    <div class="stat-number">1</div>
+                    <div class="stat-number">0</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-label">平均响应时间(分钟)</div>
-                    <div class="stat-number"><span class="placeholder-text">0 (无对话)</span></div>
+                    <div class="stat-number">N/A</div>
                 </div>
             </div>
             
@@ -274,26 +98,14 @@
             <div class="heat-distribution">
                 <div class="heat-item">
                     <div class="heat-header">
-                        <span class="heat-topic">Faker五冠王：电竞传奇再续！</span>
-                        <span class="heat-percentage">100%</span>
-                    </div>
-                    <div class="heat-bar">
-                        <div class="heat-fill" style="width: 100%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
-                    </div>
-                    <div class="heat-stats">
-                        <span>1条消息</span> · <span>1人参与</span>
-                    </div>
-                </div>
-                <div class="heat-item">
-                    <div class="heat-header">
-                        <span class="heat-topic">其他话题</span>
-                        <span class="heat-percentage"><span class="placeholder-text">0%</span></span>
+                        <span class="heat-topic">[无有效话题]</span>
+                        <span class="heat-percentage">0%</span>
                     </div>
                     <div class="heat-bar">
                         <div class="heat-fill" style="width: 0%; background: linear-gradient(90deg, #667eea, #764ba2);"></div>
                     </div>
                     <div class="heat-stats">
-                        <span><span class="placeholder-text">0条消息</span></span> · <span><span class="placeholder-text">0人参与</span></span>
+                        <span>0条消息</span> · <span>0人参与</span>
                     </div>
                 </div>
             </div>
@@ -304,31 +116,17 @@
                 <div class="participant-card">
                     <div class="participant-rank rank-1">1</div>
                     <div class="participant-info">
-                        <div class="participant-name"><span class="placeholder-text">群友A (ID: 未知)</span></div>
+                        <div class="participant-name">[无人参与]</div>
                         <div class="participant-stats">
-                            <span>💬 1条</span>
-                            <span>⏱️ 平均<span class="placeholder-text">即时</span></span>
-                            <span>🎯 参与1个话题</span>
+                            <span>💬 0条</span>
+                            <span>⏱️ 平均N/A分钟</span>
+                            <span>🎯 参与0个话题</span>
                         </div>
                         <div class="participant-traits">
-                            <span class="badge badge-secondary">电竞狂热者</span>
-                            <span class="badge badge-secondary">Faker粉丝</span>
-                            <span class="badge badge-secondary">激情表达者</span>
-                            <span class="badge badge-secondary">信息先锋</span>
-                        </div>
-                    </div>
-                </div>
-                 <div class="participant-card">
-                    <div class="participant-rank"><span class="placeholder-text">2</span></div>
-                    <div class="participant-info">
-                        <div class="participant-name"><span class="placeholder-text">暂无更多数据</span></div>
-                        <div class="participant-stats">
-                            <span>💬 <span class="placeholder-text">0条</span></span>
-                            <span>⏱️ 平均<span class="placeholder-text">N/A</span></span>
-                            <span>🎯 参与<span class="placeholder-text">0个话题</span></span>
-                        </div>
-                        <div class="participant-traits">
-                            <span class="badge badge-secondary"><span class="placeholder-text">等待发言</span></span>
+                            <span class="badge badge-secondary">[沉默寡言]</span>
+                            <span class="badge badge-secondary">[隐身模式]</span>
+                            <span class="badge badge-secondary">[零贡献]</span>
+                            <span class="badge badge-secondary">[虚空存在]</span>
                         </div>
                     </div>
                 </div>
@@ -337,101 +135,100 @@
             <!-- 时段活跃度分析 - 仅限日报/周报 -->
             <h3>⏰ 时段活跃度分析</h3>
             <div class="time-activity">
-                <p class="placeholder-text">现有数据无法提供详细时段活跃度分析，以下为示例，所有时段消息数默认为0。</p>
                 <div class="time-chart">
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">00</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">01</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">02</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">03</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">04</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">05</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">06</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">07</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">08</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">09</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">10</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">11</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">12</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">13</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">14</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">15</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">16</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">17</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">18</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">19</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">20</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">21</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">22</div>
                         <div class="time-count">0</div>
                     </div>
-                    <div class="time-slot">
+                    <div class="time-slot" style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(102, 126, 234, 0.3));">
                         <div class="time-hour">23</div>
                         <div class="time-count">0</div>
                     </div>
@@ -444,13 +241,13 @@
                 <div class="owl-content">
                     <div class="owl-crown">👑</div>
                     <div class="owl-info">
-                        <h4><span class="placeholder-text">暂无数据</span></h4>
-                        <p class="owl-title">"<span class="placeholder-text">午夜的沉寂者</span>"</p>
+                        <h4>[无人]</h4>
+                        <p class="owl-title">"[午夜幽灵]"</p>
                         <div class="owl-stats">
-                            <span>🕐 最晚活跃：<span class="placeholder-text">N/A</span></span>
-                            <span>🌙 深夜消息：<span class="placeholder-text">0条</span></span>
+                            <span>🕐 最晚活跃：N/A</span>
+                            <span>🌙 深夜消息：0条</span>
                         </div>
-                        <p class="owl-quote">"<span class="placeholder-text">群星璀璨，而我独眠。</span>"</p>
+                        <p class="owl-quote">"[寂静无声，只有风在耳边低语。]"</p>
                     </div>
                 </div>
             </div>
@@ -460,29 +257,14 @@
         <section class="word-cloud">
             <h2>☁️ 热词云图</h2>
             <div class="cloud-container">
-                <div class="cloud-layer">
-                    <span class="cloud-word" style="font-size: 36px; color: #667eea;">Faker</span>
-                    <span class="cloud-word" style="font-size: 28px; color: #764ba2;">五冠王</span>
-                    <span class="cloud-word" style="font-size: 24px; color: #4CAF50;">FKGOD</span>
-                    <span class="cloud-word" style="font-size: 20px; color: #FFC107;">SKT T1</span>
-                    <span class="cloud-word" style="font-size: 18px; color: #F44336;">冠军</span>
-                    <span class="cloud-word" style="font-size: 16px; color: #2196F3;">电竞</span>
-                    <span class="cloud-word" style="font-size: 14px; color: #9E9E9E;">传奇</span>
-                    <span class="cloud-word" style="font-size: 12px; color: #607D8B;">荣耀</span>
+                <div class="cloud-3d" style="text-align: center; padding: 50px;">
+                    <p style="font-size: 20px; color: #888;">暂无有效聊天记录，无法生成热词云图。</p>
                 </div>
                 
                 <div class="cloud-legend">
                     <div class="legend-item">
-                        <span class="legend-dot" style="background-color: #667eea;"></span>
-                        <span>核心热点</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="legend-dot" style="background-color: #764ba2;"></span>
-                        <span>赛事成就</span>
-                    </div>
-                     <div class="legend-item">
-                        <span class="legend-dot" style="background-color: #4CAF50;"></span>
-                        <span>崇拜情绪</span>
+                        <span class="legend-dot" style="background-color: #ccc;"></span>
+                        <span>[无数据] 相关</span>
                     </div>
                 </div>
             </div>
@@ -490,31 +272,31 @@
         
         <!-- 4. 报告总结 -->
         <section class="summary">
-            <h2>📝 2025年11月02日总结</h2>
+            <h2>📝 2025年11月3日总结</h2>
             <div class="card">
                 <h3>核心洞察</h3>
                 <ul>
-                    <li><strong>高关注度：</strong> 群内对电竞头部选手Faker的成就表现出极高热情，表明群友对顶级电竞赛事有强烈兴趣。</li>
-                    <li><strong>崇拜氛围：</strong> "FKGOD"的称谓体现了群友对选手Faker超凡实力和历史地位的极致崇拜与认可。</li>
-                    <li><strong>单一焦点：</strong> 今日群聊内容高度聚焦于Faker五冠王这一单一热门话题，缺乏其他多元化讨论。</li>
-                    <li><strong>互动待提升：</strong> 鉴于数据量限制，今日未观察到多方互动和深度的讨论链，群聊活跃度仍有提升空间。</li>
-                    <li><strong>潜力巨大：</strong> 若有更多电竞相关新闻或赛事进展，群聊有望迅速被点燃，展现出更强的互动能量。</li>
+                    <li><strong>[数据缺失]：</strong>未提供有效的聊天记录，无法生成核心洞察。</li>
+                    <li><strong>[内容空白]：</strong>群聊在统计周期内未产生任何有效消息，一片静默。</li>
+                    <li><strong>[活跃度低]：</strong>无人发言，活跃用户数为零，群聊处于休眠状态。</li>
+                    <li><strong>[趋势不明]：</strong>由于数据缺失，无法分析任何讨论趋势或用户行为模式。</li>
+                    <li><strong>[未来展望]：</strong>期待未来能有真实的交流数据，以生成有意义的报告。</li>
                 </ul>
                 
                 <h3>趋势分析</h3>
-                <p>鉴于2025年11月02日仅有一条聊天记录，本报告无法进行有意义的趋势分析。今日群聊呈现高度聚焦单一热门话题的特点，这可能暗示了群内成员对特定事件的爆发性关注。期待未来有更多数据能够揭示群聊活动的周期性或事件驱动性趋势。</p>
+                <p>未检测到有效聊天记录，因此无法分析2025年11月3日的任何讨论趋势变化。今日群聊仿佛置身于一座空无一人的图书馆，虽有其形，却无其声。</p>
             </div>
         </section>
         
         <!-- 页脚信息 -->
         <footer>
             <div class="footer-info">
-                <span>📊 数据来源：电竞荣耀群</span>
-                <span>📅 统计周期：2025年11月02日</span>
-                <span>🕐 生成时间：2023-10-27 10:30:00 (示例时间)</span>
+                <span>📊 数据来源：SKT T1 Faker 五冠王FKGOD!</span>
+                <span>📅 统计周期：2025年11月3日</span>
+                <span>🕐 生成时间：2024-03-08 10:00:00</span>
             </div>
             <p class="disclaimer">
-                免责声明：本报告基于群聊公开讨论内容自动生成，仅供参考。由于原始聊天记录极度精简，报告中的许多统计数据为推测或占位符。如有不当内容，请联系管理员处理。
+                免责声明：本报告基于对您提供的“聊天记录”的分析，但因聊天记录实际为错误信息，报告内容为占位符。请提供正确的群聊数据以获得准确报告。
             </p>
         </footer>
     </div>
